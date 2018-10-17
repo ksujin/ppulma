@@ -19,6 +19,9 @@
 		3B05B27D21777AE200BB6803 /* MagazineFirstCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05B27C21777AE200BB6803 /* MagazineFirstCVCell.swift */; };
 		3B05B27F21777AEF00BB6803 /* MagazineSecondCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05B27E21777AEF00BB6803 /* MagazineSecondCVCell.swift */; };
 		3B05B28221778A8700BB6803 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05B28121778A8700BB6803 /* Delegate.swift */; };
+		3B05B2852177A7A700BB6803 /* GMStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05B2842177A7A700BB6803 /* GMStepper.swift */; };
+		3B05B2882177A8D100BB6803 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05B2872177A8D100BB6803 /* CartVC.swift */; };
+		3B05B28A2177A8E800BB6803 /* CartTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05B2892177A8E800BB6803 /* CartTVCell.swift */; };
 		3BE79721217752A10071AF34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79720217752A10071AF34 /* AppDelegate.swift */; };
 		3BE79723217752A10071AF34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79722217752A10071AF34 /* ViewController.swift */; };
 		3BE79726217752A10071AF34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79724217752A10071AF34 /* Main.storyboard */; };
@@ -41,6 +44,9 @@
 		3B05B27C21777AE200BB6803 /* MagazineFirstCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineFirstCVCell.swift; sourceTree = "<group>"; };
 		3B05B27E21777AEF00BB6803 /* MagazineSecondCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineSecondCVCell.swift; sourceTree = "<group>"; };
 		3B05B28121778A8700BB6803 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
+		3B05B2842177A7A700BB6803 /* GMStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMStepper.swift; sourceTree = "<group>"; };
+		3B05B2872177A8D100BB6803 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
+		3B05B2892177A8E800BB6803 /* CartTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTVCell.swift; sourceTree = "<group>"; };
 		3BE7971D217752A10071AF34 /* Ppulma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ppulma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE79720217752A10071AF34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BE79722217752A10071AF34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 		3B05B26A21776F7300BB6803 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3B05B2832177A79500BB6803 /* GMStepper */,
 				3B05B26B21776F7800BB6803 /* WRNavigationBar */,
 			);
 			path = Resources;
@@ -127,6 +134,23 @@
 				3B05B28121778A8700BB6803 /* Delegate.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		3B05B2832177A79500BB6803 /* GMStepper */ = {
+			isa = PBXGroup;
+			children = (
+				3B05B2842177A7A700BB6803 /* GMStepper.swift */,
+			);
+			path = GMStepper;
+			sourceTree = "<group>";
+		};
+		3B05B2862177A8A700BB6803 /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+				3B05B2872177A8D100BB6803 /* CartVC.swift */,
+				3B05B2892177A8E800BB6803 /* CartTVCell.swift */,
+			);
+			path = Cart;
 			sourceTree = "<group>";
 		};
 		3BE79714217752A10071AF34 = {
@@ -168,6 +192,7 @@
 		3BE79734217767D50071AF34 /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				3B05B2862177A8A700BB6803 /* Cart */,
 				3B05B26221776BDF00BB6803 /* Main */,
 				3B05B26721776F2F00BB6803 /* Magazine */,
 			);
@@ -305,10 +330,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B05B26921776F4300BB6803 /* MagazineVC.swift in Sources */,
+				3B05B2852177A7A700BB6803 /* GMStepper.swift in Sources */,
 				3B05B26F21776F9600BB6803 /* WRCustomNavigationBar.swift in Sources */,
+				3B05B2882177A8D100BB6803 /* CartVC.swift in Sources */,
 				3B05B271217771D600BB6803 /* MagazineFirstTVCell.swift in Sources */,
 				3B05B28221778A8700BB6803 /* Delegate.swift in Sources */,
 				3B05B2762177730A00BB6803 /* Storyboard.swift in Sources */,
+				3B05B28A2177A8E800BB6803 /* CartTVCell.swift in Sources */,
 				3B05B27F21777AEF00BB6803 /* MagazineSecondCVCell.swift in Sources */,
 				3B05B279217778FC00BB6803 /* ColorChip.swift in Sources */,
 				3BE797332177588D0071AF34 /* ExamplePopupViewController.swift in Sources */,

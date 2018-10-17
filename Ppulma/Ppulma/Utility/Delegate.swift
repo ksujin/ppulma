@@ -11,3 +11,7 @@ import UIKit
 protocol SelectDelegate {
     func tap(selected : Int?)
 }
+
+protocol CheckDelegate {
+    func check(selected : Int?)
+}
