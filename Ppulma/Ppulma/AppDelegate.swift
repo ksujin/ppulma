@@ -8,6 +8,12 @@
 
 import UIKit
 
+let kScreenWidth = UIScreen.main.bounds.width
+let kScreenHeight = UIScreen.main.bounds.height
+let kTabBarHeight = 49
+let kNavBarHeight = 44
+let kNavBarBottom = WRNavigationBar.navBarBottom()
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

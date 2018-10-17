@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import BottomPopup
 
 class ViewController: UIViewController {
 
@@ -15,9 +16,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func showViewControllerTapped(_ sender: UIButton) {
+        guard let popupVC = storyboard?.instantiateViewController(withIdentifier: "secondVC") as? ExamplePopupViewController else { return }
+        popupVC.height = 300
+        popupVC.topCornerRadius = 10
+        popupVC.presentDuration = 0.2
+        popupVC.dismissDuration = 0.2
+        popupVC.shouldDismissInteractivelty = true
+        present(popupVC, animated: true, completion: nil)
     }
 
 
