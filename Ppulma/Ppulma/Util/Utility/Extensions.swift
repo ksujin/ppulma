@@ -27,12 +27,24 @@ extension UIView {
         self.layer.masksToBounds = true
     }
     
-    
-    
     func makeViewBorder(width : Double, color : UIColor){
         self.layer.borderWidth = CGFloat(width)
         self.layer.borderColor = color.cgColor
     }
+    
+    
+    func makeShadow(myImage : UIImage, cornerRadius : CGFloat){
+        let myImgView = UIImageView()
+        self.clipsToBounds = false
+        self.layer.applySketchShadow(alpha : 0.16, x : 0, y : 2, blur : 6, spread : 2)
+        self.backgroundColor = UIColor.clear
+        myImgView.frame = self.bounds
+        myImgView.clipsToBounds = true
+        myImgView.layer.cornerRadius = cornerRadius
+        myImgView.image = myImage
+        self.addSubview(myImgView)
+    }
+    
 }
 
 extension UIViewController {
@@ -40,7 +52,7 @@ extension UIViewController {
     
     //백버튼
     func setBackBtn(color : UIColor? = .white){
-        let backBTN = UIBarButtonItem(image: UIImage(named: "category_detail_left_arrow"),
+        let backBTN = UIBarButtonItem(image: UIImage(named: "icBack"),
                                       style: .plain,
                                       target: self,
                                       action: #selector(self.pop))

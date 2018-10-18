@@ -17,6 +17,7 @@ class CartTVCell: UITableViewCell {
     @IBOutlet weak var goodsImgView: UIImageView!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
+    @IBOutlet weak var descLbl: UILabel!
     
     var delegate : SelectRowDelegate?
     var checkDelegate : CheckDelegate?
@@ -25,6 +26,7 @@ class CartTVCell: UITableViewCell {
     func configure(data : SampleCartStruct, row : Int){
         nameLbl.text = data.name
         priceLbl.text = "\(data.price)원"
+        descLbl.text = data.desc
         stepper.value = Double(data.value)
         count = Int(stepper.value)
         won = data.price

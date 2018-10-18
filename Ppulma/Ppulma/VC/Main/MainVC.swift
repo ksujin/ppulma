@@ -8,9 +8,13 @@
 
 import UIKit
 
+
+
 class MainVC: UIViewController {
 
     
+    @IBOutlet weak var sOuterView: UIView!
+    @IBOutlet weak var wOutherView: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var firstLbl: UILabel!
     @IBOutlet weak var secondLbl: UILabel!
@@ -36,13 +40,17 @@ class MainVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 8))
+        tableView.tableFooterView?.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.937254902, alpha: 1)
         firstLbl.text = "13000원"
         secondLbl.text = "87000원"
         firstLbl.textColor = ColorChip.shared().mainPurple
         secondLbl.textColor = ColorChip.shared().mainOrange
+        sOuterView.makeShadow(myImage: #imageLiteral(resourceName: "aimg"), cornerRadius: sOuterView.frame.height/2)
+        wOutherView.makeShadow(myImage: #imageLiteral(resourceName: "aimg"), cornerRadius: wOutherView.frame.height/2)
     }
-
+    
+    
 }
 
 extension MainVC : UITableViewDelegate, UITableViewDataSource{

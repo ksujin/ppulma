@@ -12,6 +12,7 @@ struct SampleCartStruct {
     let name : String
     var value : Int
     let price : Int
+    let desc : String
 }
 
 struct SampleUserStruct {
@@ -66,11 +67,13 @@ class CartVC: UIViewController {
         tableView.dataSource = self
         purpleTopView.layoutSubviews()
        // purpleTopView.makeRounded(cornerRadius: 7)
-        let a = SampleCartStruct(name: "할로윈모자", value: 1, price: 1000)
-        let b = SampleCartStruct(name: "호박사탕", value: 2, price: 2000)
-        let c = SampleCartStruct(name: "분장", value: 3, price: 3000)
-        let d = SampleCartStruct(name: "술", value: 1, price: 4000)
-        sampleArr.append(contentsOf: [a,b,c,d])
+        let a = SampleCartStruct(name: "커플 머그컵", value: 1, price: 1000, desc: "냥이 I BLUE&PINK")
+        let b = SampleCartStruct(name: "커플 휴대폰 케이스", value: 2, price: 2000, desc: "일러스트1 I BLUE&PINK")
+        let c = SampleCartStruct(name: "커플 카시오 시계", value: 3, price: 3000, desc: "WDFFS21 I 남성&여성")
+        let d = SampleCartStruct(name: "커플 수면 잠옷", value: 1, price: 4000, desc: "여름여름해 I 남성&여성")
+        let e = SampleCartStruct(name: "칸쵸", value: 1, price: 4000, desc: "여름여름해 I 남성&여성")
+        let f = SampleCartStruct(name: "볶음우동", value: 1, price: 4000, desc: "여름여름해 I 남성&여성")
+        sampleArr.append(contentsOf: [a,b,c,d,e,f])
     
         selectAllLbl.text = "전체선택 \(sampleArr.count)개"
         selectAllLbl.sizeToFit()
@@ -88,11 +91,11 @@ class CartVC: UIViewController {
     }
     
     @IBAction func deleteAction(_ sender: Any) {
-        var deleteArr : [SampleCartStruct] = []
+        var deleteArr : [String] = []
         for section in 0..<tableView.numberOfSections {
             for row in 0..<tableView.numberOfRows(inSection: section) {
                 if isSelectedArr[row] {
-                   deleteArr.append(sampleArr[row])
+                   deleteArr.append(sampleArr[row].name)
                 }
             }
         }
