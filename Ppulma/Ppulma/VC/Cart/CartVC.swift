@@ -117,6 +117,7 @@ class CartVC: UIViewController {
             isSelectedArr.append(false)
         }
         tableView.reloadData()
+        setPriceLbl()
     }
     
     @IBAction func payAction(_ sender: Any) {
