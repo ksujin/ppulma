@@ -38,11 +38,12 @@ class MainVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(getUserInfo(_:)), name: NSNotification.Name("GetUserValue"), object: nil)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 8))
         tableView.tableFooterView?.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.937254902, alpha: 1)
-        firstLbl.text = "13000원"
+        firstLbl.text = String(format: "%.0f", sampleUser.point)+"원"
         secondLbl.text = "87000원"
         firstLbl.textColor = ColorChip.shared().mainPurple
         secondLbl.textColor = ColorChip.shared().mainOrange
@@ -50,7 +51,9 @@ class MainVC: UIViewController {
         wOutherView.makeShadow(myImage: #imageLiteral(resourceName: "aimg"), cornerRadius: wOutherView.frame.height/2)
     }
     
-    
+    @objc func getUserInfo(_ notification : Notification) {
+       firstLbl.text = String(format: "%.0f", sampleUser.point)+"원"
+    }
 }
 
 extension MainVC : UITableViewDelegate, UITableViewDataSource{

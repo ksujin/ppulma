@@ -47,8 +47,6 @@ enum SalePercent : Double {
 class CartVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
-    
-    
     @IBOutlet weak var purpleTopView: RoundShadowView!
     //첫 통신에서 유저 포인트 전역변수로 박아놓고, 결제할때 접근해서 차감
     @IBOutlet weak var salePercentLbl : UILabel!
@@ -57,9 +55,10 @@ class CartVC: UIViewController {
     @IBOutlet weak var selectAllBtn: UIButton!
     @IBOutlet weak var selectAllLbl: UILabel!
     
+    
     var sampleArr : [SampleCartStruct] = []
-    var isSelectedArr : [Bool] = []
-
+    var isSelectedArr : [Bool] = [] 
+    var willDecrease_ : Double = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,15 +90,32 @@ class CartVC: UIViewController {
     }
     
     @IBAction func deleteAction(_ sender: Any) {
-        var deleteArr : [String] = []
+        var deleteArr : [SampleCartStruct] = []
         for section in 0..<tableView.numberOfSections {
-            for row in 0..<tableView.numberOfRows(inSection: section) {
+            let rowNum = tableView.numberOfRows(inSection: section)
+            for row in 0..<rowNum{
                 if isSelectedArr[row] {
-                   deleteArr.append(sampleArr[row].name)
+                    deleteArr.append(sampleArr[row])
                 }
             }
         }
+         self.tableView.reloadData()
+        //통신
         print(deleteArr)
+        //통신 완료 후
+        sampleArr = deleteArr
+        isSelectedArr = []
+        sampleArr.forEach { (_) in
+            isSelectedArr.append(false)
+        }
+        tableView.reloadData()
+    }
+    
+    @IBAction func payAction(_ sender: Any) {
+        //통신 완료후
+        sampleUser.point -= willDecrease_
+        NotificationCenter.default.post(name: NSNotification.Name("GetUserValue"), object: nil, userInfo: nil)
+        setPriceLbl()
     }
     
     @objc func selectAllAction(_ sender : UIButton){
@@ -131,6 +147,11 @@ extension CartVC : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CartTVCell.reuseIdentifier) as! CartTVCell
         cell.configure(data: sampleArr[indexPath.row], row : indexPath.row)
+        cell.cancleHandler = { (row) in
+            self.sampleArr.remove(at: row)
+            self.isSelectedArr.remove(at: row)
+            self.tableView.reloadData()
+        }
         if isSelectedArr.count > 0 {
            cell.selectedConfig(isSelected : isSelectedArr[indexPath.row])
         }
@@ -176,9 +197,9 @@ extension CartVC {
         if willDecrease > sampleUser.point {
             willDecrease = sampleUser.point
         }
-        
+        willDecrease_ = willDecrease
         let afterDecrease = Double(totalPrice)-(willDecrease)
-       
+        
         salePercentLbl.text = salePercent.percentString
         decreasePointLbl.text = String(format: "%.0f", willDecrease)+"원"
         afterDecreaseLbl.text = String(format: "%.0f", afterDecrease)+"원"

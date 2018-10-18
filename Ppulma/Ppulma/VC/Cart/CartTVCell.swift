@@ -18,7 +18,7 @@ class CartTVCell: UITableViewCell {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
-    
+    var cancleHandler : ((_ row : Int)->Void)?
     var delegate : SelectRowDelegate?
     var checkDelegate : CheckDelegate?
     var won : Int = 1
@@ -33,6 +33,7 @@ class CartTVCell: UITableViewCell {
         checkBtn.tag = row
         stepper.leftButton.tag = row
         stepper.rightButton.tag = row
+        deleteBtn.tag = row
     }
     
     func selectedConfig(isSelected : Bool){
@@ -48,6 +49,13 @@ class CartTVCell: UITableViewCell {
         checkBtn.setImage(
             UIImage(named: "bimg"), for: .selected)
         checkBtn.addTarget(self, action: #selector(checkAction(_:)), for: .touchUpInside)
+        deleteBtn.addTarget(self, action: #selector(deleteAction(_:)), for: .touchUpInside)
+        
+    }
+    
+    //checkBtn 클릭
+    @objc func deleteAction(_ sender : UIButton){
+        cancleHandler!(sender.tag)
     }
     
     //checkBtn 클릭
