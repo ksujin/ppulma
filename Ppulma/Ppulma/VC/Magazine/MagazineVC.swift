@@ -7,10 +7,8 @@
 //
 
 import UIKit
-private let IMAGE_HEIGHT:CGFloat = 284
+private let IMAGE_HEIGHT:CGFloat = 433
 private let NAVBAR_COLORCHANGE_POINT:CGFloat = IMAGE_HEIGHT - CGFloat(kNavBarBottom * 2)
-
-
 class MagazineVC: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var tableView : UITableView!

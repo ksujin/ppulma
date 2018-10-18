@@ -102,7 +102,7 @@ extension MagazineFirstTVCell: UICollectionViewDelegateFlowLayout {
     //cell size
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.collectionView {
-             return CGSize(width: 100, height: 100)
+             return CGSize(width: 72, height: 72)
         } else {
              return CGSize(width: 110, height: 147)
         }

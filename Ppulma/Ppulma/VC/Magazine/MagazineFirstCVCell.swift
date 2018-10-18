@@ -10,10 +10,9 @@ import UIKit
 
 class MagazineFirstCVCell: UICollectionViewCell {
     @IBOutlet weak var myImgView: UIImageView!
-    @IBOutlet weak var titleLbl: UILabel!
     override var isSelected: Bool {
         didSet {
-            self.contentView.backgroundColor = isSelected ? #colorLiteral(red: 0.9803921569, green: 0.5764705882, blue: 0.5019607843, alpha: 1) : UIColor.red
+            self.contentView.backgroundColor = isSelected ? #colorLiteral(red: 0.9764705882, green: 0.4, blue: 0.4392156863, alpha: 1) : UIColor.red
             self.myImgView.alpha = isSelected ? 0.65 : 1.0
         }
     }
