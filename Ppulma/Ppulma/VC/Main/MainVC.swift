@@ -47,15 +47,15 @@ class MainVC: UIViewController {
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 8))
         tableView.tableFooterView?.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.937254902, alpha: 1)
-        firstLbl.text = String(format: "%.0f", sampleUser.point)+"원"
-        secondLbl.text = "87000원"
+        firstLbl.text = Int(sampleUser.point).withCommas()+"원"
+        secondLbl.text = "87,000원"
         alarmOrangeVie.makeRounded(cornerRadius: nil)
         sOuterView.makeShadow(myImage: #imageLiteral(resourceName: "aimg"), cornerRadius: sOuterView.frame.height/2)
         wOutherView.makeShadow(myImage: #imageLiteral(resourceName: "aimg"), cornerRadius: wOutherView.frame.height/2)
     }
     
     @objc func getUserInfo(_ notification : Notification) {
-       firstLbl.text = String(format: "%.0f", sampleUser.point)+"원"
+       firstLbl.text = Int(sampleUser.point).withCommas()+"원"
     }
     
     func setSampleData(){

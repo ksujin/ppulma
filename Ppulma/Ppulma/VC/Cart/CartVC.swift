@@ -22,7 +22,7 @@ struct SampleUserStruct {
 }
 
 
-var sampleUser = SampleUserStruct(name: "sujin", point: 2100)
+var sampleUser = SampleUserStruct(name: "sujin", point: 13000)
 
 enum SalePercent : Double {
     case zero = 0.0
@@ -56,9 +56,12 @@ class CartVC: UIViewController {
     @IBOutlet weak var selectAllBtn: UIButton!
     @IBOutlet weak var selectAllLbl: UILabel!
     
-    
-    var sampleArr : [SampleCartStruct] = []
-    var isSelectedArr : [Bool] = [] 
+    var sampleArr : [SampleCartStruct] = [] {
+        didSet {
+            selectAllLbl.text = "전체선택 \(sampleArr.count)개"
+        }
+    }
+    var isSelectedArr : [Bool] = []
     var willDecrease_ : Double = 0
 
     override func viewDidLoad() {

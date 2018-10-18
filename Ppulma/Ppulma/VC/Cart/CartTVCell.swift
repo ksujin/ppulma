@@ -28,7 +28,7 @@ class CartTVCell: UITableViewCell {
     func configure(data : SampleCartStruct, row : Int){
         myImgView.image = data.img
         nameLbl.text = data.name
-        priceLbl.text = "\(data.price)원"
+        priceLbl.text = data.price.withCommas()+"원"
         descLbl.text = data.desc
         stepper.value = Double(data.value)
         count = Int(stepper.value)
