@@ -29,7 +29,12 @@ class MagazineVC: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         setupTableView()
         setupNavView()
+        let cell = tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
+        cell.collectionView.selectItem(at: IndexPath(row : 0, section : 0), animated: false, scrollPosition: .centeredVertically)
+        cell.imgHandler = reloadTVForCV
+        cell.imgArr2 = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg")]
     }
+    
     func setupTableView(){
         tableView.contentInset = UIEdgeInsetsMake(-CGFloat(kNavBarBottom), 0, 0, 0)
         tableView.delegate = self
@@ -47,6 +52,14 @@ class MagazineVC: UIViewController, UIGestureRecognizerDelegate {
         navBarBackgroundAlpha = 0
         //네비게이션 바 안의 아이템 컬러
         navBarTintColor = .white
+    }
+    
+    func reloadTVForCV(){
+        let cell = tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
+        cell.secondCollectionView.reloadData()
+       
+        cell.collectionViewHeight.constant = cell.secondCollectionView.collectionViewLayout.collectionViewContentSize.height
+        tableView.reloadData()
     }
 }
 
@@ -72,9 +85,6 @@ extension MagazineVC : SelectDelegate {
     func tap(selected: Int?) {
         let cell = tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
         cell.imgArr2 = [#imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg")]
-        cell.secondCollectionView.reloadData()
-        cell.collectionViewHeight.constant = cell.secondCollectionView.collectionViewLayout.collectionViewContentSize.height
-        tableView.reloadData()
     }
 }
 
@@ -112,8 +122,5 @@ extension MagazineVC: DropperDelegate {
         } else {
             cell.imgArr2 = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "bimg")]
         }
-        cell.secondCollectionView.reloadData()
-        cell.collectionViewHeight.constant = cell.secondCollectionView.collectionViewLayout.collectionViewContentSize.height
-        tableView.reloadData()
     }
 }

@@ -12,9 +12,15 @@ import Dropper
 class MagazineFirstTVCell: UITableViewCell {
 
     var imgArr = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg")]
-    var imgArr2 = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg")]
+    var imgArr2 : [UIImage] = [] {
+        didSet {
+            if let imgHandler_ = imgHandler {
+               imgHandler_()
+            }
+        }
+    }
     let dropper = Dropper(width: 75, height: 200)
-    
+    var imgHandler : (()->Void)?
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var secondCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
@@ -88,7 +94,6 @@ extension MagazineFirstTVCell : UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.collectionView {
-           
             delegate?.tap(selected: 0)
         } else {
             
