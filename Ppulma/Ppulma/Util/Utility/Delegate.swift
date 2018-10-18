@@ -12,6 +12,10 @@ protocol SelectDelegate {
     func tap(selected : Int?)
 }
 
+protocol SelectRowDelegate {
+    func tap(row : Int, selected : Int)
+}
+
 protocol CheckDelegate {
     func check(selected : Int?)
 }

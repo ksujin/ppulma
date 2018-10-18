@@ -100,7 +100,7 @@ import UIKit
     }
     
     /// Font of the buttons. Defaults to AvenirNext-Bold, 20.0 points in size.
-    @objc public var buttonsFont = UIFont(name: "AvenirNext-Bold", size: 20.0)! {
+    @objc public var buttonsFont = UIFont(name: NanumSquareOTF.NanumSquareOTFR.rawValue, size: 13)! {
         didSet {
             for button in [leftButton, rightButton] {
                 button.titleLabel?.font = buttonsFont
@@ -123,7 +123,7 @@ import UIKit
     }
     
     /// Font of the middle label. Defaults to AvenirNext-Bold, 25.0 points in size.
-    @objc public var labelFont = UIFont(name: "AvenirNext-Bold", size: 15.0)! {
+    @objc public var labelFont = UIFont(name: NanumSquareOTF.NanumSquareOTFR.rawValue, size: 13)! {
         didSet {
             label.font = labelFont
         }

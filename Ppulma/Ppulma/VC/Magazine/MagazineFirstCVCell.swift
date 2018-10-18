@@ -10,6 +10,9 @@ import UIKit
 
 class MagazineFirstCVCell: UICollectionViewCell {
      @IBOutlet weak var myImgView: UIImageView!
+    
+    @IBOutlet weak var titleLbl: UILabel!
+    
     func configure(data : UIImage) {
        myImgView.image = data
     }

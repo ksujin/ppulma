@@ -22,6 +22,13 @@
 		3B05B2852177A7A700BB6803 /* GMStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05B2842177A7A700BB6803 /* GMStepper.swift */; };
 		3B05B2882177A8D100BB6803 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05B2872177A8D100BB6803 /* CartVC.swift */; };
 		3B05B28A2177A8E800BB6803 /* CartTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05B2892177A8E800BB6803 /* CartTVCell.swift */; };
+		3BB04FAD2178D4F00096BF4D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB04FAC2178D4F00096BF4D /* CustomView.swift */; };
+		3BB04FB02178D6390096BF4D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB04FAF2178D6390096BF4D /* Font.swift */; };
+		3BB04FBA2178D6E00096BF4D /* NanumSquareOTFExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3BB04FB62178D6DA0096BF4D /* NanumSquareOTFExtraBold.otf */; };
+		3BB04FBB2178D6E00096BF4D /* NanumSquareOTFLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3BB04FB72178D6DB0096BF4D /* NanumSquareOTFLight.otf */; };
+		3BB04FBC2178D6E00096BF4D /* NanumSquareOTFBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3BB04FB82178D6DD0096BF4D /* NanumSquareOTFBold.otf */; };
+		3BB04FBD2178D6E00096BF4D /* NanumSquareOTFRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3BB04FB92178D6DE0096BF4D /* NanumSquareOTFRegular.otf */; };
+		3BB04FBF2178ED430096BF4D /* RoundShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB04FBE2178ED430096BF4D /* RoundShadowView.swift */; };
 		3BE79721217752A10071AF34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79720217752A10071AF34 /* AppDelegate.swift */; };
 		3BE79723217752A10071AF34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79722217752A10071AF34 /* ViewController.swift */; };
 		3BE79726217752A10071AF34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79724217752A10071AF34 /* Main.storyboard */; };
@@ -47,6 +54,13 @@
 		3B05B2842177A7A700BB6803 /* GMStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMStepper.swift; sourceTree = "<group>"; };
 		3B05B2872177A8D100BB6803 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		3B05B2892177A8E800BB6803 /* CartTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTVCell.swift; sourceTree = "<group>"; };
+		3BB04FAC2178D4F00096BF4D /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		3BB04FAF2178D6390096BF4D /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		3BB04FB62178D6DA0096BF4D /* NanumSquareOTFExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFExtraBold.otf; sourceTree = "<group>"; };
+		3BB04FB72178D6DB0096BF4D /* NanumSquareOTFLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFLight.otf; sourceTree = "<group>"; };
+		3BB04FB82178D6DD0096BF4D /* NanumSquareOTFBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFBold.otf; sourceTree = "<group>"; };
+		3BB04FB92178D6DE0096BF4D /* NanumSquareOTFRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = NanumSquareOTFRegular.otf; sourceTree = "<group>"; };
+		3BB04FBE2178ED430096BF4D /* RoundShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundShadowView.swift; sourceTree = "<group>"; };
 		3BE7971D217752A10071AF34 /* Ppulma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ppulma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE79720217752A10071AF34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3BE79722217752A10071AF34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,6 +109,7 @@
 		3B05B26A21776F7300BB6803 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3BB04FB12178D69B0096BF4D /* Fonts */,
 				3B05B2832177A79500BB6803 /* GMStepper */,
 				3B05B26B21776F7800BB6803 /* WRNavigationBar */,
 			);
@@ -115,6 +130,7 @@
 			children = (
 				3B05B2752177730A00BB6803 /* Storyboard.swift */,
 				3B05B278217778FC00BB6803 /* ColorChip.swift */,
+				3BB04FAF2178D6390096BF4D /* Font.swift */,
 			);
 			path = Singleton;
 			sourceTree = "<group>";
@@ -153,6 +169,44 @@
 			path = Cart;
 			sourceTree = "<group>";
 		};
+		3BB04FAA2178D4C80096BF4D /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				3BB04FAE2178D5670096BF4D /* Data */,
+				3B05B28021778A7100BB6803 /* Utility */,
+				3BB04FAB2178D4D60096BF4D /* CustomUI */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		3BB04FAB2178D4D60096BF4D /* CustomUI */ = {
+			isa = PBXGroup;
+			children = (
+				3BB04FAC2178D4F00096BF4D /* CustomView.swift */,
+				3BB04FBE2178ED430096BF4D /* RoundShadowView.swift */,
+			);
+			path = CustomUI;
+			sourceTree = "<group>";
+		};
+		3BB04FAE2178D5670096BF4D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				3B05B274217772E300BB6803 /* Singleton */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		3BB04FB12178D69B0096BF4D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3BB04FB82178D6DD0096BF4D /* NanumSquareOTFBold.otf */,
+				3BB04FB62178D6DA0096BF4D /* NanumSquareOTFExtraBold.otf */,
+				3BB04FB72178D6DB0096BF4D /* NanumSquareOTFLight.otf */,
+				3BB04FB92178D6DE0096BF4D /* NanumSquareOTFRegular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		3BE79714217752A10071AF34 = {
 			isa = PBXGroup;
 			children = (
@@ -174,9 +228,8 @@
 		3BE7971F217752A10071AF34 /* Ppulma */ = {
 			isa = PBXGroup;
 			children = (
-				3B05B28021778A7100BB6803 /* Utility */,
+				3BB04FAA2178D4C80096BF4D /* Util */,
 				3B05B277217777CB00BB6803 /* Storyboard */,
-				3B05B274217772E300BB6803 /* Singleton */,
 				3B05B26A21776F7300BB6803 /* Resources */,
 				3BE79734217767D50071AF34 /* VC */,
 				3BE79720217752A10071AF34 /* AppDelegate.swift */,
@@ -277,8 +330,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BB04FBA2178D6E00096BF4D /* NanumSquareOTFExtraBold.otf in Resources */,
 				3BE7972B217752A10071AF34 /* LaunchScreen.storyboard in Resources */,
 				3BE79728217752A10071AF34 /* Assets.xcassets in Resources */,
+				3BB04FBC2178D6E00096BF4D /* NanumSquareOTFBold.otf in Resources */,
+				3BB04FBB2178D6E00096BF4D /* NanumSquareOTFLight.otf in Resources */,
+				3BB04FBD2178D6E00096BF4D /* NanumSquareOTFRegular.otf in Resources */,
 				3BE79726217752A10071AF34 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -334,12 +391,15 @@
 				3B05B26F21776F9600BB6803 /* WRCustomNavigationBar.swift in Sources */,
 				3B05B2882177A8D100BB6803 /* CartVC.swift in Sources */,
 				3B05B271217771D600BB6803 /* MagazineFirstTVCell.swift in Sources */,
+				3BB04FBF2178ED430096BF4D /* RoundShadowView.swift in Sources */,
 				3B05B28221778A8700BB6803 /* Delegate.swift in Sources */,
 				3B05B2762177730A00BB6803 /* Storyboard.swift in Sources */,
+				3BB04FAD2178D4F00096BF4D /* CustomView.swift in Sources */,
 				3B05B28A2177A8E800BB6803 /* CartTVCell.swift in Sources */,
 				3B05B27F21777AEF00BB6803 /* MagazineSecondCVCell.swift in Sources */,
 				3B05B279217778FC00BB6803 /* ColorChip.swift in Sources */,
 				3BE797332177588D0071AF34 /* ExamplePopupViewController.swift in Sources */,
+				3BB04FB02178D6390096BF4D /* Font.swift in Sources */,
 				3B05B27D21777AE200BB6803 /* MagazineFirstCVCell.swift in Sources */,
 				3B05B26621776C1800BB6803 /* Extensions.swift in Sources */,
 				3BE79736217767EC0071AF34 /* MainVC.swift in Sources */,

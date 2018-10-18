@@ -85,9 +85,9 @@ extension MagazineFirstTVCell: UICollectionViewDelegateFlowLayout {
     //-간격 위아래
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if collectionView == self.collectionView {
-            return 16
+            return 10
         } else {
-            return 16
+            return 20
         }
     }
     //-간격 왼쪽오른쪽
@@ -104,7 +104,7 @@ extension MagazineFirstTVCell: UICollectionViewDelegateFlowLayout {
         if collectionView == self.collectionView {
              return CGSize(width: 100, height: 100)
         } else {
-             return CGSize(width: 170, height: 250)
+             return CGSize(width: 110, height: 147)
         }
     }
 

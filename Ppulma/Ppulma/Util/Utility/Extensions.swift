@@ -36,6 +36,8 @@ extension UIView {
 }
 
 extension UIViewController {
+    
+    
     //백버튼
     func setBackBtn(color : UIColor? = .white){
         let backBTN = UIBarButtonItem(image: UIImage(named: "category_detail_left_arrow"),
@@ -50,6 +52,41 @@ extension UIViewController {
     @objc func pop(){
         self.navigationController?.popViewController(animated: true)
     }
+    
+    func simpleAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okTitle =  "확인"
+        let okAction = UIAlertAction(title: okTitle,style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
+    
+    
+    func simpleAlertwithHandler(title: String, message: String, okHandler : ((UIAlertAction) -> Void)?){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okTitle = "확인"
+        let cancelTitle = "취소"
+        let okAction = UIAlertAction(title: okTitle,style: .default, handler: okHandler)
+        let cancelAction = UIAlertAction(title: cancelTitle,style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func addChildView(containerView : UIView, asChildViewController viewController: UIViewController) {
+        addChildViewController(viewController)
+        containerView.addSubview(viewController.view)
+        viewController.view.frame = containerView.bounds
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        viewController.didMove(toParentViewController: self)
+    }
+    
+    func removeChildView(containerView : UIView, asChildViewController viewController: UIViewController) {
+        viewController.willMove(toParentViewController: nil)
+        viewController.view.removeFromSuperview()
+        viewController.removeFromParentViewController()
+    }
+    
 }
 
 /*---------------------UICollectionViewCell---------------------------*/
@@ -61,4 +98,6 @@ extension UICollectionViewCell {
         self.contentView.layer.masksToBounds = true
         self.contentView.clipsToBounds = true
     }
+    
+    
 }
