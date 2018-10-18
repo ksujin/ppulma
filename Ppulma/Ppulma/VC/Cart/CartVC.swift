@@ -58,7 +58,7 @@ class CartVC: UIViewController {
     
     var sampleArr : [SampleCartStruct] = [] {
         didSet {
-            selectAllLbl.text = "전체선택 \(sampleArr.count)개"
+            selectAllLbl.text = "전체 선택 (총 \(sampleArr.count)개)"
         }
     }
     var isSelectedArr : [Bool] = []
@@ -79,7 +79,7 @@ class CartVC: UIViewController {
         let f = SampleCartStruct(name: "볶음우동", value: 1, price: 4000, desc: "여름여름해 I 남성&여성", img: #imageLiteral(resourceName: "bimg"))
         sampleArr.append(contentsOf: [a,b,c,d,e,f])
     
-        selectAllLbl.text = "전체선택 \(sampleArr.count)개"
+        selectAllLbl.text = "전체 선택 (총 \(sampleArr.count)개)"
         selectAllLbl.sizeToFit()
         selectAllBtn.setImage(UIImage(named: "icCheckBox"), for: .normal)
         selectAllBtn.setImage(
@@ -241,6 +241,12 @@ extension CartVC {
          5개 품목 이상: 15%
          */
         var salePercent : SalePercent = .zero
+        
+        if selectedCount == sampleArr.count {
+            selectAllBtn.isSelected = true
+        } else {
+            selectAllBtn.isSelected = false
+        }
         if selectedCount >= 5 {
             salePercent = .fifteen
         } else if selectedCount >= 3 {
