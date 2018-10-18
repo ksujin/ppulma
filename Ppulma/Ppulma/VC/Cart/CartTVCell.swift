@@ -14,7 +14,7 @@ class CartTVCell: UITableViewCell {
     @IBOutlet weak var stepper: GMStepper!
     @IBOutlet weak var deleteBtn: UIButton!
     @IBOutlet weak var checkBtn: UIButton!
-    @IBOutlet weak var goodsImgView: UIImageView!
+    @IBOutlet weak var goodsOuterView: UIView!
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
@@ -23,7 +23,10 @@ class CartTVCell: UITableViewCell {
     var checkDelegate : CheckDelegate?
     var won : Int = 1
     var count : Int = 0
+    var myImgView = UIImageView()
+    
     func configure(data : SampleCartStruct, row : Int){
+        myImgView.image = data.img
         nameLbl.text = data.name
         priceLbl.text = "\(data.price)원"
         descLbl.text = data.desc
@@ -45,12 +48,19 @@ class CartTVCell: UITableViewCell {
         whiteView.fillColor = .white
         stepper.leftButton.addTarget(self, action: #selector(valueChaned(_:)), for: .touchUpInside)
         stepper.rightButton.addTarget(self, action: #selector(valueChaned(_:)), for: .touchUpInside)
-        checkBtn.setImage(UIImage(named: "aimg"), for: .normal)
+        checkBtn.setImage(UIImage(named: "icCheckBox"), for: .normal)
         checkBtn.setImage(
             UIImage(named: "bimg"), for: .selected)
         checkBtn.addTarget(self, action: #selector(checkAction(_:)), for: .touchUpInside)
         deleteBtn.addTarget(self, action: #selector(deleteAction(_:)), for: .touchUpInside)
-        
+        //shadow
+        goodsOuterView.clipsToBounds = false
+        goodsOuterView.layer.applySketchShadow(alpha : 0.16, x : 0, y : 2, blur : 6, spread : 2)
+        goodsOuterView.backgroundColor = UIColor.clear
+        myImgView.frame = goodsOuterView.bounds
+        myImgView.clipsToBounds = true
+        myImgView.layer.cornerRadius = 7
+        goodsOuterView.addSubview(myImgView)
     }
     
     //checkBtn 클릭

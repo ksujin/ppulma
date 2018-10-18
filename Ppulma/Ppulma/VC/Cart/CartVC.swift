@@ -13,6 +13,7 @@ struct SampleCartStruct {
     var value : Int
     let price : Int
     let desc : String
+    let img : UIImage
 }
 
 struct SampleUserStruct {
@@ -67,17 +68,17 @@ class CartVC: UIViewController {
         tableView.tableFooterView = UIView(frame : .zero)
         purpleTopView.layoutSubviews()
        // purpleTopView.makeRounded(cornerRadius: 7)
-        let a = SampleCartStruct(name: "커플 머그컵", value: 1, price: 1000, desc: "냥이 I BLUE&PINK")
-        let b = SampleCartStruct(name: "커플 휴대폰 케이스", value: 2, price: 2000, desc: "일러스트1 I BLUE&PINK")
-        let c = SampleCartStruct(name: "커플 카시오 시계", value: 3, price: 3000, desc: "WDFFS21 I 남성&여성")
-        let d = SampleCartStruct(name: "커플 수면 잠옷", value: 1, price: 4000, desc: "여름여름해 I 남성&여성")
-        let e = SampleCartStruct(name: "칸쵸", value: 1, price: 4000, desc: "여름여름해 I 남성&여성")
-        let f = SampleCartStruct(name: "볶음우동", value: 1, price: 4000, desc: "여름여름해 I 남성&여성")
+        let a = SampleCartStruct(name: "커플 머그컵", value: 1, price: 1000, desc: "냥이 I BLUE&PINK", img: #imageLiteral(resourceName: "aimg"))
+        let b = SampleCartStruct(name: "커플 휴대폰 케이스", value: 2, price: 2000, desc: "일러스트1 I BLUE&PINK", img: #imageLiteral(resourceName: "bimg"))
+        let c = SampleCartStruct(name: "커플 카시오 시계", value: 3, price: 3000, desc: "WDFFS21 I 남성&여성", img: #imageLiteral(resourceName: "bimg"))
+        let d = SampleCartStruct(name: "커플 수면 잠옷", value: 1, price: 4000, desc: "여름여름해 I 남성&여성", img: #imageLiteral(resourceName: "aimg"))
+        let e = SampleCartStruct(name: "칸쵸", value: 1, price: 4000, desc: "여름여름해 I 남성&여성", img: #imageLiteral(resourceName: "aimg"))
+        let f = SampleCartStruct(name: "볶음우동", value: 1, price: 4000, desc: "여름여름해 I 남성&여성", img: #imageLiteral(resourceName: "bimg"))
         sampleArr.append(contentsOf: [a,b,c,d,e,f])
     
         selectAllLbl.text = "전체선택 \(sampleArr.count)개"
         selectAllLbl.sizeToFit()
-        selectAllBtn.setImage(UIImage(named: "aimg"), for: .normal)
+        selectAllBtn.setImage(UIImage(named: "icCheckBox"), for: .normal)
         selectAllBtn.setImage(
             UIImage(named: "bimg"), for: .selected)
         selectAllBtn.addTarget(self, action: #selector(selectAllAction(_:)), for: .touchUpInside)
@@ -87,6 +88,9 @@ class CartVC: UIViewController {
         sampleArr.forEach { (_) in
             isSelectedArr.append(true)
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         setPriceLbl()
     }
     
@@ -202,8 +206,8 @@ extension CartVC {
         let afterDecrease = Double(totalPrice)-(willDecrease)
         
         salePercentLbl.text = salePercent.percentString
-        decreasePointLbl.text = String(format: "%.0f", willDecrease)+"원"
-        afterDecreaseLbl.text = String(format: "%.0f", afterDecrease)+"원"
+        decreasePointLbl.text = Int(willDecrease).withCommas()+"원"
+        afterDecreaseLbl.text = Int(afterDecrease).withCommas()+"원"
         afterDecreaseLbl.sizeToFit()
     }
     
@@ -217,6 +221,7 @@ extension CartVC {
         //선택된 아이템들 고름
         for row in 0..<tableView.numberOfRows(inSection: 0) {
             if isSelectedArr[row] {
+                
                 selectedCount += 1
                 let tempItem = tempStruct(price: sampleArr[row].price, count: Int(sampleArr[row].value))
                 selectedItem.append(tempItem)
@@ -225,7 +230,6 @@ extension CartVC {
         let price = selectedItem.map({ (item) in
             item.price*item.count
         }).reduce(0, +)
-        
         /*
          2개 품목: 5%
          3개 품목: 10%
