@@ -11,9 +11,13 @@ import UIKit
 class MagazineSecondCVCell: UICollectionViewCell {
     
     @IBOutlet weak var outerView: UIView!
+    @IBOutlet weak var nameLbl: UILabel!
+    @IBOutlet weak var priceLbl: UILabel!
     var myImgView = UIImageView()
     func configure(data : UIImage) {
         myImgView.image = data
+        nameLbl.text = "호박주스"
+        priceLbl.text = 10000.withCommas()+"원"
     }
 
     override func awakeFromNib() {

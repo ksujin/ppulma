@@ -408,7 +408,7 @@
                                                                     <real key="value" value="100"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="minimumValue">
-                                                                    <real key="value" value="0.0"/>
+                                                                    <real key="value" value="1"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="stepValue">
                                                                     <real key="value" value="1"/>
@@ -708,7 +708,9 @@
                                                             </constraints>
                                                             <size key="customSize" width="110" height="147"/>
                                                             <connections>
+                                                                <outlet property="nameLbl" destination="ivi-gl-KIK" id="ItK-lk-5o3"/>
                                                                 <outlet property="outerView" destination="GzE-q1-zQN" id="8ql-u2-Phd"/>
+                                                                <outlet property="priceLbl" destination="1oH-OK-keZ" id="zq4-OJ-gdo"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
