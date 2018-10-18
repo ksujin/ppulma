@@ -19,6 +19,7 @@ class MainTVCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         myImgView.makeRounded(cornerRadius: 10)
+        myImgView.makeViewBorder(width: 0.3, color: #colorLiteral(red: 0.4392156863, green: 0.4392156863, blue: 0.4392156863, alpha: 1))
         // Initialization code
     }
 

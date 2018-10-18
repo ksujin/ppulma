@@ -64,6 +64,7 @@ class CartVC: UIViewController {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.tableFooterView = UIView(frame : .zero)
         purpleTopView.layoutSubviews()
        // purpleTopView.makeRounded(cornerRadius: 7)
         let a = SampleCartStruct(name: "커플 머그컵", value: 1, price: 1000, desc: "냥이 I BLUE&PINK")

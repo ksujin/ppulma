@@ -13,9 +13,11 @@ private let IMAGE_HEIGHT:CGFloat = 433
 private let NAVBAR_COLORCHANGE_POINT:CGFloat = IMAGE_HEIGHT - CGFloat(kNavBarBottom * 2)
 class MagazineVC: UIViewController, UIGestureRecognizerDelegate {
 
+    
     @IBOutlet weak var tableView : UITableView!
+    var topImg = UIImage()
     lazy var topView:UIImageView = {
-        let imgView = UIImageView(image: UIImage(named: "aimg"))
+        let imgView = UIImageView(image: topImg)
         imgView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: IMAGE_HEIGHT)
         imgView.contentMode = UIViewContentMode.scaleAspectFill
         imgView.clipsToBounds = true

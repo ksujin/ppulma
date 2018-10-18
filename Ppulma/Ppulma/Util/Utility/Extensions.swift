@@ -122,12 +122,15 @@ extension CALayer {
         x: CGFloat = 0,
         y: CGFloat = 0,
         blur: CGFloat = 4,
-        spread: CGFloat = 0)
+        spread: CGFloat = 0,
+        shadowRadius_ : CGFloat? = 4
+        )
     {
         shadowColor = color.cgColor
         shadowOpacity = alpha
         shadowOffset = CGSize(width: x, height: y)
-        shadowRadius = blur / 2.0
+        //원래는 이거였음 shadowRadius = blur / 2.0
+        shadowRadius = shadowRadius_ ?? blur / 2.0
         if spread == 0 {
             shadowPath = nil
         } else {

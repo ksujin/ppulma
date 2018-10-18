@@ -7,7 +7,11 @@
 //
 
 import UIKit
-
+struct SampleMainStruct {
+    let idx : Int
+    let img : UIImage
+    let backgroundImg : UIImage
+}
 
 
 class MainVC: UIViewController {
@@ -22,9 +26,8 @@ class MainVC: UIViewController {
     @IBOutlet weak var alarmBtn: UIButton!
     @IBOutlet weak var alarmOrangeVie: UIView!
     @IBOutlet weak var moreBtn: UIButton!
-    let imgArr = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg")]
+    var mainArr : [SampleMainStruct] = []
     
-  
     //hide Navigation Bar only on first page
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -39,14 +42,14 @@ class MainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(getUserInfo(_:)), name: NSNotification.Name("GetUserValue"), object: nil)
+        setSampleData()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 8))
         tableView.tableFooterView?.backgroundColor = #colorLiteral(red: 0.937254902, green: 0.937254902, blue: 0.937254902, alpha: 1)
         firstLbl.text = String(format: "%.0f", sampleUser.point)+"원"
         secondLbl.text = "87000원"
-        firstLbl.textColor = ColorChip.shared().mainPurple
-        secondLbl.textColor = ColorChip.shared().mainOrange
+        alarmOrangeVie.makeRounded(cornerRadius: nil)
         sOuterView.makeShadow(myImage: #imageLiteral(resourceName: "aimg"), cornerRadius: sOuterView.frame.height/2)
         wOutherView.makeShadow(myImage: #imageLiteral(resourceName: "aimg"), cornerRadius: wOutherView.frame.height/2)
     }
@@ -54,20 +57,33 @@ class MainVC: UIViewController {
     @objc func getUserInfo(_ notification : Notification) {
        firstLbl.text = String(format: "%.0f", sampleUser.point)+"원"
     }
+    
+    func setSampleData(){
+        let firstItem = SampleMainStruct(idx: 1, img: #imageLiteral(resourceName: "planLove"), backgroundImg: #imageLiteral(resourceName: "background"))
+        let secondItem = SampleMainStruct(idx: 2, img: #imageLiteral(resourceName: "planAlone"), backgroundImg: #imageLiteral(resourceName: "background"))
+        let thirdItem = SampleMainStruct(idx: 3, img: #imageLiteral(resourceName: "planPet"), backgroundImg: #imageLiteral(resourceName: "background"))
+        let forthItem = SampleMainStruct(idx: 4, img: #imageLiteral(resourceName: "planHealing"), backgroundImg: #imageLiteral(resourceName: "background"))
+        let fifthItem = SampleMainStruct(idx: 5, img: #imageLiteral(resourceName: "planSanta"), backgroundImg: #imageLiteral(resourceName: "background"))
+        mainArr.append(contentsOf: [firstItem, secondItem, thirdItem, forthItem, fifthItem])
+    }
 }
 
 extension MainVC : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return imgArr.count
+        return mainArr.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MainTVCell.reuseIdentifier) as! MainTVCell
-        cell.configure(data : imgArr[indexPath.row])
+        let imageArr = mainArr.map { (item) in
+            item.img
+        }
+        cell.configure(data : imageArr[indexPath.row])
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let mainStoryboard = Storyboard.shared().mainStoryboard
         if let magazineVC = mainStoryboard.instantiateViewController(withIdentifier:MagazineVC.reuseIdentifier) as? MagazineVC {
+            magazineVC.topImg = mainArr[indexPath.row].backgroundImg
             self.navigationController?.pushViewController(magazineVC, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: false)
