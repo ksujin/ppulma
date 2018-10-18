@@ -514,6 +514,20 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tec-FX-iSI">
                                 <rect key="frame" x="0.0" y="546" width="375" height="72"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oy8-f5-e4Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="0.5"/>
+                                        <color key="backgroundColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.29999999999999999" id="yY0-PA-wtZ"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48Q-6a-ojW">
+                                        <rect key="frame" x="0.0" y="71.5" width="375" height="0.5"/>
+                                        <color key="backgroundColor" red="0.47843137254901957" green="0.47843137254901957" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="XTY-MB-1XR"/>
+                                        </constraints>
+                                    </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n79-YE-PUY">
                                         <rect key="frame" x="28" y="40.5" width="49.5" height="21"/>
                                         <fontDescription key="fontDescription" name="NanumSquareOTFEB" family="NanumSquareOTF" pointSize="19"/>
@@ -542,9 +556,15 @@
                                     <constraint firstAttribute="bottom" secondItem="fcz-qH-6JX" secondAttribute="bottom" constant="12" id="3kg-CV-Pd7"/>
                                     <constraint firstItem="n79-YE-PUY" firstAttribute="leading" secondItem="6Vy-3f-JCm" secondAttribute="leading" id="9dQ-JT-kfu"/>
                                     <constraint firstItem="6Vy-3f-JCm" firstAttribute="leading" secondItem="Tec-FX-iSI" secondAttribute="leading" constant="28" id="AO9-n8-iSY"/>
+                                    <constraint firstAttribute="trailing" secondItem="48Q-6a-ojW" secondAttribute="trailing" constant="0.5" id="Cpu-eo-XQw"/>
+                                    <constraint firstAttribute="bottom" secondItem="48Q-6a-ojW" secondAttribute="bottom" id="JKg-vA-68A"/>
                                     <constraint firstAttribute="height" constant="72" id="Mgl-aM-pTI"/>
                                     <constraint firstAttribute="trailing" secondItem="fcz-qH-6JX" secondAttribute="trailing" constant="29" id="e1t-aa-S0h"/>
+                                    <constraint firstItem="48Q-6a-ojW" firstAttribute="leading" secondItem="Tec-FX-iSI" secondAttribute="leading" constant="0.5" id="fJd-jC-4c3"/>
                                     <constraint firstAttribute="bottom" secondItem="n79-YE-PUY" secondAttribute="bottom" constant="11" id="hOV-om-Eye"/>
+                                    <constraint firstItem="oy8-f5-e4Z" firstAttribute="leading" secondItem="Tec-FX-iSI" secondAttribute="leading" constant="0.5" id="mAh-70-VmF"/>
+                                    <constraint firstAttribute="trailing" secondItem="oy8-f5-e4Z" secondAttribute="trailing" constant="0.5" id="ooa-lD-Eer"/>
+                                    <constraint firstItem="oy8-f5-e4Z" firstAttribute="top" secondItem="Tec-FX-iSI" secondAttribute="top" id="pD7-7X-uni"/>
                                     <constraint firstItem="6Vy-3f-JCm" firstAttribute="top" secondItem="Tec-FX-iSI" secondAttribute="top" constant="14" id="rLU-WA-wIU"/>
                                     <constraint firstItem="fcz-qH-6JX" firstAttribute="top" secondItem="Tec-FX-iSI" secondAttribute="top" constant="12" id="zyT-lw-ihy"/>
                                 </constraints>
