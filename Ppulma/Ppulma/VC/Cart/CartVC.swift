@@ -155,10 +155,11 @@ extension CartVC : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CartTVCell.reuseIdentifier) as! CartTVCell
         cell.configure(data: sampleArr[indexPath.row], row : indexPath.row)
-        cell.cancleHandler = { (row) in
+        cell.deleteHandler = { (row) in
             self.sampleArr.remove(at: row)
             self.isSelectedArr.remove(at: row)
             self.tableView.reloadData()
+            self.setPriceLbl()
         }
         if isSelectedArr.count > 0 {
            cell.selectedConfig(isSelected : isSelectedArr[indexPath.row])

@@ -18,7 +18,7 @@ class CartTVCell: UITableViewCell {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
-    var cancleHandler : ((_ row : Int)->Void)?
+    var deleteHandler : ((_ row : Int)->Void)?
     var delegate : SelectRowDelegate?
     var checkDelegate : CheckDelegate?
     var won : Int = 1
@@ -65,7 +65,7 @@ class CartTVCell: UITableViewCell {
     
     //checkBtn 클릭
     @objc func deleteAction(_ sender : UIButton){
-        cancleHandler!(sender.tag)
+        deleteHandler!(sender.tag)
     }
     
     //checkBtn 클릭
