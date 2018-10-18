@@ -7,15 +7,33 @@
 //
 
 import UIKit
+import Dropper
 
 class MagazineFirstTVCell: UITableViewCell {
 
     var imgArr = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg")]
     var imgArr2 = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg")]
-
+    let dropper = Dropper(width: 75, height: 200)
+    
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var secondCollectionView: UICollectionView!
     @IBOutlet weak var collectionViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var filterLblBtn: UIButton!
+    @IBAction func filterAction(_ sender: Any) {
+        //dropper
+        if dropper.status == .hidden {
+            dropper.items = ["인기순", "최신순"]
+            dropper.theme = Dropper.Themes.white
+            dropper.border.color = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            dropper.cellTextFont = UIFont(name: NanumSquareOTF.NanumSquareOTFR.rawValue, size: 13)!
+            dropper.cellColor = #colorLiteral(red: 0.262745098, green: 0.262745098, blue: 0.262745098, alpha: 1)
+            dropper.cornerRadius = 3
+            dropper.showWithAnimation(0.15, options: .center, position: .bottom, button: filterLblBtn)
+            self.addSubview(dropper)
+        } else {
+            dropper.hideWithAnimation(0.1)
+        }
+    }
     var delegate : SelectDelegate?
     
     override func awakeFromNib() {
@@ -28,6 +46,8 @@ class MagazineFirstTVCell: UITableViewCell {
         //처음에도 간격 맞게 해줌
         self.layoutIfNeeded()
         collectionViewHeight.constant = secondCollectionView.collectionViewLayout.collectionViewContentSize.height
+        
+        filterLblBtn.addTarget(self, action: #selector(filterAction(_:)), for: .touchUpInside)
        
     }
     
@@ -50,7 +70,6 @@ extension MagazineFirstTVCell : UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == self.collectionView {
-            
             if let cell: MagazineFirstCVCell = collectionView.dequeueReusableCell(withReuseIdentifier: MagazineFirstCVCell.reuseIdentifier, for: indexPath) as? MagazineFirstCVCell{
                 cell.configure(data: imgArr[indexPath.row])
                 return cell
@@ -69,9 +88,7 @@ extension MagazineFirstTVCell : UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.collectionView {
-            imgArr2 = [#imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg")]
-            secondCollectionView.reloadData()
-            collectionViewHeight.constant = secondCollectionView.collectionViewLayout.collectionViewContentSize.height
+           
             delegate?.tap(selected: 0)
         } else {
             
@@ -109,3 +126,4 @@ extension MagazineFirstTVCell: UICollectionViewDelegateFlowLayout {
     }
 
 }
+

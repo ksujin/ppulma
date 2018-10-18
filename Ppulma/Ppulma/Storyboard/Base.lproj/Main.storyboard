@@ -65,7 +65,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="293"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="aimg" translatesAutoresizingMaskIntoConstraints="NO" id="5Lv-Z5-KZ4">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bimg" translatesAutoresizingMaskIntoConstraints="NO" id="5Lv-Z5-KZ4">
                                             <rect key="frame" x="0.0" y="-20" width="375" height="255"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="255" id="VwM-h8-0cs"/>
@@ -173,7 +173,7 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MainTVCell" rowHeight="105" id="ix4-ea-Gio" customClass="MainTVCell" customModule="Ppulma" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MainTVCell" rowHeight="105" id="ix4-ea-Gio" customClass="MainTVCell" customModule="Ppulma" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="321" width="375" height="105"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ix4-ea-Gio" id="4HZ-XP-naF">
@@ -227,7 +227,7 @@
             </objects>
             <point key="canvasLocation" x="1028" y="797.45127436281871"/>
         </scene>
-        <!--Item-->
+        <!--장바구니-->
         <scene sceneID="W6I-9x-JQQ">
             <objects>
                 <viewController storyboardIdentifier="CartVC" id="al2-vC-YSZ" customClass="CartVC" customModule="Ppulma" customModuleProvider="target" sceneMemberID="viewController">
@@ -515,7 +515,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="e6p-08-cLY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="Q3H-bq-1Kd"/>
+                    <tabBarItem key="tabBarItem" title="장바구니" id="Q3H-bq-1Kd"/>
                     <navigationItem key="navigationItem" id="AkI-Vh-LZU"/>
                     <connections>
                         <outlet property="afterDecreaseLbl" destination="n79-YE-PUY" id="U4b-vM-B1L"/>
@@ -543,7 +543,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MagazineFirstTVCell" rowHeight="504" id="gCA-oZ-g3j" customClass="MagazineFirstTVCell" customModule="Ppulma" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MagazineFirstTVCell" rowHeight="504" id="gCA-oZ-g3j" customClass="MagazineFirstTVCell" customModule="Ppulma" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="504"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gCA-oZ-g3j" id="RCj-hX-fER">
@@ -666,6 +666,9 @@
                                                         <constraint firstAttribute="width" constant="24" id="nS7-A4-ujh"/>
                                                     </constraints>
                                                     <state key="normal" image="icFilterDown"/>
+                                                    <connections>
+                                                        <action selector="filterAction:" destination="gCA-oZ-g3j" eventType="touchUpInside" id="hBg-Wl-4EP"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -688,6 +691,7 @@
                                         <connections>
                                             <outlet property="collectionView" destination="Rgo-pC-BNm" id="JMK-zB-aEU"/>
                                             <outlet property="collectionViewHeight" destination="mH1-bc-LxS" id="7uj-7c-omE"/>
+                                            <outlet property="filterLblBtn" destination="GdT-5j-SXb" id="GoX-0a-pE6"/>
                                             <outlet property="secondCollectionView" destination="f4h-7K-lBe" id="SWM-Us-Aox"/>
                                         </connections>
                                     </tableViewCell>
@@ -753,11 +757,11 @@
             </objects>
             <point key="canvasLocation" x="772" y="134"/>
         </scene>
-        <!--Item-->
+        <!--홈-->
         <scene sceneID="snf-Wh-9C5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="eHj-ps-B8S" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="gP9-Wd-VZf"/>
+                    <tabBarItem key="tabBarItem" title="홈" id="gP9-Wd-VZf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cPT-Pe-sDG">
                         <autoresizingMask key="autoresizingMask"/>
@@ -780,6 +784,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.26274509800000001" green="0.2274509804" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="eHj-ps-B8S" kind="relationship" relationship="viewControllers" id="7Kj-On-UOi"/>
@@ -793,6 +798,7 @@
     </scenes>
     <resources>
         <image name="aimg" width="303" height="204"/>
+        <image name="bimg" width="530" height="530"/>
         <image name="icBell" width="36" height="36"/>
         <image name="icCancle" width="24" height="24"/>
         <image name="icFilterDown" width="24" height="24"/>

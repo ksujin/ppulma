@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Dropper
+
 private let IMAGE_HEIGHT:CGFloat = 433
 private let NAVBAR_COLORCHANGE_POINT:CGFloat = IMAGE_HEIGHT - CGFloat(kNavBarBottom * 2)
 class MagazineVC: UIViewController, UIGestureRecognizerDelegate {
@@ -19,6 +21,7 @@ class MagazineVC: UIViewController, UIGestureRecognizerDelegate {
         imgView.clipsToBounds = true
         return imgView
     }()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +56,7 @@ extension MagazineVC : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: MagazineFirstTVCell.reuseIdentifier) as! MagazineFirstTVCell
         cell.delegate = self
+        cell.dropper.delegate = self
         return cell
     }
     
@@ -64,6 +68,10 @@ extension MagazineVC : UITableViewDataSource, UITableViewDelegate {
 
 extension MagazineVC : SelectDelegate {
     func tap(selected: Int?) {
+        let cell = tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
+        cell.imgArr2 = [#imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg")]
+        cell.secondCollectionView.reloadData()
+        cell.collectionViewHeight.constant = cell.secondCollectionView.collectionViewLayout.collectionViewContentSize.height
         tableView.reloadData()
     }
 }
@@ -90,5 +98,20 @@ extension MagazineVC {
             navBarTitleColor = .white
             statusBarStyle = .lightContent
         }
+    }
+}
+
+extension MagazineVC: DropperDelegate {
+    func DropperSelectedRow(_ path: IndexPath, contents: String) {
+        let cell = tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
+        cell.filterLblBtn.setTitle(contents, for: .normal)
+        if contents == "인기순" {
+            cell.imgArr2 = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg")]
+        } else {
+            cell.imgArr2 = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "bimg")]
+        }
+        cell.secondCollectionView.reloadData()
+        cell.collectionViewHeight.constant = cell.secondCollectionView.collectionViewLayout.collectionViewContentSize.height
+        tableView.reloadData()
     }
 }
