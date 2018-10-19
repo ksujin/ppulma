@@ -19,10 +19,11 @@ struct SampleCartStruct {
 struct SampleUserStruct {
     let name : String
     var point : Double
+    var saveMoney : Double
 }
 
 
-var sampleUser = SampleUserStruct(name: "sujin", point: 13000)
+var sampleUser = SampleUserStruct(name: "sujin", point: 13000, saveMoney : 0)
 
 enum SalePercent : Double {
     case zero = 0.0
@@ -123,6 +124,7 @@ class CartVC: UIViewController {
     @IBAction func payAction(_ sender: Any) {
         //통신 완료후
         sampleUser.point -= willDecrease_
+        sampleUser.saveMoney += willDecrease_
         NotificationCenter.default.post(name: NSNotification.Name("GetUserValue"), object: nil, userInfo: nil)
         setPriceLbl()
     }

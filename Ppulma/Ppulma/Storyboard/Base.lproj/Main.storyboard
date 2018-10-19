@@ -222,7 +222,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="94"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planLove" translatesAutoresizingMaskIntoConstraints="NO" id="5tV-7c-R5M">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="planLove" translatesAutoresizingMaskIntoConstraints="NO" id="5tV-7c-R5M">
                                                     <rect key="frame" x="19" y="0.0" width="337" height="83"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="83" id="v0O-RA-doh"/>
