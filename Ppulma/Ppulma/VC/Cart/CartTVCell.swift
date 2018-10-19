@@ -50,7 +50,7 @@ class CartTVCell: UITableViewCell {
         stepper.rightButton.addTarget(self, action: #selector(valueChaned(_:)), for: .touchUpInside)
         checkBtn.setImage(UIImage(named: "icCheckBox"), for: .normal)
         checkBtn.setImage(
-            UIImage(named: "bimg"), for: .selected)
+            UIImage(named: "icCheckDone"), for: .selected)
         checkBtn.addTarget(self, action: #selector(checkAction(_:)), for: .touchUpInside)
         deleteBtn.addTarget(self, action: #selector(deleteAction(_:)), for: .touchUpInside)
         //shadow

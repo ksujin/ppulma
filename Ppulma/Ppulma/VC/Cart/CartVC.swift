@@ -84,7 +84,7 @@ class CartVC: UIViewController {
         selectAllLbl.sizeToFit()
         selectAllBtn.setImage(UIImage(named: "icCheckBox"), for: .normal)
         selectAllBtn.setImage(
-            UIImage(named: "bimg"), for: .selected)
+            UIImage(named: "icCheckDone"), for: .selected)
         selectAllBtn.addTarget(self, action: #selector(selectAllAction(_:)), for: .touchUpInside)
         
         //처음에 전체 선택

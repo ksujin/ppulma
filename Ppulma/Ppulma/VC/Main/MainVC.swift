@@ -51,7 +51,7 @@ class MainVC: UIViewController {
         secondLbl.text = Int(sampleUser.point).withCommas()+"원"
         alarmOrangeVie.makeRounded(cornerRadius: nil)
         sOuterView.makeShadow(myImage: #imageLiteral(resourceName: "icS"), cornerRadius: sOuterView.frame.height/2)
-        wOutherView.makeShadow(myImage: #imageLiteral(resourceName: "icWon"), cornerRadius: wOutherView.frame.height/2)
+        wOutherView.makeShadow(myImage: #imageLiteral(resourceName: "icP"), cornerRadius: wOutherView.frame.height/2)
     }
     
     @objc func getUserInfo(_ notification : Notification) {

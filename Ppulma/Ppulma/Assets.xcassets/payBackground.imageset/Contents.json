@@ -1,18 +1,18 @@
 {
   "images" : [
     {
-      "filename" : "payBackground.png",
       "idiom" : "universal",
+      "filename" : "payBackground.png",
       "scale" : "1x"
     },
     {
-      "filename" : "payBackground@2x.png",
       "idiom" : "universal",
+      "filename" : "payBackground@2x.png",
       "scale" : "2x"
     },
     {
-      "filename" : "payBackground@3x.png",
       "idiom" : "universal",
+      "filename" : "payBackground@3x.png",
       "scale" : "3x"
     }
   ],
