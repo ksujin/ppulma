@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SelectDelegate {
-    func tap(selected : Int?)
+    func tap(section : Int, selected : Int?)
 }
 
 protocol SelectRowDelegate {

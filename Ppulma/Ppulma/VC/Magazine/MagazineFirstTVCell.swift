@@ -28,7 +28,7 @@ class MagazineFirstTVCell: UITableViewCell {
     @IBAction func filterAction(_ sender: Any) {
         //dropper
         if dropper.status == .hidden {
-            dropper.items = ["인기순", "최신순"]
+            dropper.items = ["인기순", "낮은가격순"]
             dropper.theme = Dropper.Themes.white
             dropper.border.color = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
             dropper.cellTextFont = UIFont(name: NanumSquareOTF.NanumSquareOTFR.rawValue, size: 13)!
@@ -94,9 +94,9 @@ extension MagazineFirstTVCell : UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.collectionView {
-            delegate?.tap(selected: 0)
+            delegate?.tap(section: 0, selected: 0)
         } else {
-            
+             delegate?.tap(section: 1, selected: 0)
         }
     }
 }

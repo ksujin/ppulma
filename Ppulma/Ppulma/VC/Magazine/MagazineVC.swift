@@ -12,7 +12,7 @@ import Dropper
 private let IMAGE_HEIGHT:CGFloat = 433
 private let NAVBAR_COLORCHANGE_POINT:CGFloat = IMAGE_HEIGHT - CGFloat(kNavBarBottom * 2)
 class MagazineVC: UIViewController, UIGestureRecognizerDelegate {
-
+    
     
     @IBOutlet weak var tableView : UITableView!
     var topImg = UIImage()
@@ -23,7 +23,7 @@ class MagazineVC: UIViewController, UIGestureRecognizerDelegate {
         imgView.clipsToBounds = true
         return imgView
     }()
-   
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +57,7 @@ class MagazineVC: UIViewController, UIGestureRecognizerDelegate {
     func reloadTVForCV(){
         let cell = tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
         cell.secondCollectionView.reloadData()
-       
+        
         cell.collectionViewHeight.constant = cell.secondCollectionView.collectionViewLayout.collectionViewContentSize.height
         tableView.reloadData()
     }
@@ -82,10 +82,19 @@ extension MagazineVC : UITableViewDataSource, UITableViewDelegate {
 }
 
 extension MagazineVC : SelectDelegate {
-    func tap(selected: Int?) {
-        let cell = tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
-        cell.imgArr2 = [#imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg")]
+    func tap(section: Int, selected: Int?) {
+        if section == 0 {
+            let cell = tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
+            cell.imgArr2 = [#imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg")]
+        } else {
+            let mainStoryboard = Storyboard.shared().mainStoryboard
+            if let detailVC = mainStoryboard.instantiateViewController(withIdentifier:DetailVC.reuseIdentifier) as? DetailVC {
+                
+                self.navigationController?.pushViewController(detailVC, animated: true)
+            }
+        }
     }
+    
 }
 
 // MARK: - 스크롤 할 때 네비게이션 색깔
