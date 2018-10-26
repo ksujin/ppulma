@@ -1,0 +1,20 @@
+PODS:
+  - BottomPopup (0.1.1)
+  - Dropper (2.7.6)
+
+DEPENDENCIES:
+  - BottomPopup
+  - Dropper
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - BottomPopup
+    - Dropper
+
+SPEC CHECKSUMS:
+  BottomPopup: f83867bd54fe62455fabc36b7e074754b71a17b8
+  Dropper: 52a020beb6fef2e4b1d55447f17099e5776954ef
+
+PODFILE CHECKSUM: 49f0cced4e9cb74d2c09f8d5f2123b9ab5d291ee
+
+COCOAPODS: 1.6.0.beta.1
