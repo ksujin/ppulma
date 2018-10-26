@@ -22,7 +22,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var firstLbl: UILabel!
     @IBOutlet weak var secondLbl: UILabel!
-    @IBOutlet weak var searchBtn: UIButton!
+
     @IBOutlet weak var alarmBtn: UIButton!
     @IBOutlet weak var alarmOrangeVie: UIView!
     @IBOutlet weak var moreBtn: UIButton!
@@ -59,6 +59,12 @@ class MainVC: UIViewController {
        secondLbl.text = Int(sampleUser.saveMoney).withCommas()+"원"
     }
     
+    @IBAction func searchAction(_ sender: Any) {
+        let mainStoryboard = Storyboard.shared().mainStoryboard
+        if let searchVC = mainStoryboard.instantiateViewController(withIdentifier:SearchVC.reuseIdentifier) as? SearchVC {
+            self.navigationController?.pushViewController(searchVC, animated: true)
+        }
+    }
     func setSampleData(){
         let firstItem = SampleMainStruct(idx: 1, img: #imageLiteral(resourceName: "planLove"), backgroundImg: #imageLiteral(resourceName: "background"))
         let secondItem = SampleMainStruct(idx: 2, img: #imageLiteral(resourceName: "planAlone"), backgroundImg: #imageLiteral(resourceName: "background"))
