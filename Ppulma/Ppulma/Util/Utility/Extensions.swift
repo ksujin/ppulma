@@ -149,3 +149,19 @@ extension Int {
         return numberFormatter.string(from: NSNumber(value:self))!
     }
 }
+
+/*---------------------UIBarButtonItem---------------------------*/
+
+extension UIBarButtonItem {
+    class func itemWith(colorfulImage: UIImage?, target: AnyObject, action: Selector) -> UIBarButtonItem {
+        let button = UIButton(type: .custom)
+        button.setImage(colorfulImage, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.widthAnchor.constraint(equalToConstant: 48).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 48).isActive = true
+        button.addTarget(target, action: action, for: .touchUpInside)
+        
+        let barButtonItem = UIBarButtonItem(customView: button)
+        return barButtonItem
+    }
+}
