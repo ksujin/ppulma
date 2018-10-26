@@ -86,7 +86,10 @@ extension SearchResultVC : UICollectionViewDataSource, UICollectionViewDelegate 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let mainStoryboard = Storyboard.shared().mainStoryboard
+        if let detailVC = mainStoryboard.instantiateViewController(withIdentifier:DetailVC.reuseIdentifier) as? DetailVC {
+            self.navigationController?.pushViewController(detailVC, animated: true)
+        }
     }
 }
 
