@@ -20,10 +20,13 @@ class SearchResultVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchField: UITextField!
     var resultArr : [SampleSearchResultStruct] = []
+    var keyboardDismissGesture: UITapGestureRecognizer?
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackBtn(color: ColorChip.shared().barbuttonColor)
         setupCollectionView()
+        setKeyboardSetting()
+        searchField.delegate = self
         searchField.text = searchString
         
         let cartItem = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "icCart"), target: self, action: #selector(SearchResultVC.cartAction(_:)))
@@ -106,4 +109,76 @@ extension SearchResultVC: UICollectionViewDelegateFlowLayout {
         
     }
     
+}
+
+//키보드 대응
+extension SearchResultVC{
+    func setKeyboardSetting() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: .UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: .UIKeyboardWillHide, object: nil)
+    }
+    
+    @objc func keyboardWillShow(_ notification: Notification) {
+        
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            collectionView.contentInset.bottom = keyboardSize.height
+        }
+        
+        adjustKeyboardDismissGesture(isKeyboardVisible: true)
+    }
+    
+    @objc func keyboardWillHide(_ notification: Notification) {
+        collectionView.contentInset.bottom = 0
+        
+        adjustKeyboardDismissGesture(isKeyboardVisible: false)
+        
+    }
+    
+    //화면 바깥 터치했을때 키보드 없어지는 코드
+    func adjustKeyboardDismissGesture(isKeyboardVisible: Bool) {
+        if isKeyboardVisible {
+            if keyboardDismissGesture == nil {
+                keyboardDismissGesture = UITapGestureRecognizer(target: self, action: #selector(tapBackground))
+                view.addGestureRecognizer(keyboardDismissGesture!)
+            }
+        } else {
+            if keyboardDismissGesture != nil {
+                view.removeGestureRecognizer(keyboardDismissGesture!)
+                keyboardDismissGesture = nil
+            }
+        }
+    }
+    
+    @objc func tapBackground() {
+        //내 텍필
+        self.view.endEditing(true)
+    }
+}
+
+
+extension SearchResultVC : UITextFieldDelegate {
+    
+    //키보드 엔터 버튼 눌렀을 때
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField.text == "" {
+            simpleAlert(title: "오류", message: "검색어 입력")
+            return false
+        }
+        
+        if let myString = textField.text {
+            let emptySpacesCount = myString.components(separatedBy: " ").count-1
+            if emptySpacesCount == myString.count {
+                simpleAlert(title: "오류", message: "검색어 입력")
+                return false
+            }
+        }
+        
+        //있으면 리로드, 없으면 얼러트
+        if let searchString_ = textField.text {
+            //검색 통신
+             collectionView.reloadData()
+        }
+        
+        return true
+    }
 }
