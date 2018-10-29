@@ -91,6 +91,9 @@
                                                 <constraint firstAttribute="width" constant="36" id="wpI-FN-MGD"/>
                                             </constraints>
                                             <state key="normal" image="icBell"/>
+                                            <connections>
+                                                <action selector="alarmAction:" destination="2IJ-ZA-Gfj" eventType="touchUpInside" id="lUv-O1-235"/>
+                                            </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUm-R5-TQU">
                                             <rect key="frame" x="259" y="189" width="102" height="27"/>
@@ -257,8 +260,8 @@
                         <viewLayoutGuide key="safeArea" id="Hin-Ti-NtZ"/>
                     </view>
                     <navigationItem key="navigationItem" id="1E6-HN-gUq"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="alarmBtn" destination="Zpk-nD-ViC" id="SJW-b3-D9a"/>
                         <outlet property="alarmOrangeVie" destination="CzQ-hQ-ROt" id="h0O-3A-47r"/>
                         <outlet property="firstLbl" destination="aDl-iP-qVZ" id="emt-y4-ocS"/>
                         <outlet property="moreBtn" destination="jUm-R5-TQU" id="wwP-0a-lpn"/>
@@ -292,7 +295,7 @@
                                 <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchBackground" translatesAutoresizingMaskIntoConstraints="NO" id="NDv-8i-zuc">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="searchImgView" translatesAutoresizingMaskIntoConstraints="NO" id="NDv-8i-zuc">
                                 <rect key="frame" x="0.0" y="119" width="375" height="548"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cpa-eD-Sw2">
@@ -417,7 +420,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[필립스] LED 전구 모음" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leJ-8h-yIK">
-                                                    <rect key="frame" x="19" y="173.5" width="115.5" height="13.5"/>
+                                                    <rect key="frame" x="19" y="173.5" width="123" height="13.5"/>
                                                     <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="12"/>
                                                     <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -441,6 +444,7 @@
                                             <constraint firstAttribute="trailing" secondItem="fTX-Um-FHB" secondAttribute="trailing" id="YkI-O4-WDi"/>
                                             <constraint firstItem="fTX-Um-FHB" firstAttribute="top" secondItem="f61-aZ-Hkr" secondAttribute="top" id="dvz-gO-7V9"/>
                                             <constraint firstItem="rrg-vu-jgJ" firstAttribute="trailing" secondItem="fTX-Um-FHB" secondAttribute="trailing" id="ha7-hT-pVj"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="leJ-8h-yIK" secondAttribute="trailing" constant="11" id="iB5-yC-lWm"/>
                                             <constraint firstItem="leJ-8h-yIK" firstAttribute="leading" secondItem="f61-aZ-Hkr" secondAttribute="leadingMargin" constant="11" id="iPF-dC-SyO"/>
                                             <constraint firstItem="c0n-Hh-5uc" firstAttribute="leading" secondItem="leJ-8h-yIK" secondAttribute="leading" id="z6V-p6-CXW"/>
                                         </constraints>
@@ -606,6 +610,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nUF-lj-umG"/>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                    <connections>
+                        <outlet property="mainImgView" destination="ddb-NN-hbl" id="KB1-N7-v4g"/>
+                        <outlet property="titleLbl" destination="j3e-GK-E6O" id="gL9-hg-aVk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fsv-kx-iKH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -636,7 +645,7 @@
                                             <state key="normal" image="aimg"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zwq-YL-UTK">
-                                            <rect key="frame" x="60" y="135.5" width="55" height="17"/>
+                                            <rect key="frame" x="60" y="135.5" width="52" height="17"/>
                                             <fontDescription key="fontDescription" name="NanumSquareOTFL" family="NanumSquareOTF" pointSize="15"/>
                                             <color key="textColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -645,31 +654,31 @@
                                             <rect key="frame" x="19" y="23" width="337" height="87"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 적용된 할인율" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zel-WP-0UL">
-                                                    <rect key="frame" x="26" y="21" width="117" height="17"/>
+                                                    <rect key="frame" x="26" y="21" width="112.5" height="17"/>
                                                     <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="15"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2n-WN-g9l">
-                                                    <rect key="frame" x="149" y="21.5" width="23" height="17"/>
+                                                    <rect key="frame" x="144.5" y="21.5" width="23" height="17"/>
                                                     <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="15"/>
                                                     <color key="textColor" red="1" green="0.70588235294117641" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2100000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cBb-44-Poq">
-                                                    <rect key="frame" x="26" y="50" width="78" height="17"/>
+                                                    <rect key="frame" x="26" y="50" width="71.5" height="17"/>
                                                     <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="15"/>
                                                     <color key="textColor" red="1" green="0.70588235290000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이며" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDX-Ti-fpi">
-                                                    <rect key="frame" x="174" y="21" width="27.5" height="17"/>
+                                                    <rect key="frame" x="169.5" y="21" width="26" height="17"/>
                                                     <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="15"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="의 포인트가 차감될 예정입니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syx-56-6MV">
-                                                    <rect key="frame" x="108" y="50" width="192.5" height="17"/>
+                                                    <rect key="frame" x="101.5" y="50" width="185.5" height="17"/>
                                                     <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="15"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -727,13 +736,13 @@
                                                     <rect key="frame" x="24" y="7" width="327" height="87"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="할로윈 모자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k0j-Wi-Xj4">
-                                                            <rect key="frame" x="120" y="11.5" width="72" height="17"/>
+                                                            <rect key="frame" x="120" y="11.5" width="69.5" height="17"/>
                                                             <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="15"/>
                                                             <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEp-Jk-3lF">
-                                                            <rect key="frame" x="277" y="59" width="37" height="14"/>
+                                                            <rect key="frame" x="280.5" y="59" width="33.5" height="14"/>
                                                             <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="12"/>
                                                             <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -798,7 +807,7 @@
                                                             <state key="normal" image="aimg"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="냥이 I BLUE&amp;PINK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2U-Lg-ttd">
-                                                            <rect key="frame" x="120" y="36" width="69.5" height="10"/>
+                                                            <rect key="frame" x="120" y="36" width="72.5" height="10"/>
                                                             <fontDescription key="fontDescription" name="NanumSquareOTFL" family="NanumSquareOTF" pointSize="9"/>
                                                             <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -860,13 +869,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n79-YE-PUY">
-                                        <rect key="frame" x="28" y="40.5" width="49.5" height="21"/>
+                                        <rect key="frame" x="28" y="39" width="46.5" height="22.5"/>
                                         <fontDescription key="fontDescription" name="NanumSquareOTFEB" family="NanumSquareOTF" pointSize="19"/>
                                         <color key="textColor" red="1" green="0.70588235294117641" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 결제금액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Vy-3f-JCm">
-                                        <rect key="frame" x="28" y="14" width="62.5" height="14.5"/>
+                                        <rect key="frame" x="28" y="14" width="60" height="15.5"/>
                                         <fontDescription key="fontDescription" name="NanumSquareOTFL" family="NanumSquareOTF" pointSize="13"/>
                                         <color key="textColor" red="0.2627450980392157" green="0.2627450980392157" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -924,7 +933,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UQc-WT-EwZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1415.2" y="1534.1829085457273"/>
+            <point key="canvasLocation" x="1145" y="1533"/>
         </scene>
         <!--MagazineVC-->
         <scene sceneID="w6L-cN-4d3">
@@ -1017,7 +1026,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="호박모자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivi-gl-KIK">
-                                                                        <rect key="frame" x="8" y="115" width="36.5" height="11.5"/>
+                                                                        <rect key="frame" x="8" y="115" width="94" height="11.5"/>
                                                                         <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="10"/>
                                                                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -1029,6 +1038,7 @@
                                                                 <constraint firstItem="GzE-q1-zQN" firstAttribute="leading" secondItem="pjA-Fd-xzo" secondAttribute="leading" constant="8" id="35u-oR-Ws4"/>
                                                                 <constraint firstAttribute="bottom" secondItem="1oH-OK-keZ" secondAttribute="bottom" id="DnS-aP-6EC"/>
                                                                 <constraint firstItem="GzE-q1-zQN" firstAttribute="top" secondItem="pjA-Fd-xzo" secondAttribute="top" constant="8" id="PPk-iQ-iOZ"/>
+                                                                <constraint firstItem="ivi-gl-KIK" firstAttribute="trailing" secondItem="GzE-q1-zQN" secondAttribute="trailing" id="U3k-RT-4Z8"/>
                                                                 <constraint firstItem="ivi-gl-KIK" firstAttribute="leading" secondItem="GzE-q1-zQN" secondAttribute="leading" id="W7E-9P-zmL"/>
                                                                 <constraint firstItem="ivi-gl-KIK" firstAttribute="leading" secondItem="1oH-OK-keZ" secondAttribute="leading" id="cMP-JA-f78"/>
                                                                 <constraint firstItem="ivi-gl-KIK" firstAttribute="top" secondItem="GzE-q1-zQN" secondAttribute="bottom" constant="13" id="cnM-b0-Lmw"/>
@@ -1418,7 +1428,7 @@
         <image name="planLove" width="338" height="83"/>
         <image name="pplusLogo" width="81" height="35"/>
         <image name="purpleBackground" width="375" height="255"/>
-        <image name="searchBackground" width="201" height="292"/>
         <image name="searchField" width="273" height="28"/>
+        <image name="searchImgView" width="375" height="538"/>
     </resources>
 </document>

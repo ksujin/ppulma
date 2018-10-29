@@ -11,14 +11,20 @@ import Dropper
 
 class MagazineFirstTVCell: UITableViewCell {
 
-    var imgArr = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg")]
-    var imgArr2 : [UIImage] = [] {
+    var firstDataArr : [CategoryVOSemiResult] = []{
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    var secondDataArr : [SemiCategoryVOResult] = []{
         didSet {
             if let imgHandler_ = imgHandler {
-               imgHandler_()
+                imgHandler_()
             }
         }
     }
+    
+
     let dropper = Dropper(width: 75, height: 200)
     var imgHandler : (()->Void)?
     @IBOutlet weak var collectionView: UICollectionView!
@@ -67,9 +73,9 @@ extension MagazineFirstTVCell : UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.collectionView {
-            return imgArr.count
+            return firstDataArr.count
         } else {
-            return imgArr2.count
+            return secondDataArr.count
         }
     }
     
@@ -77,14 +83,14 @@ extension MagazineFirstTVCell : UICollectionViewDataSource, UICollectionViewDele
         
         if collectionView == self.collectionView {
             if let cell: MagazineFirstCVCell = collectionView.dequeueReusableCell(withReuseIdentifier: MagazineFirstCVCell.reuseIdentifier, for: indexPath) as? MagazineFirstCVCell{
-                cell.configure(data: imgArr[indexPath.row])
+                cell.configure(data: firstDataArr[indexPath.row].semiImgURL[0])
                 return cell
             }
             return UICollectionViewCell()
         } else {
             
             if let cell: MagazineSecondCVCell = collectionView.dequeueReusableCell(withReuseIdentifier: MagazineSecondCVCell.reuseIdentifier, for: indexPath) as? MagazineSecondCVCell{
-                cell.configure(data: imgArr2[indexPath.row])
+                cell.configure(data: secondDataArr[indexPath.row])
                 return cell
             }
             return UICollectionViewCell()
@@ -94,7 +100,7 @@ extension MagazineFirstTVCell : UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.collectionView {
-            delegate?.tap(section: 0, selected: 0)
+            delegate?.tap(section: 0, selected: firstDataArr[indexPath.row].semiCategoryIdx)
         } else {
              delegate?.tap(section: 1, selected: 0)
         }

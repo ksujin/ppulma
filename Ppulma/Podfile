@@ -6,6 +6,10 @@ target 'Ppulma' do
   use_frameworks!
 pod 'Dropper'
 pod 'BottomPopup'
+pod 'Kingfisher', '~>4.0.0'
+pod 'SnapKit', '~>4.0.1'
+pod 'SwiftyJSON', '~>4.2.0'
+pod 'Alamofire', '~>4.7.3'
   # Pods for Ppulma
 
 end

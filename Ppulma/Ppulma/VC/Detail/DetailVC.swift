@@ -28,6 +28,7 @@ class DetailVC: UIViewController, UIGestureRecognizerDelegate {
     
     
     @IBAction func addCartAction(_ sender: Any) {
+        self.noticeSuccess("장바구니 담기 성공!", autoClear: true, autoClearTime: 1)
     }
     
 }

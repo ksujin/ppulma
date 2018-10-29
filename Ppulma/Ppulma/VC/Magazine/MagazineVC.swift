@@ -16,6 +16,10 @@ class MagazineVC: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var tableView : UITableView!
     var topImg = UIImage()
+    var magazineIdx = ""
+    var categoryIdx = ""
+    var isOrderByPopular = true
+    
     lazy var topView:UIImageView = {
         let imgView = UIImageView(image: topImg)
         imgView.frame = CGRect(x: 0, y: 0, width: kScreenWidth, height: IMAGE_HEIGHT)
@@ -23,16 +27,15 @@ class MagazineVC: UIViewController, UIGestureRecognizerDelegate {
         imgView.clipsToBounds = true
         return imgView
     }()
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         setupNavView()
         let cell = tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
-        cell.collectionView.selectItem(at: IndexPath(row : 0, section : 0), animated: false, scrollPosition: .centeredVertically)
+        getMagazineInfo(url : UrlPath.category.getURL(magazineIdx))
         cell.imgHandler = reloadTVForCV
-        cell.imgArr2 = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg")]
     }
     
     func setupTableView(){
@@ -57,7 +60,6 @@ class MagazineVC: UIViewController, UIGestureRecognizerDelegate {
     func reloadTVForCV(){
         let cell = tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
         cell.secondCollectionView.reloadData()
-        
         cell.collectionViewHeight.constant = cell.secondCollectionView.collectionViewLayout.collectionViewContentSize.height
         tableView.reloadData()
     }
@@ -82,10 +84,14 @@ extension MagazineVC : UITableViewDataSource, UITableViewDelegate {
 }
 
 extension MagazineVC : SelectDelegate {
-    func tap(section: Int, selected: Int?) {
+    func tap(section: Int, selected: Any) {
         if section == 0 {
-            let cell = tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
-            cell.imgArr2 = [#imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg")]
+            categoryIdx = selected as! String
+            if isOrderByPopular {
+                getSemiInfo(url: UrlPath.semiCategory.getURL(categoryIdx))
+            } else {
+                getSemiInfo(url: UrlPath.semiCategoryOrderByPrice.getURL(categoryIdx))
+            }
         } else {
             let mainStoryboard = Storyboard.shared().mainStoryboard
             if let detailVC = mainStoryboard.instantiateViewController(withIdentifier:DetailVC.reuseIdentifier) as? DetailVC {
@@ -127,9 +133,55 @@ extension MagazineVC: DropperDelegate {
         let cell = tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
         cell.filterLblBtn.setTitle(contents, for: .normal)
         if contents == "인기순" {
-            cell.imgArr2 = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "aimg")]
+            isOrderByPopular = true
+            getSemiInfo(url: UrlPath.semiCategory.getURL(categoryIdx))
         } else {
-            cell.imgArr2 = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "bimg")]
+            isOrderByPopular = false
+            getSemiInfo(url: UrlPath.semiCategoryOrderByPrice.getURL(categoryIdx))
         }
     }
 }
+
+//통신
+extension MagazineVC {
+    func getMagazineInfo(url : String){
+        self.pleaseWait()
+        MagazineService.shareInstance.getMagazineData(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            self.clearAllNotice()
+            switch result {
+            case .networkSuccess(let magazineData):
+                let magazineData = magazineData as! [CategoryVOSemiResult]
+                let cell = self.tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
+                cell.firstDataArr = magazineData
+                self.categoryIdx = magazineData[0].semiCategoryIdx
+                self.getSemiInfo(url: UrlPath.semiCategory.getURL(magazineData[0].semiCategoryIdx))
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
+    
+    func getSemiInfo(url : String){
+        self.pleaseWait()
+        SemiCategoryService.shareInstance.getSemiCategoryData(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            self.clearAllNotice()
+            switch result {
+            case .networkSuccess(let semiData):
+                let semiData = semiData as! [SemiCategoryVOResult]
+                let cell = self.tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
+                cell.secondDataArr = semiData
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
+}
+

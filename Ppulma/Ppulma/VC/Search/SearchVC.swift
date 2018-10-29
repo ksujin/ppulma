@@ -17,6 +17,7 @@ class SearchVC: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var backgroundView: UIImageView!
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
@@ -104,7 +105,7 @@ extension SearchVC : UITextFieldDelegate {
        
         if textField.text == "" {
             mainArr = []
-            backgroundView.image = #imageLiteral(resourceName: "searchBackground")
+            backgroundView.image = #imageLiteral(resourceName: "searchImgView")
             tableView.reloadData()
             return
         }

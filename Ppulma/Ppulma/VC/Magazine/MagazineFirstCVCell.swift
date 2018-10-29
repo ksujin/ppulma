@@ -17,8 +17,8 @@ class MagazineFirstCVCell: UICollectionViewCell {
         }
     }
     
-    func configure(data : UIImage) {
-       myImgView.image = data
+    func configure(data : String) {
+       setImgWithKF(url: data, imgView: myImgView, defaultImg: #imageLiteral(resourceName: "aimg"))
     }
     
     

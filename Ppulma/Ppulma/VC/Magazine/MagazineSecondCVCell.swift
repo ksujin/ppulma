@@ -14,10 +14,10 @@ class MagazineSecondCVCell: UICollectionViewCell {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
     var myImgView = UIImageView()
-    func configure(data : UIImage) {
-        myImgView.image = data
-        nameLbl.text = "호박주스"
-        priceLbl.text = 10000.withCommas()+"원"
+    func configure(data : SemiCategoryVOResult) {
+        setImgWithKF(url: data.productImgURL, imgView: myImgView, defaultImg: #imageLiteral(resourceName: "aimg"))
+        nameLbl.text = data.productName
+        priceLbl.text = data.productPrice.withCommas()+"원"
     }
 
     override func awakeFromNib() {

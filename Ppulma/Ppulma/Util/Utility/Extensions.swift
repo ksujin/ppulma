@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 /*---------------------NSObject---------------------------*/
 extension NSObject {
@@ -47,6 +48,7 @@ extension UIView {
     
 }
 
+
 extension UIViewController {
     
     
@@ -83,6 +85,16 @@ extension UIViewController {
         alert.addAction(okAction)
         alert.addAction(cancelAction)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func networkSimpleAlert(){
+        let title = "오류"
+        let message = "네트워크 연결상태를 확인해주세요"
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okTitle = "확인"
+        let okAction = UIAlertAction(title: okTitle,style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
     
     func addChildView(containerView : UIView, asChildViewController viewController: UIViewController) {
@@ -164,4 +176,29 @@ extension UIBarButtonItem {
         let barButtonItem = UIBarButtonItem(customView: button)
         return barButtonItem
     }
+}
+
+extension UITableViewCell {
+    func setImgWithKF(url : String, imgView : UIImageView, defaultImg : UIImage){
+        if let url = URL(string: url){
+            imgView.kf.setImage(with: url)
+        } else {
+            imgView.image = defaultImg
+        }
+    }
+    
+}
+
+/*---------------------UICollectionViewCell---------------------------*/
+extension UICollectionViewCell {
+    
+    
+    func setImgWithKF(url : String, imgView : UIImageView, defaultImg : UIImage){
+        if let url = URL(string: url){
+            imgView.kf.setImage(with: url)
+        } else {
+            imgView.image = defaultImg
+        }
+    }
+    
 }

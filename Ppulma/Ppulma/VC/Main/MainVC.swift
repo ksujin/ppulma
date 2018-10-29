@@ -8,7 +8,7 @@
 
 import UIKit
 struct SampleMainStruct {
-    let idx : Int
+    let idx : String
     let img : UIImage
     let backgroundImg : UIImage
 }
@@ -23,7 +23,6 @@ class MainVC: UIViewController {
     @IBOutlet weak var firstLbl: UILabel!
     @IBOutlet weak var secondLbl: UILabel!
 
-    @IBOutlet weak var alarmBtn: UIButton!
     @IBOutlet weak var alarmOrangeVie: UIView!
     @IBOutlet weak var moreBtn: UIButton!
     var mainArr : [SampleMainStruct] = []
@@ -38,6 +37,7 @@ class MainVC: UIViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.setNavigationBarHidden(false, animated: animated)
     }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +58,15 @@ class MainVC: UIViewController {
        firstLbl.text = Int(sampleUser.point).withCommas()+"원"
        secondLbl.text = Int(sampleUser.saveMoney).withCommas()+"원"
     }
+    @IBAction func alarmAction(_ sender: Any) {
+        let mainStoryboard = Storyboard.shared().mainStoryboard
+        if let filterVC = mainStoryboard.instantiateViewController(withIdentifier:FilterVC.reuseIdentifier) as? FilterVC {
+            filterVC.navTitle = "알림"
+            filterVC.mainImg = #imageLiteral(resourceName: "alarmImgView")
+            self.alarmOrangeVie.isHidden = true
+            self.present(filterVC, animated: true, completion: nil)
+        }
+    }
     
     @IBAction func searchAction(_ sender: Any) {
         let mainStoryboard = Storyboard.shared().mainStoryboard
@@ -65,12 +74,14 @@ class MainVC: UIViewController {
             self.navigationController?.pushViewController(searchVC, animated: true)
         }
     }
+    
+    
     func setSampleData(){
-        let firstItem = SampleMainStruct(idx: 1, img: #imageLiteral(resourceName: "planLove"), backgroundImg: #imageLiteral(resourceName: "background"))
-        let secondItem = SampleMainStruct(idx: 2, img: #imageLiteral(resourceName: "planAlone"), backgroundImg: #imageLiteral(resourceName: "background"))
-        let thirdItem = SampleMainStruct(idx: 3, img: #imageLiteral(resourceName: "planPet"), backgroundImg: #imageLiteral(resourceName: "background"))
-        let forthItem = SampleMainStruct(idx: 4, img: #imageLiteral(resourceName: "planHealing"), backgroundImg: #imageLiteral(resourceName: "background"))
-        let fifthItem = SampleMainStruct(idx: 5, img: #imageLiteral(resourceName: "planSanta"), backgroundImg: #imageLiteral(resourceName: "background"))
+        let firstItem = SampleMainStruct(idx: "5bd1beec5097b627bca0013c", img: #imageLiteral(resourceName: "planLove"), backgroundImg: #imageLiteral(resourceName: "background"))
+        let secondItem = SampleMainStruct(idx: "5bd1bf335097b627bca0013d", img: #imageLiteral(resourceName: "planAlone"), backgroundImg: #imageLiteral(resourceName: "background"))
+        let thirdItem = SampleMainStruct(idx: "5bd1bf6e5097b627bca0013e", img: #imageLiteral(resourceName: "planPet"), backgroundImg: #imageLiteral(resourceName: "background"))
+        let forthItem = SampleMainStruct(idx: "5bd1bfa25097b627bca0013f", img: #imageLiteral(resourceName: "planHealing"), backgroundImg: #imageLiteral(resourceName: "background"))
+        let fifthItem = SampleMainStruct(idx: "5bd1bfdd5097b627bca00140", img: #imageLiteral(resourceName: "planSanta"), backgroundImg: #imageLiteral(resourceName: "background"))
         mainArr.append(contentsOf: [firstItem, secondItem, thirdItem, forthItem, fifthItem])
     }
 }
@@ -91,6 +102,7 @@ extension MainVC : UITableViewDelegate, UITableViewDataSource{
         let mainStoryboard = Storyboard.shared().mainStoryboard
         if let magazineVC = mainStoryboard.instantiateViewController(withIdentifier:MagazineVC.reuseIdentifier) as? MagazineVC {
             magazineVC.topImg = mainArr[indexPath.row].backgroundImg
+            magazineVC.magazineIdx = mainArr[indexPath.row].idx
             self.navigationController?.pushViewController(magazineVC, animated: true)
         }
         tableView.deselectRow(at: indexPath, animated: false)

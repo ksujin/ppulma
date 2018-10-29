@@ -71,6 +71,8 @@ extension SearchResultVC : UICollectionViewDataSource, UICollectionViewDelegate 
     @objc func filterAction(){
         let mainStoryboard = Storyboard.shared().mainStoryboard
         if let filterVC = mainStoryboard.instantiateViewController(withIdentifier:FilterVC.reuseIdentifier) as? FilterVC {
+            filterVC.navTitle = "필터"
+            filterVC.mainImg = #imageLiteral(resourceName: "filterImgView")
             self.present(filterVC, animated: true, completion: nil)
         }
     }
