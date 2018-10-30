@@ -40,6 +40,7 @@ class CartTVCell: UITableViewCell {
         stepper.rightButton.accessibilityIdentifier = data.cartIdx
         deleteBtn.accessibilityIdentifier = data.cartIdx
         deleteBtn.tag = row
+        //TODO: - isSelected 속성 주기
     }
     
     func selectedConfig(isSelected : Bool){

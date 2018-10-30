@@ -8,6 +8,7 @@
 
 import Foundation
 struct AddCartService: PostableService, GettableService {
+    
     typealias NetworkData = MessageVO
     static let shareInstance = AddCartService()
     func addCart(url : String, params : [String : Any], completion : @escaping (NetworkResult<Any>) -> Void){
@@ -40,11 +41,35 @@ struct AddCartService: PostableService, GettableService {
             switch result {
             case .success(let networkResult):
                 switch networkResult.resCode{
-                case HttpResponseCode.postSuccess.rawValue : completion(.networkSuccess(networkResult.resResult.message))
+                case HttpResponseCode.getSuccess.rawValue : completion(.networkSuccess(networkResult.resResult.message))
                 case HttpResponseCode.serverErr.rawValue :
                     completion(.serverErr)
                 default :
                     print("no 200//500 rescode is \(networkResult.resCode)")
+                    break
+                }
+                break
+            case .error(let errMsg) :
+                print(errMsg)
+                break
+            case .failure(_) :
+                completion(.networkFail)
+            }
+        }
+        
+    }
+    
+    func updateCart(url : String, params : [String : Any], completion : @escaping (NetworkResult<Any>) -> Void){
+        post(url, params: params, method: .put) { (result) in
+            switch result {
+            case .success(let networkResult):
+                switch networkResult.resCode{
+                case HttpResponseCode.getSuccess.rawValue :
+                    completion(.networkSuccess(networkResult.resResult.message))
+                case HttpResponseCode.serverErr.rawValue :
+                    completion(.serverErr)
+                default :
+                    print("no 200/500 rescode is \(networkResult.resCode)")
                     break
                 }
                 break

@@ -12,6 +12,7 @@ struct CartVO: Codable {
     let result: [CartVOResult]
 }
 
+//TODO: - isSelected 추가
 struct CartVOResult: Codable {
     let cartIdx, productIdx, productName: String
     let productImg: String

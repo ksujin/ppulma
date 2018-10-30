@@ -13,7 +13,7 @@ import SwiftyJSON
 protocol PostableService {
     associatedtype NetworkData : Codable
     typealias networkResult = (resCode : Int, resResult : NetworkData)
-    func post(_ URL:String, params : [String : Any], completion : @escaping (Result<networkResult>)->Void)
+    func post(_ URL:String, params : [String : Any],method : HTTPMethod, completion : @escaping (Result<networkResult>)->Void)
     
 }
 
@@ -24,7 +24,7 @@ extension PostableService {
     }
     
     
-    func post(_ URL:String, params : [String : Any], completion : @escaping (Result<networkResult>)->Void){
+    func post(_ URL:String, params : [String : Any], method : HTTPMethod = .post, completion : @escaping (Result<networkResult>)->Void){
         
         guard let encodedUrl = URL.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             print("networking - invalid url")
@@ -41,7 +41,7 @@ extension PostableService {
             ]
         }
         
-        Alamofire.request(encodedUrl, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers).responseData(){
+        Alamofire.request(encodedUrl, method: method, parameters: params, encoding: JSONEncoding.default, headers: headers).responseData(){
             res in
             switch res.result {
             case .success:

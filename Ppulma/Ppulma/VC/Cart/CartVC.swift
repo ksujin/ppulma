@@ -116,7 +116,7 @@ class CartVC: UIViewController {
         setPriceLbl()
     }
     
-    //전체삭제
+    //TODO:- 체크 되어 있는것 전체삭제
     @IBAction func deleteAction(_ sender: Any) {
         let rowNum = tableView.numberOfRows(inSection: 0)
         for row in 0..<rowNum{
@@ -148,6 +148,7 @@ class CartVC: UIViewController {
     }
     
     @IBAction func payAction(_ sender: Any) {
+        //TODO:- 체크 되어 있는것 전체 삭제
         //통신 완료후
         sampleUser.point -= willDecrease_
         sampleUser.saveMoney += willDecrease_
@@ -155,6 +156,7 @@ class CartVC: UIViewController {
         setPriceLbl()
     }
     
+    //TODO:- 체크 통신
     @objc func selectAllAction(_ sender : UIButton){
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
@@ -184,7 +186,6 @@ extension CartVC : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CartTVCell.reuseIdentifier) as! CartTVCell
         cell.configure(data: cartListArr[indexPath.row], row : indexPath.row)
-       
         cell.stepperHandler = updateStepper
         cell.deleteHandler = deleteCart
         if isSelectedArr.count > 0 {
@@ -199,9 +200,8 @@ extension CartVC : UITableViewDelegate, UITableViewDataSource{
 extension CartVC : CheckDelegate{
     
     func updateStepper(idx: String, count: Int){
-        let params : [String : Any] = ["product_idx" : idx,
-                                       "count" : count]
-        addToCart(url: UrlPath.cart.getURL(), params: params)
+        let params : [String : Any] = ["product_count" : count]
+        updateFromCart(url: UrlPath.cart.getURL(idx), params: params)
         setPriceLbl()
     }
     
@@ -217,6 +217,7 @@ extension CartVC : CheckDelegate{
     }
     
     //2. check 버튼 클릭시
+    //TODO: - 체크 통신
     func check(selected: Int?) {
         //deselect 이면 -, select이면 +
         if selected! > 0 {
@@ -313,14 +314,26 @@ extension CartVC {
         })
     }
     
-    func addToCart(url : String, params : [String : Any]){
-        
-       
-    }
-    
     func deleteFromCart(url : String){
         self.pleaseWait()
         AddCartService.shareInstance.deleteCart(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            self.clearAllNotice()
+            switch result {
+            case .networkSuccess(_):
+                self.getCartList(url: UrlPath.cart.getURL())
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
+    
+    func updateFromCart(url : String, params : [String : Any]){
+        self.pleaseWait()
+        AddCartService.shareInstance.updateCart(url: url,params : params, completion: { [weak self] (result) in
             guard let `self` = self else { return }
             self.clearAllNotice()
             switch result {
