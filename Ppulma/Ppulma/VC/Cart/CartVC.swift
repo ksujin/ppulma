@@ -23,7 +23,7 @@ struct SampleUserStruct {
 }
 
 
-var sampleUser = SampleUserStruct(name: "sujin", point: 13000, saveMoney : 0)
+var sampleUser = SampleUserStruct(name: "sujin", point: 100000, saveMoney : 0)
 
 enum SalePercent : Double {
     case zero = 0.0
