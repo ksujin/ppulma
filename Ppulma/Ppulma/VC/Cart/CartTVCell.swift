@@ -18,24 +18,27 @@ class CartTVCell: UITableViewCell {
     @IBOutlet weak var nameLbl: UILabel!
     @IBOutlet weak var priceLbl: UILabel!
     @IBOutlet weak var descLbl: UILabel!
-    var deleteHandler : ((_ row : Int)->Void)?
-    var delegate : SelectRowDelegate?
+    var deleteHandler : ((_ idx : String)->Void)?
+    var stepperHandler : ((_ idx: String, _ count : Int)->Void)?
     var checkDelegate : CheckDelegate?
     var won : Int = 1
     var count : Int = 0
     var myImgView = UIImageView()
     
-    func configure(data : SampleCartStruct, row : Int){
-        myImgView.image = data.img
-        nameLbl.text = data.name
-        priceLbl.text = data.price.withCommas()+"원"
-        descLbl.text = data.desc
-        stepper.value = Double(data.value)
+    func configure(data : CartVOResult, row : Int){
+        myImgView.setImgWithKF(url: data.productImg, defaultImg: #imageLiteral(resourceName: "aimg"))
+        nameLbl.text = data.productName
+        priceLbl.text = data.productPrice.withCommas()+"원"
+        descLbl.text = ""
+        stepper.value = Double(data.productCount)
         count = Int(stepper.value)
-        won = data.price
+        won = data.productPrice
         checkBtn.tag = row
-        stepper.leftButton.tag = row
-        stepper.rightButton.tag = row
+        //stepper.leftButton.tag = row
+        //stepper.rightButton.tag = row
+        stepper.leftButton.accessibilityIdentifier = data.cartIdx
+        stepper.rightButton.accessibilityIdentifier = data.cartIdx
+        deleteBtn.accessibilityIdentifier = data.cartIdx
         deleteBtn.tag = row
     }
     
@@ -65,7 +68,8 @@ class CartTVCell: UITableViewCell {
     
     //checkBtn 클릭
     @objc func deleteAction(_ sender : UIButton){
-        deleteHandler!(sender.tag)
+       
+        deleteHandler!(sender.accessibilityIdentifier!)
     }
     
     //checkBtn 클릭
@@ -83,7 +87,6 @@ class CartTVCell: UITableViewCell {
     
     //stepper 클릭
     @objc func valueChaned(_ sender : UIButton){
-        //selected에 바뀐 value 들어감
-        delegate?.tap(row: sender.tag, selected: Int(stepper.value))
+        stepperHandler!(sender.accessibilityIdentifier!, Int(stepper.value))
     }
 }

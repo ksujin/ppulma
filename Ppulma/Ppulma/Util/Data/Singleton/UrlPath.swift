@@ -13,6 +13,8 @@ enum UrlPath : String {
     case category = "/category/"
     case semiCategory = "/semi/"
     case semiCategoryOrderByPrice = "/semi/price/"
+    case product = "/product/"
+    case cart = "/cart/"
 
     func getURL(_ parameter : String? = nil) -> String{
         return "\(NetworkConfiguration.shared().baseURL)\(self.rawValue)\(parameter ?? "")"

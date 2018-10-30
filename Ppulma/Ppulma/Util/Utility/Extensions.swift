@@ -48,9 +48,24 @@ extension UIView {
     
 }
 
+extension UIImageView {
+    func setImgWithKF(url : String, defaultImg : UIImage){
+        if let url = URL(string: url){
+            self.kf.setImage(with: url)
+        } else {
+            self.image = defaultImg
+        }
+    }
+}
 
 extension UIViewController {
-    
+    func setImgWithKF(url : String, imgView : UIImageView, defaultImg : UIImage){
+        if let url = URL(string: url){
+            imgView.kf.setImage(with: url)
+        } else {
+            imgView.image = defaultImg
+        }
+    }
     
     //백버튼
     func setBackBtn(color : UIColor? = .white){
@@ -202,3 +217,5 @@ extension UICollectionViewCell {
     }
     
 }
+
+

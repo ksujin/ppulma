@@ -57,30 +57,48 @@ class CartVC: UIViewController {
     @IBOutlet weak var selectAllBtn: UIButton!
     @IBOutlet weak var selectAllLbl: UILabel!
     
-    var sampleArr : [SampleCartStruct] = [] {
+    var cartListArr : [CartVOResult] = [] {
+        didSet {
+            selectAllLbl.text = "전체 선택 (총 \(cartListArr.count)개)"
+            isSelectedArr = []
+            cartListArr.forEach { (_) in
+                isSelectedArr.append(false)
+            }
+            tableView.reloadData()
+            self.setPriceLbl()
+        }
+    }
+    
+   /* var sampleArr : [SampleCartStruct] = [] {
         didSet {
             selectAllLbl.text = "전체 선택 (총 \(sampleArr.count)개)"
         }
-    }
+    }*/
     var isSelectedArr : [Bool] = []
     var willDecrease_ : Double = 0
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getCartList(url: UrlPath.cart.getURL())
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame : .zero)
         purpleTopView.layoutSubviews()
+        getCartList(url: UrlPath.cart.getURL())
+       
        // purpleTopView.makeRounded(cornerRadius: 7)
-        let a = SampleCartStruct(name: "커플 머그컵", value: 1, price: 1000, desc: "냥이 I BLUE&PINK", img: #imageLiteral(resourceName: "aimg"))
+        /*let a = SampleCartStruct(name: "커플 머그컵", value: 1, price: 1000, desc: "냥이 I BLUE&PINK", img: #imageLiteral(resourceName: "aimg"))
         let b = SampleCartStruct(name: "커플 휴대폰 케이스", value: 2, price: 2000, desc: "일러스트1 I BLUE&PINK", img: #imageLiteral(resourceName: "bimg"))
         let c = SampleCartStruct(name: "커플 카시오 시계", value: 3, price: 3000, desc: "WDFFS21 I 남성&여성", img: #imageLiteral(resourceName: "bimg"))
         let d = SampleCartStruct(name: "커플 수면 잠옷", value: 1, price: 4000, desc: "여름여름해 I 남성&여성", img: #imageLiteral(resourceName: "aimg"))
         let e = SampleCartStruct(name: "칸쵸", value: 1, price: 4000, desc: "여름여름해 I 남성&여성", img: #imageLiteral(resourceName: "aimg"))
         let f = SampleCartStruct(name: "볶음우동", value: 1, price: 4000, desc: "여름여름해 I 남성&여성", img: #imageLiteral(resourceName: "bimg"))
-        sampleArr.append(contentsOf: [a,b,c,d,e,f])
+        sampleArr.append(contentsOf: [a,b,c,d,e,f])*/
     
-        selectAllLbl.text = "전체 선택 (총 \(sampleArr.count)개)"
+        selectAllLbl.text = "전체 선택 (총 \(cartListArr.count)개)"
         selectAllLbl.sizeToFit()
         selectAllBtn.setImage(UIImage(named: "icCheckBox"), for: .normal)
         selectAllBtn.setImage(
@@ -89,7 +107,7 @@ class CartVC: UIViewController {
         
         //처음에 전체 선택
         selectAllBtn.isSelected = true
-        sampleArr.forEach { (_) in
+        cartListArr.forEach { (_) in
             isSelectedArr.append(true)
         }
     }
@@ -98,8 +116,16 @@ class CartVC: UIViewController {
         setPriceLbl()
     }
     
+    //전체삭제
     @IBAction func deleteAction(_ sender: Any) {
-        var deleteArr : [SampleCartStruct] = []
+        let rowNum = tableView.numberOfRows(inSection: 0)
+        for row in 0..<rowNum{
+            //select되었는지 아닌지 체크
+            let idx = cartListArr[row].cartIdx
+            deleteFromCart(url: UrlPath.cart.getURL(idx))
+        }
+        //setPriceLbl()
+       /* var deleteArr : [SampleCartStruct] = []
         for section in 0..<tableView.numberOfSections {
             let rowNum = tableView.numberOfRows(inSection: section)
             for row in 0..<rowNum{
@@ -118,7 +144,7 @@ class CartVC: UIViewController {
             isSelectedArr.append(false)
         }
         tableView.reloadData()
-        setPriceLbl()
+        setPriceLbl()*/
     }
     
     @IBAction func payAction(_ sender: Any) {
@@ -152,34 +178,41 @@ class CartVC: UIViewController {
 //테이블뷰 delegate, datasource
 extension CartVC : UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sampleArr.count
+        return cartListArr.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CartTVCell.reuseIdentifier) as! CartTVCell
-        cell.configure(data: sampleArr[indexPath.row], row : indexPath.row)
-        cell.deleteHandler = { (row) in
-            self.sampleArr.remove(at: row)
-            self.isSelectedArr.remove(at: row)
-            self.tableView.reloadData()
-            self.setPriceLbl()
-        }
+        cell.configure(data: cartListArr[indexPath.row], row : indexPath.row)
+       
+        cell.stepperHandler = updateStepper
+        cell.deleteHandler = deleteCart
         if isSelectedArr.count > 0 {
            cell.selectedConfig(isSelected : isSelectedArr[indexPath.row])
         }
-        
-        cell.delegate = self
         cell.checkDelegate = self
         return cell
     }
 }
 
 //select Delegate
-extension CartVC : SelectRowDelegate, CheckDelegate{
-    //1. stepper클릭시
-    func tap(row: Int, selected: Int) {
-        //selected 에 stepper value 담겨져있음. 모델 변경
-        sampleArr[row].value = selected
+extension CartVC : CheckDelegate{
+    
+    func updateStepper(idx: String, count: Int){
+        let params : [String : Any] = ["product_idx" : idx,
+                                       "count" : count]
+        addToCart(url: UrlPath.cart.getURL(), params: params)
+        setPriceLbl()
+    }
+    
+    func deleteCart(idx: String){
+        /* cell.deleteHandler = { (row) in
+         self.cartListArr.remove(at: row)
+         self.isSelectedArr.remove(at: row)
+         self.tableView.reloadData()
+         self.setPriceLbl()
+         }*/
+        deleteFromCart(url: UrlPath.cart.getURL(idx))
         setPriceLbl()
     }
     
@@ -230,7 +263,7 @@ extension CartVC {
             if isSelectedArr[row] {
                 
                 selectedCount += 1
-                let tempItem = tempStruct(price: sampleArr[row].price, count: Int(sampleArr[row].value))
+                let tempItem = tempStruct(price: cartListArr[row].productPrice, count: Int(cartListArr[row].productCount))
                 selectedItem.append(tempItem)
             }
         }
@@ -244,7 +277,7 @@ extension CartVC {
          */
         var salePercent : SalePercent = .zero
         
-        if selectedCount == sampleArr.count {
+        if selectedCount == cartListArr.count {
             selectAllBtn.isSelected = true
         } else {
             selectAllBtn.isSelected = false
@@ -257,5 +290,48 @@ extension CartVC {
             salePercent = .five
         }
         return (price, salePercent)
+    }
+}
+
+//통신
+extension CartVC {
+    func getCartList(url : String){
+        self.pleaseWait()
+        GetCartListService.shareInstance.getCartList(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            self.clearAllNotice()
+            switch result {
+            case .networkSuccess(let cartList):
+                let cartList = cartList as! [CartVOResult]
+                self.cartListArr = cartList
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
+    
+    func addToCart(url : String, params : [String : Any]){
+        
+       
+    }
+    
+    func deleteFromCart(url : String){
+        self.pleaseWait()
+        AddCartService.shareInstance.deleteCart(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            self.clearAllNotice()
+            switch result {
+            case .networkSuccess(_):
+                self.getCartList(url: UrlPath.cart.getURL())
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
     }
 }
