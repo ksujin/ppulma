@@ -95,7 +95,7 @@ extension MagazineVC : SelectDelegate {
         } else {
             let mainStoryboard = Storyboard.shared().mainStoryboard
             if let detailVC = mainStoryboard.instantiateViewController(withIdentifier:DetailVC.reuseIdentifier) as? DetailVC {
-                
+                detailVC.productIdx =  selected as! String
                 self.navigationController?.pushViewController(detailVC, animated: true)
             }
         }
@@ -154,6 +154,7 @@ extension MagazineVC {
                 let magazineData = magazineData as! [CategoryVOSemiResult]
                 let cell = self.tableView.cellForRow(at: IndexPath(row : 0, section : 0)) as! MagazineFirstTVCell
                 cell.firstDataArr = magazineData
+                cell.collectionView.selectItem(at: IndexPath(row : 0, section : 0), animated: true, scrollPosition: UICollectionViewScrollPosition.centeredVertically)
                 self.categoryIdx = magazineData[0].semiCategoryIdx
                 self.getSemiInfo(url: UrlPath.semiCategory.getURL(magazineData[0].semiCategoryIdx))
             case .networkFail :

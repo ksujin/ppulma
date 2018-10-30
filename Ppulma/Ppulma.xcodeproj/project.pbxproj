@@ -22,6 +22,12 @@
 		3B05B2852177A7A700BB6803 /* GMStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05B2842177A7A700BB6803 /* GMStepper.swift */; };
 		3B05B2882177A8D100BB6803 /* CartVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05B2872177A8D100BB6803 /* CartVC.swift */; };
 		3B05B28A2177A8E800BB6803 /* CartTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B05B2892177A8E800BB6803 /* CartTVCell.swift */; };
+		3B618D3F2188BB0F002AA2D4 /* ProductDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D3E2188BB0F002AA2D4 /* ProductDetailService.swift */; };
+		3B618D412188BB19002AA2D4 /* ProductDetailVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D402188BB19002AA2D4 /* ProductDetailVO.swift */; };
+		3B618D452188BEA6002AA2D4 /* AddCartService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D442188BEA6002AA2D4 /* AddCartService.swift */; };
+		3B618D472188BEE3002AA2D4 /* MessageVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D462188BEE3002AA2D4 /* MessageVO.swift */; };
+		3B618D492188C044002AA2D4 /* GetCartListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D482188C044002AA2D4 /* GetCartListService.swift */; };
+		3B618D4B2188C0A7002AA2D4 /* CartVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D4A2188C0A7002AA2D4 /* CartVO.swift */; };
 		3B7D95982187116E00D63C67 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D95972187116E00D63C67 /* NetworkConfiguration.swift */; };
 		3B7D959A2187118E00D63C67 /* GettableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D95992187118E00D63C67 /* GettableService.swift */; };
 		3B7D959C2187119600D63C67 /* PostableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D959B2187119600D63C67 /* PostableService.swift */; };
@@ -71,6 +77,12 @@
 		3B05B2842177A7A700BB6803 /* GMStepper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMStepper.swift; sourceTree = "<group>"; };
 		3B05B2872177A8D100BB6803 /* CartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVC.swift; sourceTree = "<group>"; };
 		3B05B2892177A8E800BB6803 /* CartTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTVCell.swift; sourceTree = "<group>"; };
+		3B618D3E2188BB0F002AA2D4 /* ProductDetailService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailService.swift; sourceTree = "<group>"; };
+		3B618D402188BB19002AA2D4 /* ProductDetailVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVO.swift; sourceTree = "<group>"; };
+		3B618D442188BEA6002AA2D4 /* AddCartService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCartService.swift; sourceTree = "<group>"; };
+		3B618D462188BEE3002AA2D4 /* MessageVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageVO.swift; sourceTree = "<group>"; };
+		3B618D482188C044002AA2D4 /* GetCartListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCartListService.swift; sourceTree = "<group>"; };
+		3B618D4A2188C0A7002AA2D4 /* CartVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVO.swift; sourceTree = "<group>"; };
 		3B7D95972187116E00D63C67 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		3B7D95992187118E00D63C67 /* GettableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettableService.swift; sourceTree = "<group>"; };
 		3B7D959B2187119600D63C67 /* PostableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostableService.swift; sourceTree = "<group>"; };
@@ -222,6 +234,9 @@
 			children = (
 				3B7D95A62187169D00D63C67 /* CategoryVO.swift */,
 				3B7D95AB21871BDB00D63C67 /* SemiCategoryVO.swift */,
+				3B618D402188BB19002AA2D4 /* ProductDetailVO.swift */,
+				3B618D462188BEE3002AA2D4 /* MessageVO.swift */,
+				3B618D4A2188C0A7002AA2D4 /* CartVO.swift */,
 			);
 			path = VO;
 			sourceTree = "<group>";
@@ -231,6 +246,9 @@
 			children = (
 				3B7D95A92187178000D63C67 /* MagazineService.swift */,
 				3B7D95AD21871C3600D63C67 /* SemiCategoryService.swift */,
+				3B618D3E2188BB0F002AA2D4 /* ProductDetailService.swift */,
+				3B618D442188BEA6002AA2D4 /* AddCartService.swift */,
+				3B618D482188C044002AA2D4 /* GetCartListService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -519,19 +537,24 @@
 				3B05B28A2177A8E800BB6803 /* CartTVCell.swift in Sources */,
 				3B05B27F21777AEF00BB6803 /* MagazineSecondCVCell.swift in Sources */,
 				3B7D95A32187136400D63C67 /* SwiftNotice.swift in Sources */,
+				3B618D472188BEE3002AA2D4 /* MessageVO.swift in Sources */,
 				3B7D95AC21871BDB00D63C67 /* SemiCategoryVO.swift in Sources */,
 				3B05B279217778FC00BB6803 /* ColorChip.swift in Sources */,
 				3BE797332177588D0071AF34 /* ExamplePopupViewController.swift in Sources */,
 				3BD63A19218398C7007F5972 /* SearchResultCVCell.swift in Sources */,
 				3B7D959E2187119E00D63C67 /* HttpResCode.swift in Sources */,
 				3BD63A0C21836961007F5972 /* DetailVC.swift in Sources */,
+				3B618D452188BEA6002AA2D4 /* AddCartService.swift in Sources */,
 				3BB04FB02178D6390096BF4D /* Font.swift in Sources */,
+				3B618D3F2188BB0F002AA2D4 /* ProductDetailService.swift in Sources */,
 				3BD63A0F21837CF0007F5972 /* SearchVC.swift in Sources */,
+				3B618D412188BB19002AA2D4 /* ProductDetailVO.swift in Sources */,
 				3B05B27D21777AE200BB6803 /* MagazineFirstCVCell.swift in Sources */,
 				3B7D95AE21871C3600D63C67 /* SemiCategoryService.swift in Sources */,
 				3B05B26621776C1800BB6803 /* Extensions.swift in Sources */,
 				3B7D959A2187118E00D63C67 /* GettableService.swift in Sources */,
 				3BE79736217767EC0071AF34 /* MainVC.swift in Sources */,
+				3B618D492188C044002AA2D4 /* GetCartListService.swift in Sources */,
 				3BE79723217752A10071AF34 /* ViewController.swift in Sources */,
 				3B05B26421776BFB00BB6803 /* MainTVCell.swift in Sources */,
 				3B7D95AA2187178000D63C67 /* MagazineService.swift in Sources */,
@@ -540,6 +563,7 @@
 				3BE79721217752A10071AF34 /* AppDelegate.swift in Sources */,
 				3B7D95982187116E00D63C67 /* NetworkConfiguration.swift in Sources */,
 				3BD63A152183884E007F5972 /* SearchResultVC.swift in Sources */,
+				3B618D4B2188C0A7002AA2D4 /* CartVO.swift in Sources */,
 				3B7D95A72187169D00D63C67 /* CategoryVO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

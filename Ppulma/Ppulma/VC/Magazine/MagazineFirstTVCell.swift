@@ -102,7 +102,7 @@ extension MagazineFirstTVCell : UICollectionViewDataSource, UICollectionViewDele
         if collectionView == self.collectionView {
             delegate?.tap(section: 0, selected: firstDataArr[indexPath.row].semiCategoryIdx)
         } else {
-             delegate?.tap(section: 1, selected: 0)
+             delegate?.tap(section: 1, selected: secondDataArr[indexPath.row].productIdx)
         }
     }
 }
