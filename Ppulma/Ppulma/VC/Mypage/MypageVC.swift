@@ -18,9 +18,16 @@ class MypageVC: UIViewController {
     @IBOutlet weak var bottomFirstView: UIView!
     @IBOutlet weak var bottomSecondView: UIView!
 
-    let imageArr = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg")]
+    var imgUrlArr : [String] = [] {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
     
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getRecentInfo(url: UrlPath.purchase.getURL())
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(getUserInfo(_:)), name: NSNotification.Name("GetUserValue"), object: nil)
@@ -41,9 +48,19 @@ class MypageVC: UIViewController {
         savedLbl.text = Int(sampleUser.payMoney).withCommas()+"원"
         let maxMoney : Double = 500000
         let payMoney = sampleUser.payMoney
+        yellowView.deactivateAllConstraints()
         if payMoney == 0.0 {
             yellowView.snp.makeConstraints { (make) in
+                make.leading.top.bottom.equalToSuperview()
                 make.width.equalTo(0)
+            }
+            return
+        }
+        
+        if payMoney >= maxMoney {
+            yellowView.snp.makeConstraints { (make) in
+                make.leading.top.bottom.equalToSuperview()
+                make.width.equalToSuperview()
             }
             return
         }
@@ -51,7 +68,8 @@ class MypageVC: UIViewController {
         let ratio =  maxMoney/payMoney
         
         yellowView.snp.makeConstraints { (make) in
-            make.width.equalToSuperview().dividedBy(ratio).offset(10)
+            make.leading.top.bottom.equalToSuperview()
+            make.width.equalToSuperview().dividedBy(ratio)
         }
     }
     
@@ -72,12 +90,12 @@ class MypageVC: UIViewController {
 
 extension MypageVC :  UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageArr.count
+        return imgUrlArr.count
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if let cell: MypageCVCell = collectionView.dequeueReusableCell(withReuseIdentifier: MypageCVCell.reuseIdentifier, for: indexPath) as? MypageCVCell {
-            cell.configure(data: imageArr[indexPath.row])
+            cell.configure(data: imgUrlArr[indexPath.row])
             return cell
         }
         return UICollectionViewCell()
@@ -101,5 +119,28 @@ extension MypageVC: UICollectionViewDelegateFlowLayout {
         return 0
     }
     
+}
+
+//통신
+extension MypageVC {
+    func getRecentInfo(url : String){
+        self.pleaseWait()
+        RecentItemService.shareInstance.getRecentList(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            self.clearAllNotice()
+            switch result {
+            case .networkSuccess(let productData):
+                let productData = productData as! [RecentItemVOResult]
+                self.imgUrlArr = productData.map({ (item) in
+                    item.imgURL[0]
+                })
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
+    }
 }
 
