@@ -12,11 +12,11 @@ struct CartVO: Codable {
     let result: [CartVOResult]
 }
 
-//TODO: - isSelected 추가
 struct CartVOResult: Codable {
     let cartIdx, productIdx, productName: String
     let productImg: String
     let productPrice, productCount: Int
+    var check : Bool
     
     enum CodingKeys: String, CodingKey {
         case cartIdx = "cart_idx"
@@ -25,5 +25,6 @@ struct CartVOResult: Codable {
         case productImg = "product_img"
         case productPrice = "product_price"
         case productCount = "product_count"
+        case check = "check"
     }
 }

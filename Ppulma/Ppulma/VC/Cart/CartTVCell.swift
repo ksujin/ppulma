@@ -20,7 +20,7 @@ class CartTVCell: UITableViewCell {
     @IBOutlet weak var descLbl: UILabel!
     var deleteHandler : ((_ idx : String)->Void)?
     var stepperHandler : ((_ idx: String, _ count : Int)->Void)?
-    var checkDelegate : CheckDelegate?
+    var checkHandler : ((_ idx: String, _ checked : Bool)->Void)?
     var won : Int = 1
     var count : Int = 0
     var myImgView = UIImageView()
@@ -33,28 +33,25 @@ class CartTVCell: UITableViewCell {
         stepper.value = Double(data.productCount)
         count = Int(stepper.value)
         won = data.productPrice
-        checkBtn.tag = row
-        //stepper.leftButton.tag = row
-        //stepper.rightButton.tag = row
+        if data.check {
+            checkBtn.setImage(#imageLiteral(resourceName: "icCheckDone"), for: .normal)
+            checkBtn.tag = 1
+        } else {
+            checkBtn.setImage(#imageLiteral(resourceName: "icCheckBox"), for: .normal)
+            checkBtn.tag = 0
+        }
+       
         stepper.leftButton.accessibilityIdentifier = data.cartIdx
         stepper.rightButton.accessibilityIdentifier = data.cartIdx
         deleteBtn.accessibilityIdentifier = data.cartIdx
-        deleteBtn.tag = row
-        //TODO: - isSelected 속성 주기
+        checkBtn.accessibilityIdentifier = data.cartIdx
     }
-    
-    func selectedConfig(isSelected : Bool){
-        checkBtn.isSelected = isSelected
-    }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         whiteView.fillColor = .white
         stepper.leftButton.addTarget(self, action: #selector(valueChaned(_:)), for: .touchUpInside)
         stepper.rightButton.addTarget(self, action: #selector(valueChaned(_:)), for: .touchUpInside)
-        checkBtn.setImage(UIImage(named: "icCheckBox"), for: .normal)
-        checkBtn.setImage(
-            UIImage(named: "icCheckDone"), for: .selected)
         checkBtn.addTarget(self, action: #selector(checkAction(_:)), for: .touchUpInside)
         deleteBtn.addTarget(self, action: #selector(deleteAction(_:)), for: .touchUpInside)
         //shadow
@@ -67,23 +64,15 @@ class CartTVCell: UITableViewCell {
         goodsOuterView.addSubview(myImgView)
     }
     
-    //checkBtn 클릭
+
     @objc func deleteAction(_ sender : UIButton){
-       
         deleteHandler!(sender.accessibilityIdentifier!)
     }
     
-    //checkBtn 클릭
     @objc func checkAction(_ sender : UIButton){
-        sender.isSelected = !sender.isSelected
-        //0보내지는일 없게 +1 해줌
-        if sender.isSelected {
-            //select
-            checkDelegate?.check(selected: sender.tag+1)
-        } else {
-            //deselect
-            checkDelegate?.check(selected: -(sender.tag+1))
-        }
+        //반대로 바꿔줘야함
+        let checked = sender.tag == 1 ? false : true
+        checkHandler!(sender.accessibilityIdentifier!, checked)
     }
     
     //stepper 클릭

@@ -8,6 +8,7 @@
 
 import UIKit
 
+//TODO:- 1. 검색  2. 체크 결제
 struct SampleCartStruct {
     let name : String
     var value : Int
@@ -20,10 +21,11 @@ struct SampleUserStruct {
     let name : String
     var point : Double
     var saveMoney : Double
+    var payMoney : Double
 }
 
 
-var sampleUser = SampleUserStruct(name: "sujin", point: 100000, saveMoney : 0)
+var sampleUser = SampleUserStruct(name: "sujin", point: 100000, saveMoney : 0, payMoney : 0)
 
 enum SalePercent : Double {
     case zero = 0.0
@@ -60,22 +62,13 @@ class CartVC: UIViewController {
     var cartListArr : [CartVOResult] = [] {
         didSet {
             selectAllLbl.text = "전체 선택 (총 \(cartListArr.count)개)"
-            isSelectedArr = []
-            cartListArr.forEach { (_) in
-                isSelectedArr.append(false)
-            }
+            selectAllLbl.sizeToFit()
             tableView.reloadData()
             self.setPriceLbl()
         }
     }
-    
-   /* var sampleArr : [SampleCartStruct] = [] {
-        didSet {
-            selectAllLbl.text = "전체 선택 (총 \(sampleArr.count)개)"
-        }
-    }*/
-    var isSelectedArr : [Bool] = []
     var willDecrease_ : Double = 0
+    var afterDecrease_ : Double = 0
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -88,75 +81,50 @@ class CartVC: UIViewController {
         tableView.tableFooterView = UIView(frame : .zero)
         purpleTopView.layoutSubviews()
         getCartList(url: UrlPath.cart.getURL())
-       
-       // purpleTopView.makeRounded(cornerRadius: 7)
-        /*let a = SampleCartStruct(name: "커플 머그컵", value: 1, price: 1000, desc: "냥이 I BLUE&PINK", img: #imageLiteral(resourceName: "aimg"))
-        let b = SampleCartStruct(name: "커플 휴대폰 케이스", value: 2, price: 2000, desc: "일러스트1 I BLUE&PINK", img: #imageLiteral(resourceName: "bimg"))
-        let c = SampleCartStruct(name: "커플 카시오 시계", value: 3, price: 3000, desc: "WDFFS21 I 남성&여성", img: #imageLiteral(resourceName: "bimg"))
-        let d = SampleCartStruct(name: "커플 수면 잠옷", value: 1, price: 4000, desc: "여름여름해 I 남성&여성", img: #imageLiteral(resourceName: "aimg"))
-        let e = SampleCartStruct(name: "칸쵸", value: 1, price: 4000, desc: "여름여름해 I 남성&여성", img: #imageLiteral(resourceName: "aimg"))
-        let f = SampleCartStruct(name: "볶음우동", value: 1, price: 4000, desc: "여름여름해 I 남성&여성", img: #imageLiteral(resourceName: "bimg"))
-        sampleArr.append(contentsOf: [a,b,c,d,e,f])*/
-    
-        selectAllLbl.text = "전체 선택 (총 \(cartListArr.count)개)"
-        selectAllLbl.sizeToFit()
+
         selectAllBtn.setImage(UIImage(named: "icCheckBox"), for: .normal)
         selectAllBtn.setImage(
             UIImage(named: "icCheckDone"), for: .selected)
         selectAllBtn.addTarget(self, action: #selector(selectAllAction(_:)), for: .touchUpInside)
-        
-        //처음에 전체 선택
-        selectAllBtn.isSelected = true
-        cartListArr.forEach { (_) in
-            isSelectedArr.append(true)
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         setPriceLbl()
     }
     
-    //TODO:- 체크 되어 있는것 전체삭제
+
     @IBAction func deleteAction(_ sender: Any) {
         let rowNum = tableView.numberOfRows(inSection: 0)
         for row in 0..<rowNum{
             //select되었는지 아닌지 체크
-            let idx = cartListArr[row].cartIdx
-            deleteFromCart(url: UrlPath.cart.getURL(idx))
-        }
-        //setPriceLbl()
-       /* var deleteArr : [SampleCartStruct] = []
-        for section in 0..<tableView.numberOfSections {
-            let rowNum = tableView.numberOfRows(inSection: section)
-            for row in 0..<rowNum{
-                if isSelectedArr[row] {
-                    deleteArr.append(sampleArr[row])
-                }
+            if cartListArr[row].check {
+                let idx = cartListArr[row].cartIdx
+                deleteFromCart(url: UrlPath.cart.getURL(idx))
             }
         }
-         self.tableView.reloadData()
-        //통신
-        print(deleteArr)
-        //통신 완료 후
-        sampleArr = deleteArr
-        isSelectedArr = []
-        sampleArr.forEach { (_) in
-            isSelectedArr.append(false)
-        }
-        tableView.reloadData()
-        setPriceLbl()*/
     }
     
     @IBAction func payAction(_ sender: Any) {
         //TODO:- 체크 되어 있는것 전체 삭제
-        //통신 완료후
+        let rowNum = tableView.numberOfRows(inSection: 0)
+        var idxArr : [String] = []
+        for row in 0..<rowNum{
+            //select되었는지 아닌지 체크
+            if cartListArr[row].check {
+                idxArr.append(cartListArr[row].cartIdx)
+            }
+        }
+        let params : [String : Any] = ["cart_idx" : idxArr]
+        deleteFromCart(url: UrlPath.cart.getURL(), params: params)
+        //원래 통신 완료후
         sampleUser.point -= willDecrease_
         sampleUser.saveMoney += willDecrease_
+        sampleUser.payMoney += afterDecrease_
         NotificationCenter.default.post(name: NSNotification.Name("GetUserValue"), object: nil, userInfo: nil)
         setPriceLbl()
     }
     
-    //TODO:- 체크 통신
+
     @objc func selectAllAction(_ sender : UIButton){
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
@@ -164,14 +132,13 @@ class CartVC: UIViewController {
         } else {
             selectAllRows(selected: false)
         }
-        setPriceLbl()
     }
     
     func selectAllRows(selected : Bool) {
         for section in 0..<tableView.numberOfSections {
             for row in 0..<tableView.numberOfRows(inSection: section) {
-                isSelectedArr[row] = selected
-                tableView.reloadData()
+                let selectedCart = cartListArr[row]
+                updateCheck(idx: selectedCart.cartIdx, checked: selected)
             }
         }
     }
@@ -188,16 +155,13 @@ extension CartVC : UITableViewDelegate, UITableViewDataSource{
         cell.configure(data: cartListArr[indexPath.row], row : indexPath.row)
         cell.stepperHandler = updateStepper
         cell.deleteHandler = deleteCart
-        if isSelectedArr.count > 0 {
-           cell.selectedConfig(isSelected : isSelectedArr[indexPath.row])
-        }
-        cell.checkDelegate = self
+        cell.checkHandler = updateCheck
         return cell
     }
 }
 
-//select Delegate
-extension CartVC : CheckDelegate{
+//closure
+extension CartVC{
     
     func updateStepper(idx: String, count: Int){
         let params : [String : Any] = ["product_count" : count]
@@ -206,27 +170,13 @@ extension CartVC : CheckDelegate{
     }
     
     func deleteCart(idx: String){
-        /* cell.deleteHandler = { (row) in
-         self.cartListArr.remove(at: row)
-         self.isSelectedArr.remove(at: row)
-         self.tableView.reloadData()
-         self.setPriceLbl()
-         }*/
         deleteFromCart(url: UrlPath.cart.getURL(idx))
         setPriceLbl()
     }
-    
-    //2. check 버튼 클릭시
-    //TODO: - 체크 통신
-    func check(selected: Int?) {
-        //deselect 이면 -, select이면 +
-        if selected! > 0 {
-            isSelectedArr[selected!-1] = true
-        } else {
-            isSelectedArr[(-(selected!)-1)] = false
-        }
-        //tap할때마다 통신 성공하면 개수 label 도 바꾸고 totalPrice도 바꿔줌
-        setPriceLbl()
+
+    func updateCheck(idx: String, checked: Bool){
+        let params : [String : Any] = ["check" : checked]
+        updateFromCart(url: UrlPath.cart.getURL(idx), params: params)
     }
 }
 
@@ -244,11 +194,11 @@ extension CartVC {
             willDecrease = sampleUser.point
         }
         willDecrease_ = willDecrease
-        let afterDecrease = Double(totalPrice)-(willDecrease)
+        afterDecrease_ = Double(totalPrice)-(willDecrease)
         
         salePercentLbl.text = salePercent.percentString
         decreasePointLbl.text = Int(willDecrease).withCommas()+"원"
-        afterDecreaseLbl.text = Int(afterDecrease).withCommas()+"원"
+        afterDecreaseLbl.text = Int(afterDecrease_).withCommas()+"원"
         afterDecreaseLbl.sizeToFit()
     }
     
@@ -261,8 +211,7 @@ extension CartVC {
         var selectedCount = 0
         //선택된 아이템들 고름
         for row in 0..<tableView.numberOfRows(inSection: 0) {
-            if isSelectedArr[row] {
-                
+            if cartListArr[row].check {
                 selectedCount += 1
                 let tempItem = tempStruct(price: cartListArr[row].productPrice, count: Int(cartListArr[row].productCount))
                 selectedItem.append(tempItem)
@@ -314,9 +263,10 @@ extension CartVC {
         })
     }
     
-    func deleteFromCart(url : String){
+    func deleteFromCart(url : String, params : [String : Any] = [:]){
         self.pleaseWait()
-        AddCartService.shareInstance.deleteCart(url: url,completion: { [weak self] (result) in
+
+        AddCartService.shareInstance.deleteCart(url: url, params : params, completion: { [weak self] (result) in
             guard let `self` = self else { return }
             self.clearAllNotice()
             switch result {

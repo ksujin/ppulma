@@ -36,8 +36,8 @@ struct AddCartService: PostableService, GettableService {
         
     }
     
-    func deleteCart(url : String, completion : @escaping (NetworkResult<Any>) -> Void){
-        get(url, method: .delete) { (result) in
+    func deleteCart(url : String, params : [String : Any] = [:], completion : @escaping (NetworkResult<Any>) -> Void){
+        get(url, method: .delete, parameters: params) { (result) in
             switch result {
             case .success(let networkResult):
                 switch networkResult.resCode{
