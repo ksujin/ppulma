@@ -10,6 +10,26 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+struct CustomGetEncoding: ParameterEncoding {
+    func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
+        var request = try URLEncoding().encode(urlRequest, with: parameters)
+        request.url = URL(string: request.url!.absoluteString.replacingOccurrences(of: "%5B%5D=", with: "="))
+        return request
+    }
+}
+
+
+// Remove square brackets for POST request
+struct CustomPostEncoding: ParameterEncoding {
+    func encode(_ urlRequest: URLRequestConvertible, with parameters: Parameters?) throws -> URLRequest {
+        //원래 method가 .post 라면 URLEncoding().encode해도 되지만 .delete 이기때문에 httpBody 없어서 터짐. 그래서 url과 파라미터를 이용해 URLEncoding.httpBody 방식으로 인코딩해서 httpBody 뽑아낸 후에 [] 없앰
+        var request = try URLEncoding.httpBody.encode(urlRequest, with: parameters)
+        let httpBody = NSString(data: request.httpBody!, encoding: String.Encoding.utf8.rawValue)!
+        request.httpBody = httpBody.replacingOccurrences(of: "%5B%5D=", with: "=").data(using: .utf8)
+        return request
+    }
+}
+
 protocol GettableService {
     associatedtype NetworkData : Codable
     typealias networkResult = (resCode : Int, resResult : NetworkData)
@@ -39,8 +59,9 @@ extension GettableService {
                 "authorization" : userToken
             ]
         }
-        
-        Alamofire.request(encodedUrl, method: method, parameters: parameters, headers: headers).responseData {(res) in
+
+      
+        Alamofire.request(encodedUrl, method: method, parameters: parameters, encoding : CustomPostEncoding(),headers: headers).validate(contentType: ["application/json"]).responseData {(res) in
             print("encodedURK")
             print(encodedUrl)
             switch res.result {

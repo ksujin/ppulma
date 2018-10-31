@@ -1012,17 +1012,15 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Cp-ec-NX9">
                                         <rect key="frame" x="36" y="247" width="303" height="17"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QpY-bd-5ZE">
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QpY-bd-5ZE">
                                                 <rect key="frame" x="0.0" y="0.0" width="182" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="0.70588235290000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="17" id="4Ll-aZ-pN1"/>
-                                            <constraint firstItem="QpY-bd-5ZE" firstAttribute="top" secondItem="4Cp-ec-NX9" secondAttribute="top" id="BsY-Dh-LQ4"/>
-                                            <constraint firstAttribute="bottom" secondItem="QpY-bd-5ZE" secondAttribute="bottom" id="LYG-Xy-wMp"/>
-                                            <constraint firstItem="QpY-bd-5ZE" firstAttribute="leading" secondItem="4Cp-ec-NX9" secondAttribute="leading" id="aZb-mF-aZW"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="375,500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tP0-MV-Lon">
