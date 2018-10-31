@@ -28,6 +28,12 @@ class DetailVC: UIViewController, UIGestureRecognizerDelegate {
     }
 
     @IBAction func goSaleAction(_ sender: Any) {
+        let mainStoryboard = Storyboard.shared().mainStoryboard
+        if let filterVC = mainStoryboard.instantiateViewController(withIdentifier:FilterVC.reuseIdentifier) as? FilterVC {
+            filterVC.navTitle = "할인정보 안내"
+            filterVC.mainImg = #imageLiteral(resourceName: "saleinfo")
+            self.present(filterVC, animated: true, completion: nil)
+        }
     }
     
     
@@ -52,8 +58,10 @@ extension DetailVC {
                 let data = productData.first!
                 self.titleLbl.text = data.name
                 self.priceLbl.text = data.price.withCommas()+"원"
+                self.salePriceLbl.text =  Int(Double(data.price)*0.85).withCommas()+"원"
                 self.titleImgView.setImgWithKF(url: data.imgURL, defaultImg: #imageLiteral(resourceName: "aimg"))
                 self.detailImgView.setImgWithKF(url: data.detailURL, defaultImg: #imageLiteral(resourceName: "aimg"))
+               
             case .networkFail :
                 self.networkSimpleAlert()
             default :
