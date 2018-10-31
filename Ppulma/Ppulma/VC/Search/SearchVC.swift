@@ -124,14 +124,14 @@ extension SearchVC : UITextFieldDelegate {
     //키보드 엔터 버튼 눌렀을 때
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField.text == "" {
-            simpleAlert(title: "오류", message: "검색어 입력")
+            simpleAlert(title: "오류", message: "검색어를 입력해주세요")
             return false
         }
         
         if let myString = textField.text {
             let emptySpacesCount = myString.components(separatedBy: " ").count-1
             if emptySpacesCount == myString.count {
-                simpleAlert(title: "오류", message: "검색어 입력")
+                simpleAlert(title: "오류", message: "검색어를 입력해주세요")
                 return false
             }
         }

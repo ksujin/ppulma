@@ -30,6 +30,8 @@
 		3B618D4B2188C0A7002AA2D4 /* CartVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D4A2188C0A7002AA2D4 /* CartVO.swift */; };
 		3B618D4E2189B636002AA2D4 /* MypageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D4D2189B636002AA2D4 /* MypageVC.swift */; };
 		3B618D532189BADE002AA2D4 /* MypageCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D522189BADE002AA2D4 /* MypageCVCell.swift */; };
+		3B618D552189FB5F002AA2D4 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D542189FB5F002AA2D4 /* SearchService.swift */; };
+		3B618D572189FBAB002AA2D4 /* SearchVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D562189FBAB002AA2D4 /* SearchVO.swift */; };
 		3B7D95982187116E00D63C67 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D95972187116E00D63C67 /* NetworkConfiguration.swift */; };
 		3B7D959A2187118E00D63C67 /* GettableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D95992187118E00D63C67 /* GettableService.swift */; };
 		3B7D959C2187119600D63C67 /* PostableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D959B2187119600D63C67 /* PostableService.swift */; };
@@ -87,6 +89,8 @@
 		3B618D4A2188C0A7002AA2D4 /* CartVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartVO.swift; sourceTree = "<group>"; };
 		3B618D4D2189B636002AA2D4 /* MypageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageVC.swift; sourceTree = "<group>"; };
 		3B618D522189BADE002AA2D4 /* MypageCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageCVCell.swift; sourceTree = "<group>"; };
+		3B618D542189FB5F002AA2D4 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		3B618D562189FBAB002AA2D4 /* SearchVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVO.swift; sourceTree = "<group>"; };
 		3B7D95972187116E00D63C67 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		3B7D95992187118E00D63C67 /* GettableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettableService.swift; sourceTree = "<group>"; };
 		3B7D959B2187119600D63C67 /* PostableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostableService.swift; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 				3B618D402188BB19002AA2D4 /* ProductDetailVO.swift */,
 				3B618D462188BEE3002AA2D4 /* MessageVO.swift */,
 				3B618D4A2188C0A7002AA2D4 /* CartVO.swift */,
+				3B618D562189FBAB002AA2D4 /* SearchVO.swift */,
 			);
 			path = VO;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				3B618D3E2188BB0F002AA2D4 /* ProductDetailService.swift */,
 				3B618D442188BEA6002AA2D4 /* AddCartService.swift */,
 				3B618D482188C044002AA2D4 /* GetCartListService.swift */,
+				3B618D542189FB5F002AA2D4 /* SearchService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -561,6 +567,7 @@
 				3BD63A0C21836961007F5972 /* DetailVC.swift in Sources */,
 				3B618D452188BEA6002AA2D4 /* AddCartService.swift in Sources */,
 				3BB04FB02178D6390096BF4D /* Font.swift in Sources */,
+				3B618D552189FB5F002AA2D4 /* SearchService.swift in Sources */,
 				3B618D3F2188BB0F002AA2D4 /* ProductDetailService.swift in Sources */,
 				3BD63A0F21837CF0007F5972 /* SearchVC.swift in Sources */,
 				3B618D412188BB19002AA2D4 /* ProductDetailVO.swift in Sources */,
@@ -570,6 +577,7 @@
 				3B05B26621776C1800BB6803 /* Extensions.swift in Sources */,
 				3B7D959A2187118E00D63C67 /* GettableService.swift in Sources */,
 				3BE79736217767EC0071AF34 /* MainVC.swift in Sources */,
+				3B618D572189FBAB002AA2D4 /* SearchVO.swift in Sources */,
 				3B618D492188C044002AA2D4 /* GetCartListService.swift in Sources */,
 				3BE79723217752A10071AF34 /* ViewController.swift in Sources */,
 				3B05B26421776BFB00BB6803 /* MainTVCell.swift in Sources */,

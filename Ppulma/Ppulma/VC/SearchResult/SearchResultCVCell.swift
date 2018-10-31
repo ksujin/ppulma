@@ -15,9 +15,9 @@ class SearchResultCVCell: UICollectionViewCell {
     
     @IBOutlet weak var priceLbl: UILabel!
     
-    func configure(data : SampleSearchResultStruct){
-        itemImgView.image = data.image
-        titleLbl.text = data.title
+    func configure(data : SearchVOResult){
+        itemImgView.setImgWithKF(url: data.imgURL, defaultImg: #imageLiteral(resourceName: "aimg"))
+        titleLbl.text = data.name
         priceLbl.text = data.price.description
     }
     override func awakeFromNib() {

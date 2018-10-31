@@ -8,34 +8,28 @@
 
 import UIKit
 
-struct SampleSearchResultStruct {
-    let title : String
-    let price : Int
-    let image : UIImage
-}
-
 class SearchResultVC: UIViewController, UIGestureRecognizerDelegate {
     
     var searchString = ""
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchField: UITextField!
-    var resultArr : [SampleSearchResultStruct] = []
+    var resultArr : [SearchVOResult] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
+    
     var keyboardDismissGesture: UITapGestureRecognizer?
     override func viewDidLoad() {
         super.viewDidLoad()
         setBackBtn(color: ColorChip.shared().barbuttonColor)
         setupCollectionView()
         setKeyboardSetting()
+        getSearchResult(url: UrlPath.search.getURL(searchString))
         searchField.delegate = self
         searchField.text = searchString
-        
         let cartItem = UIBarButtonItem.itemWith(colorfulImage: #imageLiteral(resourceName: "icCart"), target: self, action: #selector(SearchResultVC.cartAction(_:)))
         self.navigationItem.rightBarButtonItems = [cartItem]
-        
-        let aItem = SampleSearchResultStruct(title: "팔찌", price: 1000, image: #imageLiteral(resourceName: "aimg"))
-        let bItem = SampleSearchResultStruct(title: "목걸이", price: 1000, image: #imageLiteral(resourceName: "aimg"))
-        let cItem = SampleSearchResultStruct(title: "목걸이", price: 1000, image: #imageLiteral(resourceName: "bimg"))
-        resultArr.append(contentsOf: [aItem, bItem, cItem])
         
     }
     
@@ -63,7 +57,7 @@ extension SearchResultVC : UICollectionViewDataSource, UICollectionViewDelegate 
                                                                          withReuseIdentifier: SearchResultHeader.reuseIdentifier,
                                                                          for: indexPath) as! SearchResultHeader
         headerView.filterBtn.addTarget(self, action: #selector(filterAction), for: .touchUpInside)
-
+        
         
         return headerView
     }
@@ -76,7 +70,7 @@ extension SearchResultVC : UICollectionViewDataSource, UICollectionViewDelegate 
             self.present(filterVC, animated: true, completion: nil)
         }
     }
-
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -90,6 +84,7 @@ extension SearchResultVC : UICollectionViewDataSource, UICollectionViewDelegate 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let mainStoryboard = Storyboard.shared().mainStoryboard
         if let detailVC = mainStoryboard.instantiateViewController(withIdentifier:DetailVC.reuseIdentifier) as? DetailVC {
+            detailVC.productIdx = resultArr[indexPath.row].productIdx
             self.navigationController?.pushViewController(detailVC, animated: true)
         }
     }
@@ -181,9 +176,29 @@ extension SearchResultVC : UITextFieldDelegate {
         //있으면 리로드, 없으면 얼러트
         if let searchString_ = textField.text {
             //검색 통신
-             collectionView.reloadData()
+            getSearchResult(url: UrlPath.search.getURL(searchString_))
         }
         
         return true
+    }
+}
+
+extension SearchResultVC {
+    func getSearchResult(url : String){
+        self.pleaseWait()
+        SearchService.shareInstance.getSearchResult(url: url,completion: { [weak self] (result) in
+            guard let `self` = self else { return }
+            self.clearAllNotice()
+            switch result {
+            case .networkSuccess(let searchResult):
+                let searchResult = searchResult as! [SearchVOResult]
+                self.resultArr = searchResult
+            case .networkFail :
+                self.networkSimpleAlert()
+            default :
+                self.simpleAlert(title: "오류", message: "다시 시도해주세요")
+                break
+            }
+        })
     }
 }
