@@ -164,19 +164,19 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가 되신걸 축하합니다!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myN-Si-m2Q">
-                                            <rect key="frame" x="42" y="110.5" width="125.5" height="15.5"/>
+                                            <rect key="frame" x="41.5" y="110.5" width="125.5" height="15.5"/>
                                             <fontDescription key="fontDescription" name="NanumSquareOTFL" family="NanumSquareOTF" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCd-Ji-yha">
-                                            <rect key="frame" x="19" y="103.5" width="13.5" height="22.5"/>
+                                            <rect key="frame" x="19" y="103.5" width="13" height="22.5"/>
                                             <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="20"/>
                                             <color key="textColor" red="0.26274509800000001" green="0.2274509804" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSl-1N-Scf">
-                                            <rect key="frame" x="30.5" y="101" width="8.5" height="15.5"/>
+                                            <rect key="frame" x="30" y="101" width="8.5" height="15.5"/>
                                             <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="14"/>
                                             <color key="textColor" red="0.26274509800000001" green="0.2274509804" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -414,19 +414,19 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5200" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0n-Hh-5uc">
-                                                    <rect key="frame" x="19" y="199" width="30" height="13.5"/>
+                                                    <rect key="frame" x="19" y="199.5" width="30" height="14"/>
                                                     <fontDescription key="fontDescription" name="NanumSquareOTFEB" family="NanumSquareOTF" pointSize="12"/>
                                                     <color key="textColor" red="0.26274509800000001" green="0.2274509804" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[필립스] LED 전구 모음" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leJ-8h-yIK">
-                                                    <rect key="frame" x="19" y="173.5" width="123" height="13.5"/>
+                                                    <rect key="frame" x="19" y="173.5" width="123" height="14"/>
                                                     <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="12"/>
                                                     <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQ9-9G-APe">
-                                                    <rect key="frame" x="50" y="202.5" width="8.5" height="10"/>
+                                                    <rect key="frame" x="50" y="203.5" width="8" height="10"/>
                                                     <fontDescription key="fontDescription" name="NanumSquareOTFEB" family="NanumSquareOTF" pointSize="9"/>
                                                     <color key="textColor" red="0.26274509800000001" green="0.2274509804" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -473,7 +473,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인기순" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dNG-XB-p9r">
-                                            <rect key="frame" x="258" y="4" width="33" height="13.5"/>
+                                            <rect key="frame" x="258" y="4" width="33" height="14"/>
                                             <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="12"/>
                                             <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -578,7 +578,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="필터" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3e-GK-E6O">
-                                <rect key="frame" x="171.5" y="37.5" width="31" height="19"/>
+                                <rect key="frame" x="172.5" y="37.5" width="31" height="19"/>
                                 <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="17"/>
                                 <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -642,7 +642,7 @@
                                                 <constraint firstAttribute="width" secondItem="S15-B9-dkX" secondAttribute="height" multiplier="1:1" id="8WK-hj-ZrB"/>
                                                 <constraint firstAttribute="width" constant="20" id="C6R-fA-VB4"/>
                                             </constraints>
-                                            <state key="normal" image="aimg"/>
+                                            <state key="normal" image="icCheckBox"/>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체선택" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zwq-YL-UTK">
                                             <rect key="frame" x="60" y="135.5" width="55" height="17"/>
@@ -804,7 +804,7 @@
                                                                 <constraint firstAttribute="width" secondItem="Auw-Iw-4Nb" secondAttribute="height" multiplier="1:1" id="1Ly-Zb-2To"/>
                                                                 <constraint firstAttribute="width" constant="20" id="r1i-v8-XVz"/>
                                                             </constraints>
-                                                            <state key="normal" image="aimg"/>
+                                                            <state key="normal" image="icCheckBox"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="냥이 I BLUE&amp;PINK" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2U-Lg-ttd">
                                                             <rect key="frame" x="120" y="36" width="69.5" height="10"/>
@@ -936,6 +936,356 @@
             </objects>
             <point key="canvasLocation" x="1144.8" y="1532.3838080959522"/>
         </scene>
+        <!--마이페이지-->
+        <scene sceneID="65r-gH-ZhH">
+            <objects>
+                <viewController storyboardIdentifier="MypageVC" id="qQ2-kU-TG1" customClass="MypageVC" customModule="Ppulma" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZOV-9X-DUP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5AN-9g-bj5">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="302"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="님" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdP-HD-vvg">
+                                        <rect key="frame" x="108" y="91" width="14" height="17"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="회원등급" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWz-ut-udS">
+                                        <rect key="frame" x="36" y="136" width="44" height="14"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LId-hq-W9Y">
+                                        <rect key="frame" x="33" y="274.5" width="15.5" height="11.5"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마이페이지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zy-LR-Ggl">
+                                        <rect key="frame" x="149.5" y="34" width="77.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="누적 구입액" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fTF-qs-Emg">
+                                        <rect key="frame" x="36" y="217" width="58" height="14"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="niL-GU-N5C">
+                                        <rect key="frame" x="41" y="160" width="20.5" height="33.5"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kCq-kT-QXe">
+                                        <rect key="frame" x="59.5" y="157" width="12" height="22.5"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Seg-43-Eif">
+                                        <rect key="frame" x="228" y="142" width="111" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="111" id="3TK-we-oMQ"/>
+                                            <constraint firstAttribute="height" constant="36" id="yYL-IH-L8E"/>
+                                        </constraints>
+                                        <state key="normal" image="showLevel"/>
+                                        <connections>
+                                            <action selector="showClassBenefitAction:" destination="qQ2-kU-TG1" eventType="touchUpInside" id="dle-B5-NG1"/>
+                                        </connections>
+                                    </button>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpc-lT-XTq">
+                                        <rect key="frame" x="29" y="199.5" width="319" height="0.5"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="5Y6-XG-Apb"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Cp-ec-NX9">
+                                        <rect key="frame" x="36" y="247" width="303" height="17"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QpY-bd-5ZE">
+                                                <rect key="frame" x="0.0" y="0.0" width="182" height="17"/>
+                                                <color key="backgroundColor" red="1" green="0.70588235290000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="4Ll-aZ-pN1"/>
+                                            <constraint firstItem="QpY-bd-5ZE" firstAttribute="top" secondItem="4Cp-ec-NX9" secondAttribute="top" id="BsY-Dh-LQ4"/>
+                                            <constraint firstAttribute="bottom" secondItem="QpY-bd-5ZE" secondAttribute="bottom" id="LYG-Xy-wMp"/>
+                                            <constraint firstItem="QpY-bd-5ZE" firstAttribute="leading" secondItem="4Cp-ec-NX9" secondAttribute="leading" id="aZb-mF-aZW"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="375,500원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tP0-MV-Lon">
+                                        <rect key="frame" x="101" y="217" width="58.5" height="14"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="12"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icSetting" translatesAutoresizingMaskIntoConstraints="NO" id="Bbx-1N-8lF">
+                                        <rect key="frame" x="327" y="26" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="36" id="lUK-I6-4Eo"/>
+                                            <constraint firstAttribute="width" constant="36" id="tsM-rt-qkd"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="500,000만원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGD-mO-ESE">
+                                        <rect key="frame" x="282" y="274.5" width="57" height="11.5"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="++" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNh-al-V07">
+                                        <rect key="frame" x="311" y="232.5" width="7.5" height="7"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="6"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5b3-7J-aOQ">
+                                        <rect key="frame" x="305" y="233.5" width="7" height="11.5"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="승격" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhE-vx-jlw">
+                                        <rect key="frame" x="320.5" y="233.5" width="18.5" height="11.5"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="10"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.26274509800000001" green="0.2274509804" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="jGD-mO-ESE" firstAttribute="centerY" secondItem="LId-hq-W9Y" secondAttribute="centerY" id="00w-uR-vSB"/>
+                                    <constraint firstItem="IWz-ut-udS" firstAttribute="leading" secondItem="5AN-9g-bj5" secondAttribute="leading" constant="36" id="1hs-Qx-laW"/>
+                                    <constraint firstItem="tpc-lT-XTq" firstAttribute="leading" secondItem="5AN-9g-bj5" secondAttribute="leading" constant="29" id="22a-pU-RF5"/>
+                                    <constraint firstItem="pNh-al-V07" firstAttribute="leading" secondItem="5b3-7J-aOQ" secondAttribute="trailing" constant="-1" id="2lz-2a-oLR"/>
+                                    <constraint firstItem="niL-GU-N5C" firstAttribute="top" secondItem="IWz-ut-udS" secondAttribute="bottom" constant="10" id="3f7-5K-L62"/>
+                                    <constraint firstItem="4Cp-ec-NX9" firstAttribute="top" secondItem="rhE-vx-jlw" secondAttribute="bottom" constant="2" id="5bd-IM-f3d"/>
+                                    <constraint firstItem="tP0-MV-Lon" firstAttribute="centerY" secondItem="fTF-qs-Emg" secondAttribute="centerY" id="A1k-cY-tal"/>
+                                    <constraint firstAttribute="trailing" secondItem="Bbx-1N-8lF" secondAttribute="trailing" constant="12" id="AJY-qZ-3cv"/>
+                                    <constraint firstAttribute="bottom" secondItem="LId-hq-W9Y" secondAttribute="bottom" constant="16" id="CIr-Nk-NO6"/>
+                                    <constraint firstItem="LId-hq-W9Y" firstAttribute="leading" secondItem="5AN-9g-bj5" secondAttribute="leading" constant="33" id="CRN-uV-1Kq"/>
+                                    <constraint firstAttribute="trailing" secondItem="rhE-vx-jlw" secondAttribute="trailing" constant="36" id="F1M-AS-APa"/>
+                                    <constraint firstItem="5b3-7J-aOQ" firstAttribute="centerY" secondItem="rhE-vx-jlw" secondAttribute="centerY" id="GiQ-s9-7UZ"/>
+                                    <constraint firstItem="fTF-qs-Emg" firstAttribute="leading" secondItem="5AN-9g-bj5" secondAttribute="leading" constant="36" id="M42-n1-qO4"/>
+                                    <constraint firstItem="Seg-43-Eif" firstAttribute="centerY" secondItem="niL-GU-N5C" secondAttribute="top" id="Mgg-cm-kbO"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tP0-MV-Lon" secondAttribute="trailing" constant="27" id="P2i-ag-Ota"/>
+                                    <constraint firstItem="pNh-al-V07" firstAttribute="top" secondItem="5b3-7J-aOQ" secondAttribute="top" constant="-1" id="UEx-i9-8mm"/>
+                                    <constraint firstItem="4Cp-ec-NX9" firstAttribute="leading" secondItem="5AN-9g-bj5" secondAttribute="leading" constant="36" id="Yfk-YY-nY7"/>
+                                    <constraint firstItem="niL-GU-N5C" firstAttribute="leading" secondItem="5AN-9g-bj5" secondAttribute="leading" constant="41" id="ZYx-ql-fAx"/>
+                                    <constraint firstAttribute="trailing" secondItem="Seg-43-Eif" secondAttribute="trailing" constant="36" id="ZsS-RE-tSe"/>
+                                    <constraint firstItem="kCq-kT-QXe" firstAttribute="top" secondItem="niL-GU-N5C" secondAttribute="top" constant="-3" id="aBb-dn-iUf"/>
+                                    <constraint firstAttribute="height" constant="302" id="acz-BS-Gdf"/>
+                                    <constraint firstItem="7zy-LR-Ggl" firstAttribute="centerX" secondItem="5AN-9g-bj5" secondAttribute="centerX" id="e7K-e1-0vJ"/>
+                                    <constraint firstItem="rhE-vx-jlw" firstAttribute="leading" secondItem="pNh-al-V07" secondAttribute="trailing" constant="2" id="eJq-ur-mop"/>
+                                    <constraint firstItem="4Cp-ec-NX9" firstAttribute="top" secondItem="tP0-MV-Lon" secondAttribute="bottom" constant="16" id="h6K-tK-23j"/>
+                                    <constraint firstAttribute="trailing" secondItem="tpc-lT-XTq" secondAttribute="trailing" constant="27" id="oTx-mw-cQJ"/>
+                                    <constraint firstItem="Bbx-1N-8lF" firstAttribute="centerY" secondItem="7zy-LR-Ggl" secondAttribute="centerY" id="ohk-65-hrZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="jGD-mO-ESE" secondAttribute="trailing" constant="36" id="oyb-7g-qPx"/>
+                                    <constraint firstItem="kCq-kT-QXe" firstAttribute="leading" secondItem="niL-GU-N5C" secondAttribute="trailing" constant="-2" id="p8g-qO-MYy"/>
+                                    <constraint firstItem="IWz-ut-udS" firstAttribute="top" secondItem="SdP-HD-vvg" secondAttribute="bottom" constant="28" id="qDy-v2-AOc"/>
+                                    <constraint firstItem="7zy-LR-Ggl" firstAttribute="top" secondItem="5AN-9g-bj5" secondAttribute="top" constant="34" id="qbZ-H2-0fS"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Cp-ec-NX9" secondAttribute="trailing" constant="36" id="tab-oA-mPd"/>
+                                    <constraint firstItem="tP0-MV-Lon" firstAttribute="leading" secondItem="fTF-qs-Emg" secondAttribute="trailing" constant="7" id="uIa-Gs-idQ"/>
+                                    <constraint firstItem="tpc-lT-XTq" firstAttribute="top" secondItem="niL-GU-N5C" secondAttribute="bottom" constant="6" id="wTm-zH-FHj"/>
+                                    <constraint firstItem="fTF-qs-Emg" firstAttribute="top" secondItem="tpc-lT-XTq" secondAttribute="bottom" constant="17" id="z7e-sN-GF9"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강수진" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BST-se-URu">
+                                <rect key="frame" x="29" y="81" width="74" height="30"/>
+                                <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="27"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 구매내역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnl-Bw-PwP">
+                                <rect key="frame" x="36" y="323" width="86" height="17"/>
+                                <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="15"/>
+                                <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="sFG-Vv-ooe">
+                                <rect key="frame" x="0.0" y="351" width="375" height="72"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="72" id="ZAe-Hz-ECT"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="18F-Pf-Hlv">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="29" minY="0.0" maxX="29" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MypageCVCell" id="hLU-If-6WD" customClass="MypageCVCell" customModule="Ppulma" customModuleProvider="target">
+                                        <rect key="frame" x="29" y="0.0" width="72" height="72"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W4O-8e-bXZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="72" height="72"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="W4O-8e-bXZ" secondAttribute="height" multiplier="1:1" id="fBl-Zh-pG1"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="W4O-8e-bXZ" secondAttribute="trailing" id="T3C-lr-ejS"/>
+                                            <constraint firstAttribute="bottom" secondItem="W4O-8e-bXZ" secondAttribute="bottom" id="fV0-Md-wcT"/>
+                                            <constraint firstItem="W4O-8e-bXZ" firstAttribute="leading" secondItem="hLU-If-6WD" secondAttribute="leading" id="hOA-0Z-Yeo"/>
+                                            <constraint firstItem="W4O-8e-bXZ" firstAttribute="top" secondItem="hLU-If-6WD" secondAttribute="top" id="kHv-9G-LXm"/>
+                                        </constraints>
+                                        <size key="customSize" width="72" height="72"/>
+                                        <connections>
+                                            <outlet property="myImgView" destination="W4O-8e-bXZ" id="rt9-3V-OAg"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f50-bO-pv1">
+                                <rect key="frame" x="-1" y="444" width="377" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="전체 구매 내역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef9-yo-hbO">
+                                        <rect key="frame" x="36" y="16" width="89.5" height="17"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="15"/>
+                                        <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O90-mD-dPI">
+                                        <rect key="frame" x="329.5" y="13.5" width="22.5" height="22.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22.5" id="ILU-Ms-c08"/>
+                                            <constraint firstAttribute="height" constant="22.5" id="UrM-Ha-E4W"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="ef9-yo-hbO" firstAttribute="leading" secondItem="f50-bO-pv1" secondAttribute="leading" constant="36" id="PSh-ll-mYh"/>
+                                    <constraint firstItem="O90-mD-dPI" firstAttribute="centerY" secondItem="f50-bO-pv1" secondAttribute="centerY" id="fl7-uK-3WQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="O90-mD-dPI" secondAttribute="trailing" constant="25" id="iy7-hU-8CQ"/>
+                                    <constraint firstAttribute="height" constant="49" id="pGb-uT-3hy"/>
+                                    <constraint firstItem="ef9-yo-hbO" firstAttribute="centerY" secondItem="f50-bO-pv1" secondAttribute="centerY" id="vWR-jk-MEh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vzD-ZO-vmq">
+                                <rect key="frame" x="-1" y="492" width="377" height="49"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="고객센터" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rM0-SI-4GK">
+                                        <rect key="frame" x="36" y="16" width="55" height="17"/>
+                                        <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="15"/>
+                                        <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hyf-xn-gZ7">
+                                        <rect key="frame" x="329.5" y="13.5" width="22.5" height="22.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22.5" id="DJI-GN-lQy"/>
+                                            <constraint firstAttribute="height" constant="22.5" id="Omn-xR-6fs"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="rM0-SI-4GK" firstAttribute="centerY" secondItem="vzD-ZO-vmq" secondAttribute="centerY" id="Eji-wL-8ZI"/>
+                                    <constraint firstItem="rM0-SI-4GK" firstAttribute="leading" secondItem="vzD-ZO-vmq" secondAttribute="leading" constant="36" id="Oyr-Ig-pcF"/>
+                                    <constraint firstAttribute="height" constant="49" id="S7C-Fk-vVP"/>
+                                    <constraint firstAttribute="trailing" secondItem="hyf-xn-gZ7" secondAttribute="trailing" constant="25" id="dXD-cf-aEj"/>
+                                    <constraint firstItem="hyf-xn-gZ7" firstAttribute="centerY" secondItem="vzD-ZO-vmq" secondAttribute="centerY" id="jzE-AK-53T"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vzD-ZO-vmq" firstAttribute="leading" secondItem="43q-Gi-jtN" secondAttribute="leading" constant="-1" id="1nv-TY-SaH"/>
+                            <constraint firstAttribute="trailing" secondItem="vzD-ZO-vmq" secondAttribute="trailing" constant="-1" id="2Im-BP-zQS"/>
+                            <constraint firstItem="vzD-ZO-vmq" firstAttribute="top" secondItem="f50-bO-pv1" secondAttribute="bottom" constant="-1" id="8mh-Ot-weK"/>
+                            <constraint firstItem="sFG-Vv-ooe" firstAttribute="top" secondItem="xnl-Bw-PwP" secondAttribute="bottom" constant="11" id="99W-A8-k7g"/>
+                            <constraint firstItem="SdP-HD-vvg" firstAttribute="bottom" secondItem="BST-se-URu" secondAttribute="bottom" constant="-3" id="9vE-Wt-Qoe"/>
+                            <constraint firstItem="BST-se-URu" firstAttribute="top" secondItem="7zy-LR-Ggl" secondAttribute="bottom" constant="28" id="Az7-RQ-caG"/>
+                            <constraint firstItem="BST-se-URu" firstAttribute="leading" secondItem="43q-Gi-jtN" secondAttribute="leading" constant="29" id="CyF-KB-hsW"/>
+                            <constraint firstItem="xnl-Bw-PwP" firstAttribute="top" secondItem="5AN-9g-bj5" secondAttribute="bottom" constant="21" id="FGE-uu-EWh"/>
+                            <constraint firstItem="5AN-9g-bj5" firstAttribute="top" secondItem="ZOV-9X-DUP" secondAttribute="top" id="PQ8-eh-wTj"/>
+                            <constraint firstItem="xnl-Bw-PwP" firstAttribute="leading" secondItem="43q-Gi-jtN" secondAttribute="leading" constant="36" id="TLk-yc-ETr"/>
+                            <constraint firstItem="sFG-Vv-ooe" firstAttribute="leading" secondItem="43q-Gi-jtN" secondAttribute="leading" id="U4A-AU-qlz"/>
+                            <constraint firstItem="5AN-9g-bj5" firstAttribute="leading" secondItem="43q-Gi-jtN" secondAttribute="leading" id="bcV-7x-lAv"/>
+                            <constraint firstItem="f50-bO-pv1" firstAttribute="top" secondItem="sFG-Vv-ooe" secondAttribute="bottom" constant="21" id="cPu-8l-5sb"/>
+                            <constraint firstItem="SdP-HD-vvg" firstAttribute="leading" secondItem="BST-se-URu" secondAttribute="trailing" constant="5" id="d0P-TV-tbX"/>
+                            <constraint firstItem="43q-Gi-jtN" firstAttribute="trailing" secondItem="sFG-Vv-ooe" secondAttribute="trailing" id="f4H-rJ-CSr"/>
+                            <constraint firstItem="43q-Gi-jtN" firstAttribute="trailing" secondItem="5AN-9g-bj5" secondAttribute="trailing" id="fwE-ej-aMS"/>
+                            <constraint firstItem="f50-bO-pv1" firstAttribute="leading" secondItem="43q-Gi-jtN" secondAttribute="leading" constant="-1" id="gOL-8N-2er"/>
+                            <constraint firstItem="43q-Gi-jtN" firstAttribute="trailing" secondItem="f50-bO-pv1" secondAttribute="trailing" constant="-1" id="gfk-Bt-XIt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="43q-Gi-jtN"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="마이페이지" id="eCW-nD-AYA"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="bottomFirstView" destination="f50-bO-pv1" id="LXj-VJ-Wj2"/>
+                        <outlet property="bottomSecondView" destination="vzD-ZO-vmq" id="C02-bB-nov"/>
+                        <outlet property="collectionView" destination="sFG-Vv-ooe" id="O6S-Wx-8xp"/>
+                        <outlet property="savedLbl" destination="tP0-MV-Lon" id="eyV-gc-S55"/>
+                        <outlet property="whiteView" destination="4Cp-ec-NX9" id="dCi-kQ-bdD"/>
+                        <outlet property="yellowView" destination="QpY-bd-5ZE" id="Uq1-ME-MoE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dHo-A4-Tz9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252" y="2256.521739130435"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="3XW-FC-j9K">
+            <objects>
+                <viewController id="eIv-g4-uNl" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ziE-uE-DZf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="PKM-SL-Od2"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="I5b-j9-z3K"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Fn-Jc-6ib" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1623.2" y="2908.6956521739135"/>
+        </scene>
+        <!--Benefit InfoVC-->
+        <scene sceneID="rKb-Wu-frX">
+            <objects>
+                <viewController storyboardIdentifier="BenefitInfoVC" id="HtZ-c0-Q5W" customClass="BenefitInfoVC" customModule="Ppulma" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5on-NZ-xa5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tek-0V-Kgt">
+                                <rect key="frame" x="135" y="373" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="MXI-dy-PA8"/>
+                    </view>
+                    <connections>
+                        <outlet property="benefitImgView" destination="tek-0V-Kgt" id="a4H-of-5te"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qfg-hr-5eu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1863" y="2257"/>
+        </scene>
         <!--MagazineVC-->
         <scene sceneID="w6L-cN-4d3">
             <objects>
@@ -1014,7 +1364,7 @@
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1oH-OK-keZ">
-                                                                        <rect key="frame" x="8" y="133.5" width="48" height="13.5"/>
+                                                                        <rect key="frame" x="8" y="133" width="48" height="14"/>
                                                                         <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="12"/>
                                                                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -1027,7 +1377,7 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="호박모자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ivi-gl-KIK">
-                                                                        <rect key="frame" x="8" y="115" width="94" height="11.5"/>
+                                                                        <rect key="frame" x="8" y="115" width="94" height="12"/>
                                                                         <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="10"/>
                                                                         <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                         <nil key="highlightedColor"/>
@@ -1174,13 +1524,13 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="브리이에 벨벳 극세사 수면 커플 잠옷세트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T03-8J-WhW">
-                                                <rect key="frame" x="18" y="261" width="235" height="16"/>
+                                                <rect key="frame" x="18" y="261" width="234.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="14"/>
                                                 <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mXv-7q-gIn">
-                                                <rect key="frame" x="18" y="292.5" width="76" height="21"/>
+                                                <rect key="frame" x="18" y="292.5" width="75.5" height="21"/>
                                                 <fontDescription key="fontDescription" name="NanumSquareOTFB" family="NanumSquareOTF" pointSize="19"/>
                                                 <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1200,13 +1550,13 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최대 할인가" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqh-rL-cqd">
-                                                <rect key="frame" x="18" y="348" width="58" height="13.5"/>
+                                                <rect key="frame" x="18" y="348" width="58" height="14"/>
                                                 <fontDescription key="fontDescription" name="NanumSquareOTFR" family="NanumSquareOTF" pointSize="12"/>
                                                 <color key="textColor" red="0.26274509800000001" green="0.26274509800000001" blue="0.26274509800000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cBE-SI-cNh">
-                                                <rect key="frame" x="18" y="381" width="339" height="46"/>
+                                                <rect key="frame" x="18" y="381.5" width="339" height="46"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="46" id="bsa-Fe-TLY"/>
                                                 </constraints>
@@ -1225,7 +1575,7 @@
                                                 <rect key="frame" x="0.0" y="497.5" width="375" height="1"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19750원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZI5-bG-gAH">
-                                                <rect key="frame" x="84" y="346" width="64.5" height="18"/>
+                                                <rect key="frame" x="84" y="346.5" width="64.5" height="18"/>
                                                 <fontDescription key="fontDescription" name="NanumSquareOTFEB" family="NanumSquareOTF" pointSize="16"/>
                                                 <color key="textColor" red="0.26274509800000001" green="0.2274509804" blue="0.6705882353" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1346,7 +1696,7 @@
         <scene sceneID="snf-Wh-9C5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eHj-ps-B8S" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="홈" id="gP9-Wd-VZf"/>
+                    <tabBarItem key="tabBarItem" title="홈" image="t_homeGray" selectedImage="t_homePurple" id="gP9-Wd-VZf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="cPT-Pe-sDG">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1379,17 +1729,18 @@
                     <connections>
                         <segue destination="eHj-ps-B8S" kind="relationship" relationship="viewControllers" id="7Kj-On-UOi"/>
                         <segue destination="g8W-in-sgo" kind="relationship" relationship="viewControllers" id="waO-NA-kZG"/>
+                        <segue destination="qvJ-QK-nzG" kind="relationship" relationship="viewControllers" id="o8o-Wq-J6s"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gye-Pk-Ufe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-307.19999999999999" y="798.80059970014997"/>
+            <point key="canvasLocation" x="-626" y="1512"/>
         </scene>
         <!--장바구니-->
         <scene sceneID="oGX-oY-LW8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g8W-in-sgo" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="장바구니" id="Q3H-bq-1Kd"/>
+                    <tabBarItem key="tabBarItem" title="장바구니" image="t_cartGray" id="Q3H-bq-1Kd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4y4-GP-adO">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1406,16 +1757,40 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hyY-fn-C5U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="446" y="1534"/>
+            <point key="canvasLocation" x="372" y="1532"/>
+        </scene>
+        <!--마이페이지-->
+        <scene sceneID="e1y-3b-at8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qvJ-QK-nzG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="마이페이지" image="t_mypageGray" selectedImage="t_mypagePurple" id="beu-XZ-8eY"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="BGq-tV-5rR">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.018996147260273974" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qQ2-kU-TG1" kind="relationship" relationship="rootViewController" id="3VV-GN-wmb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Vt-Bc-bek" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="332" y="2257"/>
         </scene>
     </scenes>
     <resources>
-        <image name="aimg" width="303" height="204"/>
         <image name="bimg" width="530" height="530"/>
         <image name="cBackImg" width="1" height="1"/>
         <image name="icAddCartBtn" width="199" height="46"/>
         <image name="icBell" width="36" height="36"/>
         <image name="icCancle" width="24" height="24"/>
+        <image name="icCheckBox" width="20" height="20"/>
         <image name="icDismiss" width="36" height="36"/>
         <image name="icDownArrow" width="24" height="24"/>
         <image name="icFilter" width="24" height="24"/>
@@ -1425,6 +1800,7 @@
         <image name="icReviewBtn" width="128" height="46"/>
         <image name="icSaleInfo" width="338" height="46"/>
         <image name="icSearch" width="37" height="37"/>
+        <image name="icSetting" width="36" height="36"/>
         <image name="icTrash" width="25" height="25"/>
         <image name="payBackground" width="375" height="73"/>
         <image name="planLove" width="338" height="83"/>
@@ -1432,5 +1808,11 @@
         <image name="purpleBackground" width="375" height="255"/>
         <image name="searchField" width="273" height="28"/>
         <image name="searchImgView" width="375" height="538"/>
+        <image name="showLevel" width="111" height="36"/>
+        <image name="t_cartGray" width="25" height="25"/>
+        <image name="t_homeGray" width="25" height="25"/>
+        <image name="t_homePurple" width="25" height="25"/>
+        <image name="t_mypageGray" width="25" height="25"/>
+        <image name="t_mypagePurple" width="25" height="25"/>
     </resources>
 </document>
