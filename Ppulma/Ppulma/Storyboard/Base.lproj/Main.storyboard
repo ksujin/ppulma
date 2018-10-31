@@ -612,7 +612,9 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
+                        <outlet property="dismissBtn" destination="rNT-Cd-r57" id="vkX-7d-S8S"/>
                         <outlet property="mainImgView" destination="ddb-NN-hbl" id="KB1-N7-v4g"/>
+                        <outlet property="navLine" destination="13N-Bg-tNJ" id="oTy-NM-HVj"/>
                         <outlet property="titleLbl" destination="j3e-GK-E6O" id="gL9-hg-aVk"/>
                     </connections>
                 </viewController>
@@ -1262,30 +1264,6 @@
             </objects>
             <point key="canvasLocation" x="1623.2" y="2908.6956521739135"/>
         </scene>
-        <!--Benefit InfoVC-->
-        <scene sceneID="rKb-Wu-frX">
-            <objects>
-                <viewController storyboardIdentifier="BenefitInfoVC" id="HtZ-c0-Q5W" customClass="BenefitInfoVC" customModule="Ppulma" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="5on-NZ-xa5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tek-0V-Kgt">
-                                <rect key="frame" x="135" y="373" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="MXI-dy-PA8"/>
-                    </view>
-                    <connections>
-                        <outlet property="benefitImgView" destination="tek-0V-Kgt" id="a4H-of-5te"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="qfg-hr-5eu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1863" y="2257"/>
-        </scene>
         <!--MagazineVC-->
         <scene sceneID="w6L-cN-4d3">
             <objects>
@@ -1762,11 +1740,10 @@
         <!--마이페이지-->
         <scene sceneID="e1y-3b-at8">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qvJ-QK-nzG" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="qvJ-QK-nzG" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="마이페이지" image="t_mypageGray" selectedImage="t_mypagePurple" id="beu-XZ-8eY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="BGq-tV-5rR">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.018996147260273974" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

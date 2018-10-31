@@ -99,6 +99,7 @@ extension MainVC : UITableViewDelegate, UITableViewDataSource{
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row != 0 {return}
         let mainStoryboard = Storyboard.shared().mainStoryboard
         if let magazineVC = mainStoryboard.instantiateViewController(withIdentifier:MagazineVC.reuseIdentifier) as? MagazineVC {
             magazineVC.topImg = mainArr[indexPath.row].backgroundImg
