@@ -17,22 +17,9 @@ class MypageVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var bottomFirstView: UIView!
     @IBOutlet weak var bottomSecondView: UIView!
-    
-    
-    
+
     let imageArr = [#imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "aimg"), #imageLiteral(resourceName: "bimg"), #imageLiteral(resourceName: "bimg")]
     
-    
-    //hide Navigation Bar only on first page
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,18 +38,17 @@ class MypageVC: UIViewController {
     }
     
     func setUserInfo(){
-        savedLbl.text = Int(sampleUser.saveMoney).withCommas()+"원"
+        savedLbl.text = Int(sampleUser.payMoney).withCommas()+"원"
         let maxMoney : Double = 500000
-        let saveMoney = sampleUser.saveMoney
-        print(saveMoney)
-        if saveMoney == 0.0 {
+        let payMoney = sampleUser.payMoney
+        if payMoney == 0.0 {
             yellowView.snp.makeConstraints { (make) in
                 make.width.equalTo(0)
             }
             return
         }
         
-        let ratio =  maxMoney/saveMoney
+        let ratio =  maxMoney/payMoney
         
         yellowView.snp.makeConstraints { (make) in
             make.width.equalToSuperview().dividedBy(ratio).offset(10)
@@ -75,9 +61,10 @@ class MypageVC: UIViewController {
     
     @IBAction func showClassBenefitAction(_ sender: Any) {
         let mainStoryboard = Storyboard.shared().mainStoryboard
-        if let benefitInfoVC = mainStoryboard.instantiateViewController(withIdentifier:BenefitInfoVC.reuseIdentifier) as? BenefitInfoVC {
-            // benefitInfoVC.entryPoint = 1
-            self.navigationController?.pushViewController(benefitInfoVC, animated: true)
+        if let filterVC = mainStoryboard.instantiateViewController(withIdentifier:FilterVC.reuseIdentifier) as? FilterVC {
+            filterVC.navTitle = "회원레벨 안내"
+            filterVC.mainImg = #imageLiteral(resourceName: "levelinfo")
+            self.present(filterVC, animated: true, completion: nil)
         }
     }
     
