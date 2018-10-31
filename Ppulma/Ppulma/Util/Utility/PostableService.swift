@@ -41,7 +41,7 @@ extension PostableService {
             ]
         }
         
-        Alamofire.request(encodedUrl, method: method, parameters: params, encoding: JSONEncoding.default, headers: headers).responseData(){
+        Alamofire.request(encodedUrl, method: method, parameters: params, encoding: CustomPostEncoding(), headers: headers).responseData(){
             res in
             switch res.result {
             case .success:

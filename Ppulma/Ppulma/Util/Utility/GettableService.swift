@@ -61,7 +61,7 @@ extension GettableService {
         }
 
       
-        Alamofire.request(encodedUrl, method: method, parameters: parameters, encoding : CustomPostEncoding(),headers: headers).validate(contentType: ["application/json"]).responseData {(res) in
+        Alamofire.request(encodedUrl, method: method, parameters: parameters, encoding : CustomPostEncoding(),headers: headers).responseData {(res) in
             print("encodedURK")
             print(encodedUrl)
             switch res.result {

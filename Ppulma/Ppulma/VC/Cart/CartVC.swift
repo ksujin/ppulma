@@ -69,7 +69,7 @@ class CartVC: UIViewController {
     }
     var willDecrease_ : Double = 0
     var afterDecrease_ : Double = 0
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         getCartList(url: UrlPath.cart.getURL())
@@ -81,7 +81,7 @@ class CartVC: UIViewController {
         tableView.tableFooterView = UIView(frame : .zero)
         purpleTopView.layoutSubviews()
         getCartList(url: UrlPath.cart.getURL())
-
+        
         selectAllBtn.setImage(UIImage(named: "icCheckBox"), for: .normal)
         selectAllBtn.setImage(
             UIImage(named: "icCheckDone"), for: .selected)
@@ -92,7 +92,7 @@ class CartVC: UIViewController {
         setPriceLbl()
     }
     
-
+    
     @IBAction func deleteAction(_ sender: Any) {
         let rowNum = tableView.numberOfRows(inSection: 0)
         for row in 0..<rowNum{
@@ -117,14 +117,14 @@ class CartVC: UIViewController {
         let params : [String : Any] = ["cart_idx" : idxArr]
         deleteFromCart(url: UrlPath.cart.getURL(), params: params)
         //원래 통신 완료후
-        sampleUser.point -= willDecrease_
-        sampleUser.saveMoney += willDecrease_
-        sampleUser.payMoney += afterDecrease_
-        NotificationCenter.default.post(name: NSNotification.Name("GetUserValue"), object: nil, userInfo: nil)
-        setPriceLbl()
+        //        sampleUser.point -= willDecrease_
+        //        sampleUser.saveMoney += willDecrease_
+        //        sampleUser.payMoney += afterDecrease_
+        //        NotificationCenter.default.post(name: NSNotification.Name("GetUserValue"), object: nil, userInfo: nil)
+        //        setPriceLbl()
     }
     
-
+    
     @objc func selectAllAction(_ sender : UIButton){
         sender.isSelected = !sender.isSelected
         if sender.isSelected {
@@ -173,7 +173,7 @@ extension CartVC{
         deleteFromCart(url: UrlPath.cart.getURL(idx))
         setPriceLbl()
     }
-
+    
     func updateCheck(idx: String, checked: Bool){
         let params : [String : Any] = ["check" : checked]
         updateFromCart(url: UrlPath.cart.getURL(idx), params: params)
@@ -187,7 +187,7 @@ extension CartVC {
         let currentTotal = getSelectedTotalPrice()
         let totalPrice = currentTotal.price
         let salePercent = currentTotal.salePercent
- 
+        
         //유저가 들고 있는 포인트보다 더 커지면 안됨
         var willDecrease = Double(totalPrice)*salePercent.rawValue
         if willDecrease > sampleUser.point {
@@ -262,16 +262,23 @@ extension CartVC {
             }
         })
     }
-    
+
     func deleteFromCart(url : String, params : [String : Any] = [:]){
         self.pleaseWait()
-
         AddCartService.shareInstance.deleteCart(url: url, params : params, completion: { [weak self] (result) in
             guard let `self` = self else { return }
             self.clearAllNotice()
             switch result {
             case .networkSuccess(_):
                 self.getCartList(url: UrlPath.cart.getURL())
+                if (params.count > 0){
+                   //결제했을 경우
+                   sampleUser.point -= self.willDecrease_
+                   sampleUser.saveMoney += self.willDecrease_
+                   sampleUser.payMoney += self.afterDecrease_
+                    NotificationCenter.default.post(name: NSNotification.Name("GetUserValue"), object: nil, userInfo: nil)
+                    self.setPriceLbl()
+                }
             case .networkFail :
                 self.networkSimpleAlert()
             default :

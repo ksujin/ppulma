@@ -32,6 +32,8 @@
 		3B618D532189BADE002AA2D4 /* MypageCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D522189BADE002AA2D4 /* MypageCVCell.swift */; };
 		3B618D552189FB5F002AA2D4 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D542189FB5F002AA2D4 /* SearchService.swift */; };
 		3B618D572189FBAB002AA2D4 /* SearchVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D562189FBAB002AA2D4 /* SearchVO.swift */; };
+		3B618D59218A2C3F002AA2D4 /* RecentItemVO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D58218A2C3F002AA2D4 /* RecentItemVO.swift */; };
+		3B618D5B218A2C66002AA2D4 /* RecentItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B618D5A218A2C66002AA2D4 /* RecentItemService.swift */; };
 		3B7D95982187116E00D63C67 /* NetworkConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D95972187116E00D63C67 /* NetworkConfiguration.swift */; };
 		3B7D959A2187118E00D63C67 /* GettableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D95992187118E00D63C67 /* GettableService.swift */; };
 		3B7D959C2187119600D63C67 /* PostableService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7D959B2187119600D63C67 /* PostableService.swift */; };
@@ -91,6 +93,8 @@
 		3B618D522189BADE002AA2D4 /* MypageCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MypageCVCell.swift; sourceTree = "<group>"; };
 		3B618D542189FB5F002AA2D4 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
 		3B618D562189FBAB002AA2D4 /* SearchVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVO.swift; sourceTree = "<group>"; };
+		3B618D58218A2C3F002AA2D4 /* RecentItemVO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentItemVO.swift; sourceTree = "<group>"; };
+		3B618D5A218A2C66002AA2D4 /* RecentItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentItemService.swift; sourceTree = "<group>"; };
 		3B7D95972187116E00D63C67 /* NetworkConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfiguration.swift; sourceTree = "<group>"; };
 		3B7D95992187118E00D63C67 /* GettableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettableService.swift; sourceTree = "<group>"; };
 		3B7D959B2187119600D63C67 /* PostableService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostableService.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 				3B618D462188BEE3002AA2D4 /* MessageVO.swift */,
 				3B618D4A2188C0A7002AA2D4 /* CartVO.swift */,
 				3B618D562189FBAB002AA2D4 /* SearchVO.swift */,
+				3B618D58218A2C3F002AA2D4 /* RecentItemVO.swift */,
 			);
 			path = VO;
 			sourceTree = "<group>";
@@ -268,6 +273,7 @@
 				3B618D442188BEA6002AA2D4 /* AddCartService.swift */,
 				3B618D482188C044002AA2D4 /* GetCartListService.swift */,
 				3B618D542189FB5F002AA2D4 /* SearchService.swift */,
+				3B618D5A218A2C66002AA2D4 /* RecentItemService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -564,6 +570,7 @@
 				3BE797332177588D0071AF34 /* ExamplePopupViewController.swift in Sources */,
 				3BD63A19218398C7007F5972 /* SearchResultCVCell.swift in Sources */,
 				3B7D959E2187119E00D63C67 /* HttpResCode.swift in Sources */,
+				3B618D5B218A2C66002AA2D4 /* RecentItemService.swift in Sources */,
 				3BD63A0C21836961007F5972 /* DetailVC.swift in Sources */,
 				3B618D452188BEA6002AA2D4 /* AddCartService.swift in Sources */,
 				3BB04FB02178D6390096BF4D /* Font.swift in Sources */,
@@ -571,6 +578,7 @@
 				3B618D3F2188BB0F002AA2D4 /* ProductDetailService.swift in Sources */,
 				3BD63A0F21837CF0007F5972 /* SearchVC.swift in Sources */,
 				3B618D412188BB19002AA2D4 /* ProductDetailVO.swift in Sources */,
+				3B618D59218A2C3F002AA2D4 /* RecentItemVO.swift in Sources */,
 				3B05B27D21777AE200BB6803 /* MagazineFirstCVCell.swift in Sources */,
 				3B7D95AE21871C3600D63C67 /* SemiCategoryService.swift in Sources */,
 				3B618D4E2189B636002AA2D4 /* MypageVC.swift in Sources */,

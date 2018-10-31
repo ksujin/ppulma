@@ -37,6 +37,33 @@ struct AddCartService: PostableService, GettableService {
     }
     
     func deleteCart(url : String, params : [String : Any] = [:], completion : @escaping (NetworkResult<Any>) -> Void){
+        
+        //결제까지 한다는 것
+        if params.count > 0 {
+            post(UrlPath.purchase.getURL(), params: params) { (result) in
+                switch result {
+                case .success(let networkResult):
+                    switch networkResult.resCode{
+                    case HttpResponseCode.postSuccess.rawValue :
+                        completion(.networkSuccess(networkResult.resResult.message))
+                    case HttpResponseCode.serverErr.rawValue :
+                        completion(.serverErr)
+                    default :
+                        print("no 201/500 rescode is \(networkResult.resCode)")
+                        break
+                    }
+                    
+                    break
+                case .error(let errMsg) :
+                    print(errMsg)
+                    break
+                case .failure(_) :
+                    completion(.networkFail)
+                }
+            }
+        }
+        
+        
         get(url, method: .delete, parameters: params) { (result) in
             switch result {
             case .success(let networkResult):
