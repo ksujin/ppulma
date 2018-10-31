@@ -38,7 +38,7 @@ struct AddCartService: PostableService, GettableService {
     
     func deleteCart(url : String, params : [String : Any] = [:], completion : @escaping (NetworkResult<Any>) -> Void){
         
-        //결제까지 한다는 것
+        //결제 목록에 담기까지 한다는 것
         if params.count > 0 {
             post(UrlPath.purchase.getURL(), params: params) { (result) in
                 switch result {
