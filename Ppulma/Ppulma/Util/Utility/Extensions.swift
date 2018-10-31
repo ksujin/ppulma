@@ -218,4 +218,45 @@ extension UICollectionViewCell {
     
 }
 
+//컨스트레인
+extension UIView {
+    
+    func removeConstraints() {
+        removeConstraints(constraints)
+    }
+    
+    func deactivateAllConstraints() {
+        NSLayoutConstraint.deactivate(getAllConstraints())
+    }
+    
+    func getAllSubviews() -> [UIView] {
+        return UIView.getAllSubviews(view: self)
+    }
+    
+    func getAllConstraints() -> [NSLayoutConstraint] {
+        
+        var subviewsConstraints = getAllSubviews().flatMap { (view) -> [NSLayoutConstraint] in
+            return view.constraints
+        }
+        
+        if let superview = self.superview {
+            subviewsConstraints += superview.constraints.flatMap{ (constraint) -> NSLayoutConstraint? in
+                if let view = constraint.firstItem as? UIView {
+                    if view == self {
+                        return constraint
+                    }
+                }
+                return nil
+            }
+        }
+        
+        return subviewsConstraints + constraints
+    }
+    
+    class func getAllSubviews(view: UIView) -> [UIView] {
+        return view.subviews.flatMap { subView -> [UIView] in
+            return [subView] + getAllSubviews(view: subView)
+        }
+    }
+}
 
