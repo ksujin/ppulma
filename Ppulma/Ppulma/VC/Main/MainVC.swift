@@ -55,8 +55,8 @@ class MainVC: UIViewController {
     }
     
     @objc func getUserInfo(_ notification : Notification) {
-       firstLbl.text = Int(sampleUser.point).withCommas()+"원"
-       secondLbl.text = Int(sampleUser.saveMoney).withCommas()+"원"
+       firstLbl.text = Int(sampleUser.saveMoney).withCommas()+"원"
+       secondLbl.text = Int(sampleUser.point).withCommas()+"원"
     }
     @IBAction func alarmAction(_ sender: Any) {
         let mainStoryboard = Storyboard.shared().mainStoryboard
