@@ -59,11 +59,9 @@
 		3BD63A19218398C7007F5972 /* SearchResultCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD63A18218398C7007F5972 /* SearchResultCVCell.swift */; };
 		3BD63A1C21839BC6007F5972 /* FilterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD63A1B21839BC6007F5972 /* FilterVC.swift */; };
 		3BE79721217752A10071AF34 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79720217752A10071AF34 /* AppDelegate.swift */; };
-		3BE79723217752A10071AF34 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79722217752A10071AF34 /* ViewController.swift */; };
 		3BE79726217752A10071AF34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79724217752A10071AF34 /* Main.storyboard */; };
 		3BE79728217752A10071AF34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79727217752A10071AF34 /* Assets.xcassets */; };
 		3BE7972B217752A10071AF34 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BE79729217752A10071AF34 /* LaunchScreen.storyboard */; };
-		3BE797332177588D0071AF34 /* ExamplePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE797322177588D0071AF34 /* ExamplePopupViewController.swift */; };
 		3BE79736217767EC0071AF34 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE79735217767EC0071AF34 /* MainVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -121,12 +119,10 @@
 		3BD63A1B21839BC6007F5972 /* FilterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterVC.swift; sourceTree = "<group>"; };
 		3BE7971D217752A10071AF34 /* Ppulma.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ppulma.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BE79720217752A10071AF34 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3BE79722217752A10071AF34 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3BE79725217752A10071AF34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BE79727217752A10071AF34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3BE7972A217752A10071AF34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BE7972C217752A10071AF34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3BE797322177588D0071AF34 /* ExamplePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamplePopupViewController.swift; sourceTree = "<group>"; };
 		3BE79735217767EC0071AF34 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		9EB455D49E0B171527E29F9E /* Pods-Ppulma.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ppulma.release.xcconfig"; path = "Target Support Files/Pods-Ppulma/Pods-Ppulma.release.xcconfig"; sourceTree = "<group>"; };
 		B2725CD172F7CCA4F7437D4B /* Pods-Ppulma.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Ppulma.debug.xcconfig"; path = "Target Support Files/Pods-Ppulma/Pods-Ppulma.debug.xcconfig"; sourceTree = "<group>"; };
@@ -379,8 +375,6 @@
 				3B05B277217777CB00BB6803 /* Storyboard */,
 				3BE79734217767D50071AF34 /* VC */,
 				3BE79720217752A10071AF34 /* AppDelegate.swift */,
-				3BE79722217752A10071AF34 /* ViewController.swift */,
-				3BE797322177588D0071AF34 /* ExamplePopupViewController.swift */,
 				3BE79727217752A10071AF34 /* Assets.xcassets */,
 				3BE79729217752A10071AF34 /* LaunchScreen.storyboard */,
 				3BE7972C217752A10071AF34 /* Info.plist */,
@@ -502,7 +496,6 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Ppulma/Pods-Ppulma-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/BottomPopup/BottomPopup.framework",
 				"${BUILT_PRODUCTS_DIR}/Dropper/Dropper.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
@@ -511,7 +504,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BottomPopup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Dropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
@@ -567,7 +559,6 @@
 				3B7D95AC21871BDB00D63C67 /* SemiCategoryVO.swift in Sources */,
 				3B05B279217778FC00BB6803 /* ColorChip.swift in Sources */,
 				3B618D532189BADE002AA2D4 /* MypageCVCell.swift in Sources */,
-				3BE797332177588D0071AF34 /* ExamplePopupViewController.swift in Sources */,
 				3BD63A19218398C7007F5972 /* SearchResultCVCell.swift in Sources */,
 				3B7D959E2187119E00D63C67 /* HttpResCode.swift in Sources */,
 				3B618D5B218A2C66002AA2D4 /* RecentItemService.swift in Sources */,
@@ -587,7 +578,6 @@
 				3BE79736217767EC0071AF34 /* MainVC.swift in Sources */,
 				3B618D572189FBAB002AA2D4 /* SearchVO.swift in Sources */,
 				3B618D492188C044002AA2D4 /* GetCartListService.swift in Sources */,
-				3BE79723217752A10071AF34 /* ViewController.swift in Sources */,
 				3B05B26421776BFB00BB6803 /* MainTVCell.swift in Sources */,
 				3B7D95AA2187178000D63C67 /* MagazineService.swift in Sources */,
 				3BD63A122183834D007F5972 /* SearchTVCell.swift in Sources */,
