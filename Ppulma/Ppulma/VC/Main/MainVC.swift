@@ -24,7 +24,7 @@ class MainVC: UIViewController {
     @IBOutlet weak var secondLbl: UILabel!
 
     @IBOutlet weak var alarmOrangeVie: UIView!
-    @IBOutlet weak var moreBtn: UIButton!
+    
     var mainArr : [SampleMainStruct] = []
     
     //hide Navigation Bar only on first page
@@ -57,6 +57,15 @@ class MainVC: UIViewController {
     @objc func getUserInfo(_ notification : Notification) {
        firstLbl.text = Int(sampleUser.saveMoney).withCommas()+"원"
        secondLbl.text = Int(sampleUser.point).withCommas()+"원"
+    }
+
+    @IBAction func moreAction(_ sender: Any) {
+        let mainStoryboard = Storyboard.shared().mainStoryboard
+        if let filterVC = mainStoryboard.instantiateViewController(withIdentifier:FilterVC.reuseIdentifier) as? FilterVC {
+            filterVC.navTitle = "회원레벨 안내"
+            filterVC.mainImg = #imageLiteral(resourceName: "levelinfo")
+            self.present(filterVC, animated: true, completion: nil)
+        }
     }
     @IBAction func alarmAction(_ sender: Any) {
         let mainStoryboard = Storyboard.shared().mainStoryboard
